@@ -6,18 +6,18 @@
     <description>Recent content on joker的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Tue, 05 Nov 2019 23:35:26 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 07 Nov 2019 12:04:51 +0800</lastBuildDate>
     
 	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>测试</title>
-      <link>http://example.org/post/%E6%B5%8B%E8%AF%95/</link>
-      <pubDate>Tue, 05 Nov 2019 23:35:26 +0800</pubDate>
+      <title>测试博客</title>
+      <link>http://example.org/posts/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Thu, 07 Nov 2019 12:04:51 +0800</pubDate>
       
-      <guid>http://example.org/post/%E6%B5%8B%E8%AF%95/</guid>
-      <description> 测试一下 </description>
+      <guid>http://example.org/posts/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/</guid>
+      <description>测试一下 内容</description>
     </item>
     
     <item>
