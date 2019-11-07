@@ -6,10 +6,27 @@
     <description>Recent content in Posts on joker的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Thu, 07 Nov 2019 14:22:01 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 07 Nov 2019 14:42:00 +0800</lastBuildDate>
     
 	<atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>如何搭建博客</title>
+      <link>http://example.org/posts/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Thu, 07 Nov 2019 14:42:00 +0800</pubDate>
+      
+      <guid>http://example.org/posts/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description>使用 hugo 搭建一个个人博客 首先进入 Hugo 官网按提示操作
+第一步 安装 Hugo
+第二步 执行该命令行
+hugo new site jokerguo.github.io-creator  第三步 执行下列命令行
+git init git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke echo &#39;theme = &amp;quot;ananke&amp;quot;&#39; &amp;gt;&amp;gt; config.toml  第四步 新建一篇博客
+hugo new posts/开通博客啦.md  注意点: 将博客中 draft 的值修改为 false
+第五步 hugo server -D  第六步 找到配置文件 config.toml
+ 将语言修改为&amp;rdquo;zh-Hans&amp;rdquo; 标题改为自己的博客名 主题看个人喜好更改  第七步 hugo -D  最终会生成 public 文件
+ creator 目录下添加.gitignore 文件 写入/public/ 进入 public 创建本地仓库 在 GitHub 上创建 repo 仓库名：自己用户名.</description>
+    </item>
     
     <item>
       <title>我的第一篇博客</title>
@@ -21,12 +38,12 @@
     </item>
     
     <item>
-      <title>第一条博客</title>
+      <title>开通博客</title>
       <link>http://example.org/posts/%E5%BC%80%E9%80%9A%E5%8D%9A%E5%AE%A2%E5%95%A6/</link>
       <pubDate>Tue, 05 Nov 2019 17:17:13 +0800</pubDate>
       
       <guid>http://example.org/posts/%E5%BC%80%E9%80%9A%E5%8D%9A%E5%AE%A2%E5%95%A6/</guid>
-      <description>第一条博客 这是第一条博客</description>
+      <description>开通啦 这是一条公告 哈哈哈</description>
     </item>
     
   </channel>
