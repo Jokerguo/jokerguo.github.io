@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on joker的博客</title>
-    <link>http://example.org/posts/</link>
+    <link>http://jokerguo.top/posts/</link>
     <description>Recent content in Posts on joker的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
     <lastBuildDate>Thu, 07 Nov 2019 14:42:00 +0800</lastBuildDate>
     
-	<atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://jokerguo.top/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>如何搭建博客</title>
-      <link>http://example.org/posts/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
+      <link>http://jokerguo.top/posts/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Thu, 07 Nov 2019 14:42:00 +0800</pubDate>
       
-      <guid>http://example.org/posts/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <guid>http://jokerguo.top/posts/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
       <description>使用 hugo 搭建一个个人博客 首先进入 Hugo 官网按提示操作
 第一步 安装 Hugo
 第二步 执行该命令行
@@ -30,19 +30,19 @@ hugo new posts/开通博客啦.md  注意点: 将博客中 draft 的值修改为
     
     <item>
       <title>我的第一篇博客</title>
-      <link>http://example.org/posts/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</link>
+      <link>http://jokerguo.top/posts/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Thu, 07 Nov 2019 14:22:01 +0800</pubDate>
       
-      <guid>http://example.org/posts/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</guid>
+      <guid>http://jokerguo.top/posts/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</guid>
       <description>下面是我的女朋友</description>
     </item>
     
     <item>
       <title>开通博客</title>
-      <link>http://example.org/posts/%E5%BC%80%E9%80%9A%E5%8D%9A%E5%AE%A2%E5%95%A6/</link>
+      <link>http://jokerguo.top/posts/%E5%BC%80%E9%80%9A%E5%8D%9A%E5%AE%A2%E5%95%A6/</link>
       <pubDate>Tue, 05 Nov 2019 17:17:13 +0800</pubDate>
       
-      <guid>http://example.org/posts/%E5%BC%80%E9%80%9A%E5%8D%9A%E5%AE%A2%E5%95%A6/</guid>
+      <guid>http://jokerguo.top/posts/%E5%BC%80%E9%80%9A%E5%8D%9A%E5%AE%A2%E5%95%A6/</guid>
       <description>开通啦 这是一条公告 哈哈哈</description>
     </item>
     
