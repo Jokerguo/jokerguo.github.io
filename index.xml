@@ -6,10 +6,22 @@
     <description>Recent content on joker的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Thu, 07 Nov 2019 14:42:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 08 Nov 2019 09:49:08 +0800</lastBuildDate>
     
 	<atom:link href="http://jokerguo.top/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HTML入门笔记1</title>
+      <link>http://jokerguo.top/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/</link>
+      <pubDate>Fri, 08 Nov 2019 09:49:08 +0800</pubDate>
+      
+      <guid>http://jokerguo.top/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/</guid>
+      <description> HTML入门笔记1 HTML是谁发明的 1991年由Tim Berners-Lee提出
+HTML的起手式 !  注：!会自动补齐代码
+常用的表章节标签  h1-h6 标题 section 章节 article 文章 p 段落 header 头部 footer 脚部 main 主要内容 aside 旁支内容 div 划分  全局属性  class 定义一个类 contenteditable 内容可修改 hidden 不可见
+ id 尽量不使用id style 样式 tabindex 使用Tab键选中 -1（不选中） 0（最后一个选中） 正数（按大小选中 ） title 标题  常用内容标签  ol+li 有序列表 ul+li 无序列表 dl+dt+dd 自定义列表 pre code 通常一起使用 中间代码 hr 水平线 br 换行 a 超链接 em 语气强调 strong 内容重要 quote 表示内联引用 blockquote 表示块级引用 cite属性值：url  </description>
+    </item>
     
     <item>
       <title>如何搭建博客</title>
