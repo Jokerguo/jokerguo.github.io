@@ -81,11 +81,11 @@
                         <div class="post-content">
                             
 
-<h1 id="一-css简介">一、css简介</h1>
+<h1 id="一-css-简介">一、css 简介</h1>
 
-<p>CSS，全拼Cascading Style Sheets，层叠样式表，是由Tim Berners Lee的同事赖先生（Håkon Wium Lie）首先提出的，目前使用最广泛的版本为CSS2.1。最新版本为css3.0</p>
+<p>CSS，全拼 Cascading Style Sheets，层叠样式表，是由 Tim Berners Lee 的同事赖先生（Håkon Wium Lie）首先提出的，目前使用最广泛的版本为 CSS2.1。最新版本为 css3.0</p>
 
-<h1 id="二-css语法">二、css语法</h1>
+<h1 id="二-css-语法">二、css 语法</h1>
 
 <p><img src="/images/css1.png" alt="语法一" />
 <img src="/images/css2.png" alt="语法二" /></p>
@@ -98,27 +98,27 @@
 
 <p>行内元素不能设置宽度</p>
 
-<p>行内元素的高度由line-height间接决定(如果内容字体不一致 可能行高会有所改变)</p>
+<p>行内元素的高度由 line-height 间接决定(如果内容字体不一致 可能行高会有所改变)</p>
 
 <h3 id="block">block</h3>
 
-<p>块级元素可以设置width   默认宽度为 auto   不是100%</p>
+<p>块级元素可以设置 width 默认宽度为 auto 不是 100%</p>
 
 <p>块级元素中可以嵌入行内或者块级元素</p>
 
 <h3 id="inline-block">inline-block</h3>
 
-<p>行内块元素结合两者   可使用width</p>
+<p>行内块元素结合两者 可使用 width</p>
 
-<h5 id="tips-html5中没有行内元素-块级元素的区分-所有元素指定display">Tips: HTML5中没有行内元素 块级元素的区分  所有元素指定display</h5>
+<h5 id="tips-html5-中没有行内元素-块级元素的区分-所有元素指定-display">Tips: HTML5 中没有行内元素 块级元素的区分 所有元素指定 display</h5>
 
 <h5 id="suggest-不要使用-width-100">suggest: 不要使用 width:100%</h5>
 
 <h1 id="四-脱离文档流">四、脱离文档流</h1>
 
-<p>position: absolute  绝对定位 /   fixed  固定定位</p>
+<p>position: absolute 绝对定位 / fixed 固定定位</p>
 
-<p>float  浮动</p>
+<p>float 浮动</p>
 
 <h1 id="五-overflow">五、overflow</h1>
 
@@ -133,68 +133,65 @@
 
 <p><img src="/images/box.png" alt="盒模型" /></p>
 
-<p>css盒模型分两种  一种content-box 一种border-box</p>
+<p>css 盒模型分两种 一种 content-box 一种 border-box</p>
 
-<p>区别在于content-box的宽度只包含content</p>
+<p>区别在于 content-box 的宽度只包含 content</p>
 
-<p>border-box的宽度包含border padding content</p>
+<p>border-box 的宽度包含 border padding content</p>
 
-<h1 id="七-css布局">七、css布局</h1>
+<h1 id="七-css-布局">七、css 布局</h1>
 
-<h3 id="float布局-兼容ie">float布局   （兼容ie）</h3>
+<h3 id="float-布局-兼容-ie">float 布局 （兼容 ie）</h3>
 
-<p>使用float:left / right 对子元素进行布局</p>
+<p>使用 float:left / right 对子元素进行布局</p>
 
 <p>在父元素中加入.clearfix 用于清除浮动</p>
 
-<pre><code class="language-css">.clearfix{ 
-    content:'';
-    display:block;
-    clear:both;
+<pre><code class="language-css">.clearfix {
+  content: &quot;&quot;;
+  display: block;
+  clear: both;
 }
 </code></pre>
 
 <p><img src="/images/float.png" alt="float" /></p>
 
-<p><a href="https://www.cnblogs.com/iyangyuan/archive/2013/03/27/2983813.html">float布局详细介绍</a></p>
+<p><a href="https://www.cnblogs.com/iyangyuan/archive/2013/03/27/2983813.html">float 布局详细介绍</a></p>
 
-<h3 id="flex布局">flex布局</h3>
+<h3 id="flex-布局">flex 布局</h3>
 
 <h4 id="container-容器">container (容器)</h4>
 
-<p>如何成为flex容器</p>
+<p>如何成为 flex 容器</p>
 
-<pre><code class="language-css">    display:flex; /*inline-flex*/
+<pre><code class="language-css">display: flex; /*inline-flex*/
 </code></pre>
 
-<p>控制items的流向（主轴）</p>
+<p>控制 items 的流向（主轴）</p>
 
-<pre><code class="language-css">    flex-direction:row-reverse / row / column / column-reverse;
-    
+<pre><code class="language-css">flex-direction: row-reverse / row / column / column-reverse;
 </code></pre>
 
 <p>是否换行</p>
 
-<pre><code class="language-css">    flex-wrap:wrap / nowrap / wrap-reverse;
-    
+<pre><code class="language-css">flex-wrap: wrap / nowrap / wrap-reverse;
 </code></pre>
 
 <p>主轴对齐方式</p>
 
-<pre><code class="language-css">   justify-content:flex-start / flex-end / center / space-between / space-around / space-evenly;
-  
+<pre><code class="language-css">justify-content: flex-start / flex-end / center / space-between / space-around /
+  space-evenly;
 </code></pre>
 
 <p>次轴对齐方式</p>
 
-<pre><code class="language-css">    align-items:flex-start / flex-end / center / stretch;
-    
+<pre><code class="language-css">align-items: flex-start / flex-end / center / stretch;
 </code></pre>
 
 <p>多行内容对齐</p>
 
-<pre><code class="language-css">    algin-content : flex-start / center / flex-end/  stretch/  space-between / space-around ;
-     
+<pre><code class="language-css">algin-content: flex-start / center / flex-end/ stretch/ space-between /
+  space-around;
 </code></pre>
 
 <h4 id="items">items</h4>
@@ -206,7 +203,7 @@
 <p>对内容进行从小到大排序</p>
 
 <ul>
-<li>flex-grow  对剩余宽度的分配</li>
+<li>flex-grow 对剩余宽度的分配</li>
 </ul>
 
 <p><img src="/images/grow.png" alt="flex-grow" /></p>
@@ -215,9 +212,9 @@
 <li>flex-shrink</li>
 </ul>
 
-<p>当宽度空间不够时 flex-shrink越大  缩小的程度越高</p>
+<p>当宽度空间不够时 flex-shrink 越大 缩小的程度越高</p>
 
-<p>flex-shrink : 1 ;  缩小程度一样</p>
+<p>flex-shrink : 1 ; 缩小程度一样</p>
 
 <p>flex-shrink : 0 ; 不缩小</p>
 
@@ -225,9 +222,9 @@
 <li>flex-basis</li>
 </ul>
 
-<p>控制基准宽度 默认值为auto</p>
+<p>控制基准宽度 默认值为 auto</p>
 
-<h5 id="tips-缩写方式-flex-flex-grow-flex-shrink-flex-basis">Tips: 缩写方式  flex : flex-grow  flex-shrink flex-basis</h5>
+<h5 id="tips-缩写方式-flex-flex-grow-flex-shrink-flex-basis">Tips: 缩写方式 flex : flex-grow flex-shrink flex-basis</h5>
 
 <ul>
 <li>align-self</li>
@@ -235,41 +232,41 @@
 
 <p><img src="/images/align-self.png" alt="align-self" /></p>
 
-<h4 id="flex经验">flex经验：</h4>
+<h4 id="flex-经验">flex 经验：</h4>
 
 <ul>
-<li>不要将height/width写死 除非特殊原因</li>
-<li>使用min-width/max-width/min-height/max-height</li>
-<li>flex和margin-xxx:auto 有意外效果</li>
+<li>不要将 height/width 写死 除非特殊原因</li>
+<li>使用 min-width/max-width/min-height/max-height</li>
+<li>flex 和 margin-xxx:auto 有意外效果</li>
 </ul>
 
-<h3 id="grid布局">grid布局</h3>
+<h3 id="grid-布局">grid 布局</h3>
 
-<p>如何成为grid容器</p>
+<p>如何成为 grid 容器</p>
 
-<pre><code class="language-css">    display:grid; /*inline-grid*/
+<pre><code class="language-css">display: grid; /*inline-grid*/
 </code></pre>
 
 <p>创建四行三列的网格</p>
 
-<pre><code class="language-css">    grid-template-columns: 40px 50px auto 50px;
-    grid-template-rows: 25% 100px auto;
+<pre><code class="language-css">grid-template-columns: 40px 50px auto 50px;
+grid-template-rows: 25% 100px auto;
 </code></pre>
 
 <h5 id="tips">Tips:</h5>
 
 <ol>
-<li><p>fr-free space  主要用于平均布局</p></li>
+<li><p>fr-free space 主要用于平均布局</p></li>
 
 <li><p>grid-gow 设置间隙大小</p></li>
 </ol>
 
 <p>控制行列数</p>
 
-<pre><code class="language-css">    grid-row-start: 1;
-    grid-row-end: 4; 
-    grid-column-start: 1;
-    grid-column-end: 4;
+<pre><code class="language-css">grid-row-start: 1;
+grid-row-end: 4;
+grid-column-start: 1;
+grid-column-end: 4;
 </code></pre>
 
 <h5 id="tips-可以取负值">Tips: 可以取负值</h5>
@@ -278,24 +275,24 @@
 
 <p>使用分区</p>
 
-<p><img src="/images/grid-tempalte-areas.png" alt="grid分区" /></p>
+<p><img src="/images/grid-template-areas.png" alt="grid分区" /></p>
 
 <h1 id="八-浏览器渲染">八、浏览器渲染</h1>
 
 <h3 id="浏览器渲染过程">浏览器渲染过程</h3>
 
 <ol>
-<li>根据HTML构建HTML树（DOM）</li>
-<li>根据CSS构建CSS树（CSSOM）</li>
+<li>根据 HTML 构建 HTML 树（DOM）</li>
+<li>根据 CSS 构建 CSS 树（CSSOM）</li>
 <li>将两棵树合并成渲染树（render tree）</li>
-<li>Layout布局（文档流、盒模型、计算大小和位置）</li>
-<li>Paint绘制（边框颜色。文字颜色、阴影）</li>
-<li>composite合成（根据层叠关系展示画面）</li>
+<li>Layout 布局（文档流、盒模型、计算大小和位置）</li>
+<li>Paint 绘制（边框颜色。文字颜色、阴影）</li>
+<li>composite 合成（根据层叠关系展示画面）</li>
 </ol>
 
 <p><img src="/images/tree.png" alt="render tree" /></p>
 
-<h1 id="九-css动画的两种做法-transition和animation">九、CSS动画的两种做法（transition和animation）</h1>
+<h1 id="九-css-动画的两种做法-transition-和-animation">九、CSS 动画的两种做法（transition 和 animation）</h1>
 
 <ol>
 <li>transition 过渡</li>
@@ -307,11 +304,11 @@
 <li><p>语法 :</p></li>
 </ul>
 
-<p>transition : 属性名 时长  过渡方式  延迟</p>
+<p>transition : 属性名 时长 过渡方式 延迟</p>
 
 <p>可以用逗号分隔两个不同属性（transition：left 1s，top 2s）</p>
 
-<p>可以用all代表所有属性（transition：all 1s）</p>
+<p>可以用 all 代表所有属性（transition：all 1s）</p>
 
 <p>过渡方式有： linear/eas（默认的）/ease-in/ease-out/ease-in-out&hellip;</p>
 
@@ -324,31 +321,40 @@
 <ul>
 <li><p>需先声明关键帧@keyframes</p>
 
-<pre><code class="language-css">@keyframes xxx{
-    from{
-        transform:translateX(100px)
-    }
-    to{
-        transform:translateX(100px) translateY(100px)
-    }
+<pre><code class="language-css">@keyframes xxx {
+from {
+transform: translateX(100px);
+}
+to {
+transform: translateX(100px) translateY(100px);
+}
 }
 </code></pre>
 
-<pre><code class="language-css">0%{top:0;left:0}
-50%{top:50px;left:50px}
-100%{top:100px;left:100px}
+<pre><code class="language-css">0% {
+top: 0;
+left: 0;
+}
+50% {
+top: 50px;
+left: 50px;
+}
+100% {
+top: 100px;
+left: 100px;
+}
 </code></pre></li>
 
 <li><p>语法 :</p></li>
 </ul>
 
-<p>animation : 时长   过渡方式 延迟  次数 方向 填充模式 是否暂停 动画名（xxx）</p>
+<p>animation : 时长 过渡方式 延迟 次数 方向 填充模式 是否暂停 动画名（xxx）</p>
 
-<p>时长：1s或1000ms</p>
+<p>时长：1s 或 1000ms</p>
 
-<p>过渡方式：跟transition取值一样</p>
+<p>过渡方式：跟 transition 取值一样</p>
 
-<p>次数：3或2.4或infinite（无穷尽）</p>
+<p>次数：3 或 2.4 或 infinite（无穷尽）</p>
 
 <p>方向：reverse（相反）/alternate（轮流）/alternate-reverse（交替反转）</p>
 
