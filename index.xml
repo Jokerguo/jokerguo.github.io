@@ -6,13 +6,25 @@
     <description>Recent content on joker的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Sun, 17 Nov 2019 16:03:53 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 18 Nov 2019 21:01:13 +0800</lastBuildDate>
     
 	<atom:link href="http://jokerguo.top/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>《Css总结》</title>
+      <title>浅析URL</title>
+      <link>http://jokerguo.top/posts/%E6%B5%85%E6%9E%90url/</link>
+      <pubDate>Mon, 18 Nov 2019 21:01:13 +0800</pubDate>
+      
+      <guid>http://jokerguo.top/posts/%E6%B5%85%E6%9E%90url/</guid>
+      <description>URL 的组成  协议： http(80) / https(443) 域名或 ip：域名对应一个 ip 的字符串 ip 对应一个设备 最大值 255 端口号：一个服务对应一个端口号 （最大 6 万多） 路径：一串字符串 判断访问什么网页 查询参数：查看网页中的什么内容 锚点 ： 文档内部的定位 （锚点不会传入服务器）  DNS 的作用 DNS 服务的作用是将域名解析为 IP 地址 DNS 是域名系统 (Domain Name System) 的缩写，是因特网的一项核心服务，它作为可以将域名和 IP 地址相互映射的一个分布式数据库，能够使人更方便的访问互联网，而不用去记住能够被机器直接读取的 IP 数串。这是 DNS 的官方说法。
+在互联网中通过 IP 地址来进行通信。但是 IP 地址的表示形式是数字，很难进行记忆（比如 116.213.120.232），所以为每个 IP 取一个人类更易记忆的域名形式（比如 www.google.com），而通过 DNS 来把解析域名成为 IP（将方便人理解的命名格式解析成计算机能够理解的格式，也可以将 IP 翻译成域名）
+DNS 过程
+ 客户端向 DNS 服务器（DNS 服务器有自己的 IP 地址）发送域名查询请求 DNS 服务器告知客户机 Web 服务器的 IP 地址  nslookup 命令 nslookup 命令用于查询 DNS 的记录，查看域名解析是否正常</description>
+    </item>
+    
+    <item>
+      <title>Css总结</title>
       <link>http://jokerguo.top/posts/css%E6%80%BB%E7%BB%93/</link>
       <pubDate>Sun, 17 Nov 2019 16:03:53 +0800</pubDate>
       
@@ -30,30 +42,23 @@ float 浮动
     </item>
     
     <item>
-      <title>《HTML常用标签》</title>
+      <title>HTML常用标签</title>
       <link>http://jokerguo.top/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</link>
       <pubDate>Fri, 08 Nov 2019 16:17:02 +0800</pubDate>
       
       <guid>http://jokerguo.top/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</guid>
-      <description>《HTML常用标签》 a标签 href &amp;nbsp;&amp;nbsp; 超链接 填入相应的链接地址 1.&amp;nbsp;&amp;nbsp;网址 &amp;nbsp;&amp;nbsp; 推荐使用这种格式（//google.com）因为会自动选择协议，跳转到正确页面，减少bug。
+      <description>《HTML 常用标签》 a 标签 href &amp;nbsp;&amp;nbsp; 超链接 填入相应的链接地址 1.&amp;nbsp;&amp;nbsp;网址 &amp;nbsp;&amp;nbsp; 推荐使用这种格式（//google.com）因为会自动选择协议，跳转到正确页面，减少 bug。
 2.&amp;nbsp;&amp;nbsp;绝对路径于相对路径
-注:在哪里开启的http服务 哪里就是根目录
+注:在哪里开启的 http 服务 哪里就是根目录
 3.&amp;nbsp;&amp;nbsp;伪协议
-javascript:代码; &amp;nbsp;&amp;nbsp; （可实现无任何操作的a标签 不加代码）
+javascript:代码; &amp;nbsp;&amp;nbsp; （可实现无任何操作的 a 标签 不加代码）
 mailto:&amp;nbsp;&amp;nbsp;发邮件
 tel:&amp;nbsp;&amp;nbsp;打电话
-4.&amp;nbsp;&amp;nbsp;#id&amp;nbsp;&amp;nbsp; 定位到页面中的id位置
-target  _blank &amp;nbsp;&amp;nbsp; 新建窗口打开 _top &amp;nbsp;&amp;nbsp; 级别最高的窗口打开 _parent &amp;nbsp;&amp;nbsp; 父级窗口打开 _self &amp;nbsp;&amp;nbsp; 默认值 &amp;nbsp;&amp;nbsp; 当前窗口打开 target=&amp;ldquo;xxx&amp;rdquo; 创建一个xxx窗口 会覆盖之前的窗口 iframe name=&amp;ldquo;xxx&amp;rdquo; 用name为xxx的iframe窗口打开  download 下载页面&amp;nbsp;&amp;nbsp;部分浏览器不支持
+4.&amp;nbsp;&amp;nbsp;#id&amp;nbsp;&amp;nbsp; 定位到页面中的 id 位置
+target  _blank &amp;nbsp;&amp;nbsp; 新建窗口打开 _top &amp;nbsp;&amp;nbsp; 级别最高的窗口打开 _parent &amp;nbsp;&amp;nbsp; 父级窗口打开 _self &amp;nbsp;&amp;nbsp; 默认值 &amp;nbsp;&amp;nbsp; 当前窗口打开 target=&amp;ldquo;xxx&amp;rdquo; 创建一个 xxx 窗口 会覆盖之前的窗口 iframe name=&amp;ldquo;xxx&amp;rdquo; 用 name 为 xxx 的 iframe 窗口打开  download 下载页面&amp;nbsp;&amp;nbsp;部分浏览器不支持
 rel=noopener 现在还不清楚具体用处
-总结 a标签的作用：跳转外部页面，内部锚点，邮箱和电话
-MDN a标签
-img标签 原理：发出一个get请求 展示一张图片
-alt 替代文本
-width height 宽高
-src 图片路径
-onload事件 onerror事件 图片加载失败后 展示一张准备好的报错图片
-响应式 给img设置最大宽度
-max-width:100%;  table标签 牢记：table的子元素只能是 thead tbody tfoot</description>
+总结 a 标签的作用：跳转外部页面，内部锚点，邮箱和电话
+MDN a 标签</description>
     </item>
     
     <item>
