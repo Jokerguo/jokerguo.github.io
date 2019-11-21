@@ -6,10 +6,40 @@
     <description>Recent content in Posts on joker的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Mon, 18 Nov 2019 21:01:13 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 21 Nov 2019 16:57:14 +0800</lastBuildDate>
     
 	<atom:link href="http://jokerguo.top/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JavaScript的诞生</title>
+      <link>http://jokerguo.top/posts/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/</link>
+      <pubDate>Thu, 21 Nov 2019 16:57:14 +0800</pubDate>
+      
+      <guid>http://jokerguo.top/posts/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/</guid>
+      <description>JavaScript（通常缩写为JS）是一种高级的、解释型的编程语言。JavaScript是一门基于原型、函数先行的语言，是一门多范式的语言，它支持面向对象编程，命令式编程，以及函数式编程。它提供语法来操控文本、数组、日期以及正则表达式等，不支持I/O，比如网络、存储和图形等，但这些都可以由它的宿主环境提供支持。它已经由ECMA（欧洲电脑制造商协会）通过ECMAScript实现语言的标准化。它被世界上的绝大多数网站所使用，也被世界主流浏览器（Chrome、IE、Firefox、Safari、Opera）支持。
+javascript的诞生背景  1994年，在互联网刚兴起的时代，网景公司（Netscape）发布了Navigator浏览器0.9版。这是历史上第一个比较成熟的网络浏览器，轰动一时。但是，这个版本的浏览器只能用来浏览，不具备与访问者互动的能力。因此网景公司急需一种网页脚本语言，使得浏览器可以与网页互动。
+ 网页脚本语言到底是什么语言？网景公司当时有两个选择：一个是采用现有的语言，比如Perl、Python、Tcl、Scheme等等，允许它们直接嵌入网页；另一个是发明一种全新的语言。这两个选择各有利弊。第一个选择，有利于充分利用现有代码和程序员资源，推广起来比较容易；第二个选择，有利于开发出完全适用的语言，实现起来比较容易。
+ 1995年，Sun公司将Oak语言更名为Java并推向市场，并宣称“Write Once, Run Anywhere”。网景公司深受Java的影响，网景公司高层都非常信赖Java，所以网景公司决定要蹭Java的流量，新开发一门语言，用于浏览器的交互。
+javascript的诞生 1995年4月，Brendan Eich（布兰登·艾奇） 加入网景公司。Brendan原本研究方向是函数式编程与Scheme语言。但是1995年5月，网景公司指定Brendan成为了“新语言”的设计师。并且要求这个“新语言”要和Java足够的相似（面向对象思想），但是要比Java能够更加简单地上手。
+ Brendan志不在此，而且对Java完全不感兴趣，为了完成任务他花了10天时间便把这门“新语言”的最初版本设计了出来。总的来说他的设计思路是这样的：
+ 借鉴C语言的基本语法； 借鉴Java语言的数据类型和内存管理； 借鉴Scheme语言，将函数提升到&amp;rdquo;第一等公民&amp;rdquo;（first class）的地位； 借鉴Self语言，使用基于原型（prototype）的继承机制。  所以，Javascript语言实际上是两种语言风格的混合产物——（简化的）函数式编程+（简化的）面向对象编程。
+javascript的缺陷 阮一峰&amp;ndash;Javascript的10个设计缺陷
+ECMAScript  1997年6月，第一版ECMAScript发布。
+ 1999年12月，第三版ECMAScript发布，这也是应用最广泛的ECMAScript版本。
+ 第四版流产。
+ 第三版发布后，经过了10年，20019年12月第五版ECMAScript才发布，这正是因为这段时间IE浏览器正制霸着市场。
+ 随着Chrome的崛起，这些新的浏览器的JS引擎都根据ECMAScript标准进行实现。所以除了IE，其他浏览器与浏览器之间的兼容性得到大大提高。
+ 2015年6月，ECMAScript第六版（ES6）发布。并在之后每一年都发布一版。可见JS地位在不断提高。
+ JavaScript与ECMAScript的区别在于，ECMAScript是标准，JavaScript是实现（实际上JavaScript是由ECMAScript，DOM和BOM三者组成的），实现的功能不一定会出现在标准里面，不同的浏览器也有自己独特的JS实现。
+JavaScript的发展 兴起&amp;ndash;Gmail  2004年愚人节，谷歌发布Gmail。Gmail是谷歌开发的一款具有发送接收邮件功能的在线网页。在Gmail出现以前，所有人都认为浏览器只能用 于浏览阅读。但是Gmail让用户重新认识了浏览器的功能。
+ 2005年，Jesse将谷歌实现Gmail的技术命名为AJAX。从此前端技术正式出现。
+ 2006年，JQuery发布，JQuery是最长寿的JS库，其主要是兼容IE，但随着IE的落寞，JQuery也逐渐淡出前端开发者的视野。
+爆发&amp;ndash;V8引擎  Chrome的JS引擎是V8（V1~V7是不同语言的引擎），V8引擎超快的速度让chrome成为了最主流的浏览器。
+ 2009年，Ryan基于V8，创建了Node.js；2010年Issac基于Node.js写出了npm。有了node.js，前端工程师实现了在浏览器之外执行JS。
+ 2010年，TJ受Sinatra的启发，发布了Express.js。Node.js与Express.js让前端工程师可以完成后端的内容。虽然还比不上Java，但是 至少也具备了手段。
+ 借助Chrome的风，期间也爆发除了很多前端的技术：gulp、grunt、yeoman、require.js、webpack、Angular、React、Vue等。当然其中一些技术也已经过时了。</description>
+    </item>
     
     <item>
       <title>浅析URL</title>
