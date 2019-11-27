@@ -6,10 +6,36 @@
     <description>Recent content in Posts on joker的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Tue, 26 Nov 2019 16:09:09 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 27 Nov 2019 16:28:31 +0800</lastBuildDate>
     
 	<atom:link href="http://jokerguo.top/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JS的数据类型</title>
+      <link>http://jokerguo.top/posts/js%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Wed, 27 Nov 2019 16:28:31 +0800</pubDate>
+      
+      <guid>http://jokerguo.top/posts/js%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <description>JS中的数据类型分别是：  number string null undefined symbol bool object  number 写法  整数写法
+1
+ 小数写法
+0.1
+ 科学计数法
+1.23e4
+ 八进制写法(0/00/0o)
+0123或00123或0o123
+ 十六进制写法（0x/0X）
+0x3F或0X3F
+ 二进制写法（0b/0B）
+ob11或0B11
+  特殊值  正0和负0（都等于0） 无穷（infinity / +infinity / -infinity） NaN (Not a Number)  JS数字使用64位浮点数进行存储
+string 转义字符 空字符串和空格字符串是不同的
+读取字符  string[index]
+let s = &#39;hello&#39; s[0] //&#39;h&#39;  index从0开始
+s[0] 是第一个字符  index的length
+let s = &#39;hello&#39; s[5] //undefined 不会报错 s[4] // &#39;o&#39;   bool  否定运算</description>
+    </item>
     
     <item>
       <title>JS的基本语法</title>
