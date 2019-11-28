@@ -6,10 +6,24 @@
     <description>Recent content on joker的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Wed, 27 Nov 2019 16:28:31 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 28 Nov 2019 14:52:21 +0800</lastBuildDate>
     
 	<atom:link href="http://jokerguo.top/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JS对象的基本用法</title>
+      <link>http://jokerguo.top/posts/js%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Thu, 28 Nov 2019 14:52:21 +0800</pubDate>
+      
+      <guid>http://jokerguo.top/posts/js%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/</guid>
+      <description>如何声明一个对象 简单写法
+let obj = {name:&#39;guo&#39;,age:21,gender:&#39;man&#39;}  正规写法
+let obj = new Object({name:&#39;guo&#39;,age:21,gender:&#39;man&#39;})  提示： 属性名（键名）是字符串，不是标识符
+如何删除对象的属性 delete操作符 delete obj.xxx delete obj[&#39;xxx&#39;]  in操作符 &#39;xxx&#39; in obj ===false //判断属性在不在对象中  提示： 1. 给属性赋值undefined，只是删除了属性值
+如何查看对象的属性 查看自身所有属性 Object.keys(obj) //查看所有属性名 Object.values(obj) //查看所有属性值 Object.entries(obj) //查看所有属性名和属性值  可查看自身和共有属性 console.dir(obj)  判断是自身还是共有属性 obj.hasOwnProperty(&#39;属性名&#39;)  查看对象的个别属性 obj[&#39;key&#39;] obj.key  提示： key是字符串！！！
+修改和增加对象属性 直接赋值 let obj = {name : &#39;guo&#39;} obj.name = &#39;guo&#39; obj[&#39;name&#39;] = &#39;name&#39;  批量赋值 Object.</description>
+    </item>
     
     <item>
       <title>JS的数据类型</title>
