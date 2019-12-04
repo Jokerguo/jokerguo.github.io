@@ -6,10 +6,21 @@
     <description>Recent content in Posts on joker的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Thu, 28 Nov 2019 14:52:21 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 04 Dec 2019 16:53:41 +0800</lastBuildDate>
     
 	<atom:link href="http://jokerguo.top/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JS函数的执行时机</title>
+      <link>http://jokerguo.top/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/</link>
+      <pubDate>Wed, 04 Dec 2019 16:53:41 +0800</pubDate>
+      
+      <guid>http://jokerguo.top/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/</guid>
+      <description> JS函数的调用时机不同，得到的结果也是不同的 setTimeout()方法用于在指定的毫秒后调用函数或者计算表达式，其含义就是尽快执行，而不是马上执行 为什么打印的是6个6 let i = 0 for(i = 0; i&amp;lt;6; i++){ setTimeout(()=&amp;gt;{ console.log(i) },0) } //输出 6,6,6,6,6,6  解释: 浏览器在执行到setTimeout时，不会直接去执行setTimeout里面的函数，而是继续执行for循环，将里面的函数放在一边。直到循环结束，才会去执行setTimeout里面的函数，而此时i的值等于6（for循环的原因）。所有最后打印i的值6次都是6
+如何输出 0,1,2,3,4,5 for(let i = 0; i&amp;lt;6; i++){ setTimeout(()=&amp;gt;{ console.log(i) },0) }  解释 每次执行for循环，都会复制一个新的i ,打印的每一次i都不是同一个i
+其他方法 let i for (i=0; i&amp;lt;6; i++) { (function(j){ setTimeout(()=&amp;gt;{ console.log( j ); }, 0 ); })(i); }  </description>
+    </item>
     
     <item>
       <title>JS对象的基本用法</title>

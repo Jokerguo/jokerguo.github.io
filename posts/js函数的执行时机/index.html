@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>JS的数据类型 | joker的博客</title>
-    <meta property="og:title" content="JS的数据类型 - joker的博客">
+    <title>JS函数的执行时机 | joker的博客</title>
+    <meta property="og:title" content="JS函数的执行时机 - joker的博客">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2019-11-27T16:28:31&#43;08:00">
+    <meta property="article:published_time" content="2019-12-04T16:53:41&#43;08:00">
         
         
-    <meta property="article:modified_time" content="2019-11-27T16:28:31&#43;08:00">
+    <meta property="article:modified_time" content="2019-12-04T16:53:41&#43;08:00">
         
     <meta name="Keywords" content="">
-    <meta name="description" content="JS的数据类型">
+    <meta name="description" content="JS函数的执行时机">
         
     <meta name="author" content="">
-    <meta property="og:url" content="http://jokerguo.top/posts/js%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
+    <meta property="og:url" content="http://jokerguo.top/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
@@ -70,10 +70,10 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">JS的数据类型</h1>
+                            <h1 class="post-title">JS函数的执行时机</h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2019年11月27日
+                            2019年12月4日
                         </date>
                         
                         
@@ -81,144 +81,49 @@
                         <div class="post-content">
                             
 
-<h2 id="js中的数据类型分别是">JS中的数据类型分别是：</h2>
+<h4 id="js函数的调用时机不同-得到的结果也是不同的">JS函数的调用时机不同，得到的结果也是不同的</h4>
 
-<ol>
-<li>number</li>
-<li>string</li>
-<li>null</li>
-<li>undefined</li>
-<li>symbol</li>
-<li>bool</li>
-<li>object</li>
-</ol>
+<h4 id="settimeout-方法用于在指定的毫秒后调用函数或者计算表达式-其含义就是尽快执行-而不是马上执行">setTimeout()方法用于在指定的毫秒后调用函数或者计算表达式，其含义就是尽快执行，而不是马上执行</h4>
 
-<h1 id="number">number</h1>
+<h2 id="为什么打印的是6个6">为什么打印的是6个6</h2>
 
-<h4 id="写法">写法</h4>
+<pre><code class="language-javascript">    let i = 0
+    for(i = 0; i&lt;6; i++){
+        setTimeout(()=&gt;{
+            console.log(i)
+        },0)
+    }
+//输出 6,6,6,6,6,6
+</code></pre>
 
-<ul>
-<li><p>整数写法</p>
+<h4 id="解释">解释:</h4>
 
-<p>1</p></li>
+<p>浏览器在执行到setTimeout时，不会直接去执行setTimeout里面的函数，而是继续执行for循环，将里面的函数放在一边。直到循环结束，才会去执行setTimeout里面的函数，而此时i的值等于6（for循环的原因）。所有最后打印i的值6次都是6</p>
 
-<li><p>小数写法</p>
+<h2 id="如何输出-0-1-2-3-4-5">如何输出 0,1,2,3,4,5</h2>
 
-<p>0.1</p></li>
+<pre><code class="language-javascript">    for(let i = 0; i&lt;6; i++){
+        setTimeout(()=&gt;{
+            console.log(i)
+        },0)
+    }
+</code></pre>
 
-<li><p>科学计数法</p>
+<h4 id="解释-1">解释</h4>
 
-<p>1.23e4</p></li>
+<p>每次执行for循环，都会复制一个新的i ,打印的每一次i都不是同一个i</p>
 
-<li><p>八进制写法(0/00/0o)</p>
+<h4 id="其他方法">其他方法</h4>
 
-<p>0123或00123或0o123</p></li>
-
-<li><p>十六进制写法（0x/0X）</p>
-
-<p>0x3F或0X3F</p></li>
-
-<li><p>二进制写法（0b/0B）</p>
-
-<p>ob11或0B11</p></li>
-</ul>
-
-<h4 id="特殊值">特殊值</h4>
-
-<ol>
-<li>正0和负0（都等于0）</li>
-<li>无穷（infinity / +infinity / -infinity）</li>
-<li>NaN (Not a Number)</li>
-</ol>
-
-<p>JS数字使用64位浮点数进行存储</p>
-
-<h1 id="string">string</h1>
-
-<h4 id="转义字符">转义字符</h4>
-
-<p><img src="/images/string.png" alt="转义字符" /></p>
-
-<p><img src="/images/string-kong.png" alt="空字符串" /></p>
-
-<p>空字符串和空格字符串是不同的</p>
-
-<h4 id="读取字符">读取字符</h4>
-
-<ul>
-<li><p>string[index]</p>
-
-<pre><code class="language-javascript">let s = 'hello'
-s[0] //'h'
-</code></pre></li>
-
-<li><p>index从0开始</p>
-
-<pre><code class="language-javascript">s[0] 是第一个字符
-</code></pre></li>
-
-<li><p>index的length</p>
-
-<pre><code class="language-javascript">let s = 'hello'
-s[5] //undefined  不会报错
-s[4]  // 'o'
-</code></pre></li>
-</ul>
-
-<h1 id="bool">bool</h1>
-
-<ul>
-<li><p>否定运算</p>
-
-<p>！value</p></li>
-
-<li><p>相等运算</p>
-
-<p>1==2,1!=2,3===4,3!==4</p></li>
-
-<li><p>比较运算</p>
-
-<p>1&gt;2 , 3&lt;4</p></li>
-</ul>
-
-<h4 id="5个falsy值">5个falsy值</h4>
-
-<ol>
-<li>undefined</li>
-<li>null</li>
-<li>0</li>
-<li>NaN</li>
-<li>&rdquo;(空字符串)</li>
-</ol>
-
-<h1 id="undefined-null">undefined,null</h1>
-
-<p>没有本质区别</p>
-
-<ul>
-<li>细节一</li>
-</ul>
-
-<p>如果一个变量声明了，但没有赋值，那么默认值是undefined</p>
-
-<ul>
-<li>细节二</li>
-</ul>
-
-<p>如果一个函数，没有写return，那么默认return undefined</p>
-
-<ul>
-<li>细节三</li>
-</ul>
-
-<p>前端程序员习惯将非对象的空值写为undefined，把对象的空值写为null（仅仅是习惯）</p>
-
-<h1 id="symbol">symbol</h1>
-
-<p>就是生成一个全局唯一的值
-<a href="https://zhuanlan.zhihu.com/p/22652486">点击这里了解更详细的资料</a></p>
-
-<h5 id="至于最重要的object-会单独写一篇博客">至于最重要的object，会单独写一篇博客</h5>
+<pre><code class="language-javascript">    let i
+    for (i=0; i&lt;6; i++) {
+        (function(j){
+            setTimeout(()=&gt;{
+            console.log( j );
+            }, 0 );
+        })(i);
+    }
+</code></pre>
 
                         </div>
 
