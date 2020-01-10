@@ -6,10 +6,26 @@
     <description>Recent content on joker的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Wed, 04 Dec 2019 16:53:41 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jan 2020 10:58:04 +0800</lastBuildDate>
     
 	<atom:link href="http://jokerguo.top/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JQuery的功能</title>
+      <link>http://jokerguo.top/posts/jquery%E7%9A%84%E5%8A%9F%E8%83%BD/</link>
+      <pubDate>Fri, 10 Jan 2020 10:58:04 +0800</pubDate>
+      
+      <guid>http://jokerguo.top/posts/jquery%E7%9A%84%E5%8A%9F%E8%83%BD/</guid>
+      <description> 目录  jQuery 如何获取元素 jQuery 的链式操作是怎样的 jQuery 如何创建元素 jQuery 如何移动元素 jQuery 如何修改元素的属性  正文 一、如何获取元素 将一个选择表达式，放进构造函数jQuery()（简写为$），然后得到被选中的元素。
+$(document) //选择整个文档 $(&#39;#myId&#39;) //选择id为myId的网页元素 $(&#39;.myClass&#39;) //选择class为myClass的网页元素  二、链式操作是什么 最终选中网页元素以后，可以对它进行一系列操作，并且所有操作可以连接在一起，以链条的形式写出来
+$(&#39;#id&#39;).find(&#39;.child&#39;).addClass(&#39;red&#39;)  分解后
+$(&#39;#id&#39;) //找到id .find(&#39;.child&#39;) //选中child .addClass(&#39;red&#39;) //增加red类  三、如何创建元素 $(&#39;&amp;lt;p&amp;gt;Hello&amp;lt;/p&amp;gt;&#39;); $(&#39;&amp;lt;li class=&amp;quot;new&amp;quot;&amp;gt;new list item&amp;lt;/li&amp;gt;&#39;); $(&#39;ul&#39;).append(&#39;&amp;lt;li&amp;gt;list item&amp;lt;/li&amp;gt;&#39;);  四、如何移动元素 提供两组方法，来操作元素在网页中的位置移动。一组方法是直接移动该元素，另一组方法是移动其他元素，使得目标元素达到我们想要的位置。
+假定我们选中了一个div元素，需要把它移动到p元素后面。
+第一种方法是使用.insertAfter()，把div元素移动p元素后面：
+$(&#39;div&#39;).insertAfter($(&#39;p&#39;));  第二种方法是使用.after()，把p元素加到div元素前面：
+$(&#39;p&#39;).after($(&#39;div&#39;));  五、如何修改元素的属性 $(&#39;#p&#39;).attr(&#39;class&#39;) //获取id为p的标签的属性值 $(&#39;#p&#39;).attr(&#39;class&#39;,&#39;red&#39;) //如果存在就是修改，如果不存在就是添加 $(&#39;#p&#39;).removeAttr(&#39;name&#39;) //删除属性 $(&#39;#p&#39;).addClass(&#39;blue&#39;) //添加class  </description>
+    </item>
     
     <item>
       <title>JS函数的执行时机</title>
