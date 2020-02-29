@@ -6,10 +6,20 @@
     <description>Recent content on joker的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Fri, 10 Jan 2020 10:58:04 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 29 Feb 2020 21:08:09 +0800</lastBuildDate>
     
 	<atom:link href="http://jokerguo.top/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>浅析MVC</title>
+      <link>http://jokerguo.top/posts/%E6%B5%85%E6%9E%90mvc/</link>
+      <pubDate>Sat, 29 Feb 2020 21:08:09 +0800</pubDate>
+      
+      <guid>http://jokerguo.top/posts/%E6%B5%85%E6%9E%90mvc/</guid>
+      <description>浅析MVC 什么是MVC  M是model（数据模型）的简称，用于操作数据 V是view（视图）的简称，用于负责UI界面 C是controller（控制器）的简称，用于其他
+// 伪代码 Model = { data: { 程序需要操作的数据或信息 }, create: { 增数据 }, delete: { 删数据 }, update() {改数据 }, get:{ 获取数据 } } View = { el: 需要刷新的元素, html: `html内容` init(){ v.el: 需要刷新的元素 }, render(){ 刷新页面 } } Controller = { init(){ v.init() // View初始化 v.render() // 第一次渲染 c.autoBindEvents() // 自动的事件绑定 eventBus.on(&#39;m:update&#39;, () =&amp;gt; { v.render() }) // 当eventBus触发&#39;m:update&#39;时View刷新 }, events:{ 事件以哈希表方式记录 }， method() { data = 改变后的新数据 m.</description>
+    </item>
     
     <item>
       <title>JQuery的功能</title>
