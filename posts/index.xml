@@ -6,10 +6,24 @@
     <description>Recent content in Posts on joker的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Tue, 03 Mar 2020 13:09:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 05 Mar 2020 16:56:45 +0800</lastBuildDate>
     
 	<atom:link href="http://jokerguo.top/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Sync修饰符</title>
+      <link>http://jokerguo.top/posts/sync%E4%BF%AE%E9%A5%B0%E7%AC%A6/</link>
+      <pubDate>Thu, 05 Mar 2020 16:56:45 +0800</pubDate>
+      
+      <guid>http://jokerguo.top/posts/sync%E4%BF%AE%E9%A5%B0%E7%AC%A6/</guid>
+      <description> 理解vue的.sync修饰符 .sync会被扩展为一个自动更新父组件属性的 v-on 监听器，是一个语法糖的存在
+代码示例
+&amp;lt;Child :money.sync = &amp;quot;total&amp;quot;/&amp;gt; //扩展为 &amp;lt;Child :money = &amp;quot;total&amp;quot; @update:money = &amp;quot;total = $event&amp;quot;/&amp;gt; //子组件要触发的事件 (需要100元) &amp;lt;button @click = &amp;quot;$emit(&#39;update:money&#39;,total - 100)&amp;quot;&amp;gt;&amp;lt;/button&amp;gt;  子组件向父组件发了一个update:money的方法，父组件监听了这个方法，然后更新了prop
+//index.vue
+&amp;lt;template&amp;gt; &amp;lt;div&amp;gt; App.vue 我现在有 {{total}} &amp;lt;hr&amp;gt; &amp;lt;Child :money.sync=&amp;quot;total&amp;quot;/&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; import Child from &amp;quot;./child.vue&amp;quot;; export default { data() { return { total: 10000 }; }, components: { Child: Child } }; &amp;lt;/script&amp;gt;  //child.vue
+&amp;lt;template&amp;gt; &amp;lt;div&amp;gt; &amp;lt;button @click=&amp;quot;$emit(&#39;update:money&#39;, money-100)&amp;quot;&amp;gt;花钱&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; export default { props: [&amp;quot;money&amp;quot;] }; &amp;lt;/script&amp;gt;  </description>
+    </item>
     
     <item>
       <title>Vue的两个版本</title>
