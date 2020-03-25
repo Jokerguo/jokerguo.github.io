@@ -79,7 +79,97 @@
                         
                         
                         <div class="post-content">
-                            
+                            <p>今天简单分享一下React中的两种组件</p>
+<h2 id="类组件">类组件</h2>
+<pre><code>//定义一个类组件
+
+class Component extends React.Component {
+    render() {
+        return (
+            &lt;div&gt;类组件&lt;/div&gt;
+        );
+    }
+}
+
+//使用类组件
+
+&lt;Component/&gt;
+</code></pre><h4 id="类组件中使用外部数据props">类组件中使用外部数据props</h4>
+<pre><code>//父组件给我传了一个data
+
+class Component extends React.Component {
+    constructor(props){   //没有数据时可以省略
+        super(props)
+    }
+    render() {
+        return (
+            &lt;div&gt;
+            {this.props.data}    
+            &lt;/div&gt;
+        );
+    }
+}
+</code></pre><h4 id="类组件中读写数据">类组件中读写数据</h4>
+<pre><code>class Component extends React.Component {
+    constructor(props){   
+        super(props)
+        this.state = {   //初始化数据
+            data : 0
+        }
+    }
+    add = ()=&gt;{
+        this.setState({data : this.state.data + 1})  
+    }
+    render() {
+        return (
+            &lt;div&gt;
+                &lt;button onClick={this.add}&gt; +1 &lt;/button&gt;
+            &lt;/div&gt;
+        );
+    }
+}
+</code></pre><p>!!!! 类组件中修改数据要使用setState</p>
+<h2 id="函数组件">函数组件</h2>
+<pre><code>//定义一个函数组件
+
+function Component(){
+    return (
+        &lt;div&gt;函数组件&lt;/div&gt;
+    )
+}
+
+//使用
+
+&lt;Component/&gt;
+</code></pre><h4 id="函数组件中使用外部数据props">函数组件中使用外部数据props</h4>
+<pre><code>//父组件传了一个data
+
+function Component(props){
+    return (
+        &lt;div&gt;
+            {props.data}
+        &lt;/div&gt;
+    )
+}
+</code></pre><h4 id="函数组件中读写数据">函数组件中读写数据</h4>
+<pre><code>function Component(){
+    const [n,setN] = React.useState(0)(0)
+    return (
+        &lt;div&gt;
+           {n}
+           &lt;button onClick={()=&gt;setN(n+1)}&gt; +1 &lt;/button&gt;
+        &lt;/div&gt;
+    )
+}
+</code></pre><p>const [n,setN] = React.useState(0)(0)</p>
+<ul>
+<li>n 用来读取数据</li>
+<li>setN 用来修改数据</li>
+<li>React.useState(0) 初始化数据</li>
+</ul>
+<p>React.useState(0) 可以先引入useState，这样就能直接使用useState</p>
+<pre><code>import {useState} from 'react'
+</code></pre>
                         </div>
 
                         

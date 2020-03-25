@@ -17,7 +17,8 @@
       <pubDate>Wed, 11 Mar 2020 19:50:33 +0800</pubDate>
       
       <guid>http://jokerguo.top/posts/react%E7%9A%84%E4%B8%A4%E4%B8%AA%E7%BB%84%E4%BB%B6/</guid>
-      <description></description>
+      <description>今天简单分享一下React中的两种组件
+类组件 //定义一个类组件 class Component extends React.Component { render() { return ( &amp;lt;div&amp;gt;类组件&amp;lt;/div&amp;gt; ); } } //使用类组件 &amp;lt;Component/&amp;gt; 类组件中使用外部数据props //父组件给我传了一个data class Component extends React.Component { constructor(props){ //没有数据时可以省略 super(props) } render() { return ( &amp;lt;div&amp;gt; {this.props.data} &amp;lt;/div&amp;gt; ); } } 类组件中读写数据 class Component extends React.Component { constructor(props){ super(props) this.state = { //初始化数据 data : 0 } } add = ()=&amp;gt;{ this.setState({data : this.state.data + 1}) } render() { return ( &amp;lt;div&amp;gt; &amp;lt;button onClick={this.</description>
     </item>
     
     <item>
