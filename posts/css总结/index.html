@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.66.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -79,208 +79,121 @@
                         
                         
                         <div class="post-content">
-                            
-
-<h1 id="一-css-简介">一、css 简介</h1>
-
+                            <h1 id="一css-简介">一、css 简介</h1>
 <p>CSS，全拼 Cascading Style Sheets，层叠样式表，是由 Tim Berners Lee 的同事赖先生（Håkon Wium Lie）首先提出的，目前使用最广泛的版本为 CSS2.1。最新版本为 css3.0</p>
-
-<h1 id="二-css-语法">二、css 语法</h1>
-
-<p><img src="/images/css1.png" alt="语法一" />
-<img src="/images/css2.png" alt="语法二" /></p>
-
-<h1 id="三-文档流">三、文档流</h1>
-
+<h1 id="二css-语法">二、css 语法</h1>
+<p><img src="/images/css1.png" alt="语法一">
+<img src="/images/css2.png" alt="语法二"></p>
+<h1 id="三文档流">三、文档流</h1>
 <h3 id="inline">inline</h3>
-
 <p>行内元素中不能嵌入块级元素</p>
-
 <p>行内元素不能设置宽度</p>
-
 <p>行内元素的高度由 line-height 间接决定(如果内容字体不一致 可能行高会有所改变)</p>
-
 <h3 id="block">block</h3>
-
 <p>块级元素可以设置 width 默认宽度为 auto 不是 100%</p>
-
 <p>块级元素中可以嵌入行内或者块级元素</p>
-
 <h3 id="inline-block">inline-block</h3>
-
 <p>行内块元素结合两者 可使用 width</p>
-
 <h5 id="tips-html5-中没有行内元素-块级元素的区分-所有元素指定-display">Tips: HTML5 中没有行内元素 块级元素的区分 所有元素指定 display</h5>
-
-<h5 id="suggest-不要使用-width-100">suggest: 不要使用 width:100%</h5>
-
-<h1 id="四-脱离文档流">四、脱离文档流</h1>
-
+<h5 id="suggest-不要使用-width100">suggest: 不要使用 width:100%</h5>
+<h1 id="四脱离文档流">四、脱离文档流</h1>
 <p>position: absolute 绝对定位 / fixed 固定定位</p>
-
 <p>float 浮动</p>
-
-<h1 id="五-overflow">五、overflow</h1>
-
+<h1 id="五overflow">五、overflow</h1>
 <ul>
 <li>auto 是灵活设置，超出时有滚动条，不超出时没有</li>
 <li>scroll 一直显示滚动条</li>
 <li>hidden 直接隐藏溢出部分</li>
 <li>visible 直接显示溢出部分</li>
 </ul>
-
-<h1 id="六-盒模型">六、盒模型</h1>
-
-<p><img src="/images/box.png" alt="盒模型" /></p>
-
+<h1 id="六盒模型">六、盒模型</h1>
+<p><img src="/images/box.png" alt="盒模型"></p>
 <p>css 盒模型分两种 一种 content-box 一种 border-box</p>
-
 <p>区别在于 content-box 的宽度只包含 content</p>
-
 <p>border-box 的宽度包含 border padding content</p>
-
-<h1 id="七-css-布局">七、css 布局</h1>
-
+<h1 id="七css-布局">七、css 布局</h1>
 <h3 id="float-布局-兼容-ie">float 布局 （兼容 ie）</h3>
-
 <p>使用 float:left / right 对子元素进行布局</p>
-
 <p>在父元素中加入.clearfix 用于清除浮动</p>
-
-<pre><code class="language-css">.clearfix {
-  content: &quot;&quot;;
-  display: block;
-  clear: both;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">clearfix</span> {
+  <span style="color:#66d9ef">content</span>: <span style="color:#e6db74">&#34;&#34;</span>;
+  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">block</span>;
+  <span style="color:#66d9ef">clear</span>: <span style="color:#66d9ef">both</span>;
 }
-</code></pre>
-
-<p><img src="/images/float.png" alt="float" /></p>
-
+</code></pre></div><p><img src="/images/float.png" alt="float"></p>
 <p><a href="https://www.cnblogs.com/iyangyuan/archive/2013/03/27/2983813.html">float 布局详细介绍</a></p>
-
 <h3 id="flex-布局">flex 布局</h3>
-
 <h4 id="container-容器">container (容器)</h4>
-
 <p>如何成为 flex 容器</p>
-
-<pre><code class="language-css">display: flex; /*inline-flex*/
-</code></pre>
-
-<p>控制 items 的流向（主轴）</p>
-
-<pre><code class="language-css">flex-direction: row-reverse / row / column / column-reverse;
-</code></pre>
-
-<p>是否换行</p>
-
-<pre><code class="language-css">flex-wrap: wrap / nowrap / wrap-reverse;
-</code></pre>
-
-<p>主轴对齐方式</p>
-
-<pre><code class="language-css">justify-content: flex-start / flex-end / center / space-between / space-around /
-  space-evenly;
-</code></pre>
-
-<p>次轴对齐方式</p>
-
-<pre><code class="language-css">align-items: flex-start / flex-end / center / stretch;
-</code></pre>
-
-<p>多行内容对齐</p>
-
-<pre><code class="language-css">algin-content: flex-start / center / flex-end/ stretch/ space-between /
-  space-around;
-</code></pre>
-
-<h4 id="items">items</h4>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">display</span><span style="color:#f92672">:</span> <span style="color:#f92672">flex</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*inline-flex*/</span>
+</code></pre></div><p>控制 items 的流向（主轴）</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">flex-direction</span><span style="color:#f92672">:</span> <span style="color:#f92672">row-reverse</span> <span style="color:#f92672">/</span> <span style="color:#f92672">row</span> <span style="color:#f92672">/</span> <span style="color:#f92672">column</span> <span style="color:#f92672">/</span> <span style="color:#f92672">column-reverse</span><span style="color:#f92672">;</span>
+</code></pre></div><p>是否换行</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">flex-wrap</span><span style="color:#f92672">:</span> <span style="color:#f92672">wrap</span> <span style="color:#f92672">/</span> <span style="color:#f92672">nowrap</span> <span style="color:#f92672">/</span> <span style="color:#f92672">wrap-reverse</span><span style="color:#f92672">;</span>
+</code></pre></div><p>主轴对齐方式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">justify-content</span><span style="color:#f92672">:</span> <span style="color:#f92672">flex-start</span> <span style="color:#f92672">/</span> <span style="color:#f92672">flex-end</span> <span style="color:#f92672">/</span> <span style="color:#f92672">center</span> <span style="color:#f92672">/</span> <span style="color:#f92672">space-between</span> <span style="color:#f92672">/</span> <span style="color:#f92672">space-around</span> <span style="color:#f92672">/</span>
+  <span style="color:#f92672">space-evenly</span><span style="color:#f92672">;</span>
+</code></pre></div><p>次轴对齐方式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">align-items</span><span style="color:#f92672">:</span> <span style="color:#f92672">flex-start</span> <span style="color:#f92672">/</span> <span style="color:#f92672">flex-end</span> <span style="color:#f92672">/</span> <span style="color:#f92672">center</span> <span style="color:#f92672">/</span> <span style="color:#f92672">stretch</span><span style="color:#f92672">;</span>
+</code></pre></div><p>多行内容对齐</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">algin-content</span><span style="color:#f92672">:</span> <span style="color:#f92672">flex-start</span> <span style="color:#f92672">/</span> <span style="color:#f92672">center</span> <span style="color:#f92672">/</span> <span style="color:#f92672">flex-end</span><span style="color:#f92672">/</span> <span style="color:#f92672">stretch</span><span style="color:#f92672">/</span> <span style="color:#f92672">space-between</span> <span style="color:#f92672">/</span>
+  <span style="color:#f92672">space-around</span><span style="color:#f92672">;</span>
+</code></pre></div><h4 id="items">items</h4>
 <ul>
 <li>order</li>
 </ul>
-
 <p>对内容进行从小到大排序</p>
-
 <ul>
 <li>flex-grow 对剩余宽度的分配</li>
 </ul>
-
-<p><img src="/images/grow.png" alt="flex-grow" /></p>
-
+<p><img src="/images/grow.png" alt="flex-grow"></p>
 <ul>
 <li>flex-shrink</li>
 </ul>
-
 <p>当宽度空间不够时 flex-shrink 越大 缩小的程度越高</p>
-
 <p>flex-shrink : 1 ; 缩小程度一样</p>
-
 <p>flex-shrink : 0 ; 不缩小</p>
-
 <ul>
 <li>flex-basis</li>
 </ul>
-
 <p>控制基准宽度 默认值为 auto</p>
-
-<h5 id="tips-缩写方式-flex-flex-grow-flex-shrink-flex-basis">Tips: 缩写方式 flex : flex-grow flex-shrink flex-basis</h5>
-
+<h5 id="tips-缩写方式-flex--flex-grow-flex-shrink-flex-basis">Tips: 缩写方式 flex : flex-grow flex-shrink flex-basis</h5>
 <ul>
 <li>align-self</li>
 </ul>
-
-<p><img src="/images/align-self.png" alt="align-self" /></p>
-
+<p><img src="/images/align-self.png" alt="align-self"></p>
 <h4 id="flex-经验">flex 经验：</h4>
-
 <ul>
 <li>不要将 height/width 写死 除非特殊原因</li>
 <li>使用 min-width/max-width/min-height/max-height</li>
 <li>flex 和 margin-xxx:auto 有意外效果</li>
 </ul>
-
 <h3 id="grid-布局">grid 布局</h3>
-
 <p>如何成为 grid 容器</p>
-
-<pre><code class="language-css">display: grid; /*inline-grid*/
-</code></pre>
-
-<p>创建四行三列的网格</p>
-
-<pre><code class="language-css">grid-template-columns: 40px 50px auto 50px;
-grid-template-rows: 25% 100px auto;
-</code></pre>
-
-<h5 id="tips">Tips:</h5>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">display</span><span style="color:#f92672">:</span> <span style="color:#f92672">grid</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*inline-grid*/</span>
+</code></pre></div><p>创建四行三列的网格</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">grid-template-columns</span><span style="color:#f92672">:</span> <span style="color:#f92672">40px</span> <span style="color:#f92672">50px</span> <span style="color:#f92672">auto</span> <span style="color:#f92672">50px</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">grid-template-rows</span><span style="color:#f92672">:</span> <span style="color:#f92672">25</span><span style="color:#f92672">%</span> <span style="color:#f92672">100px</span> <span style="color:#f92672">auto</span><span style="color:#f92672">;</span>
+</code></pre></div><h5 id="tips">Tips:</h5>
 <ol>
-<li><p>fr-free space 主要用于平均布局</p></li>
-
-<li><p>grid-gow 设置间隙大小</p></li>
+<li>
+<p>fr-free space 主要用于平均布局</p>
+</li>
+<li>
+<p>grid-gow 设置间隙大小</p>
+</li>
 </ol>
-
 <p>控制行列数</p>
-
-<pre><code class="language-css">grid-row-start: 1;
-grid-row-end: 4;
-grid-column-start: 1;
-grid-column-end: 4;
-</code></pre>
-
-<h5 id="tips-可以取负值">Tips: 可以取负值</h5>
-
-<p><img src="/images/grid.png" alt="grid网格" /></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">grid-row-start</span><span style="color:#f92672">:</span> <span style="color:#f92672">1</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">grid-row-end</span><span style="color:#f92672">:</span> <span style="color:#f92672">4</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">grid-column-start</span><span style="color:#f92672">:</span> <span style="color:#f92672">1</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">grid-column-end</span><span style="color:#f92672">:</span> <span style="color:#f92672">4</span><span style="color:#f92672">;</span>
+</code></pre></div><h5 id="tips-可以取负值">Tips: 可以取负值</h5>
+<p><img src="/images/grid.png" alt="grid网格"></p>
 <p>使用分区</p>
-
-<p><img src="/images/grid-template-areas.png" alt="grid分区" /></p>
-
-<h1 id="八-浏览器渲染">八、浏览器渲染</h1>
-
+<p><img src="/images/grid-template-areas.png" alt="grid分区"></p>
+<h1 id="八浏览器渲染">八、浏览器渲染</h1>
 <h3 id="浏览器渲染过程">浏览器渲染过程</h3>
-
 <ol>
 <li>根据 HTML 构建 HTML 树（DOM）</li>
 <li>根据 CSS 构建 CSS 树（CSSOM）</li>
@@ -289,82 +202,62 @@ grid-column-end: 4;
 <li>Paint 绘制（边框颜色。文字颜色、阴影）</li>
 <li>composite 合成（根据层叠关系展示画面）</li>
 </ol>
-
-<p><img src="/images/tree.png" alt="render tree" /></p>
-
-<h1 id="九-css-动画的两种做法-transition-和-animation">九、CSS 动画的两种做法（transition 和 animation）</h1>
-
+<p><img src="/images/tree.png" alt="render tree"></p>
+<h1 id="九css-动画的两种做法transition-和-animation">九、CSS 动画的两种做法（transition 和 animation）</h1>
 <ol>
 <li>transition 过渡</li>
 </ol>
-
 <ul>
-<li><p>作用 : 补充中间帧</p></li>
-
-<li><p>语法 :</p></li>
+<li>
+<p>作用 : 补充中间帧</p>
+</li>
+<li>
+<p>语法 :</p>
+</li>
 </ul>
-
 <p>transition : 属性名 时长 过渡方式 延迟</p>
-
 <p>可以用逗号分隔两个不同属性（transition：left 1s，top 2s）</p>
-
 <p>可以用 all 代表所有属性（transition：all 1s）</p>
-
 <p>过渡方式有： linear/eas（默认的）/ease-in/ease-out/ease-in-out&hellip;</p>
-
-<h5 id="tips-不是所有属性都能过渡-display">Tips: 不是所有属性都能过渡（display）</h5>
-
-<ol>
+<h5 id="tips-不是所有属性都能过渡display">Tips: 不是所有属性都能过渡（display）</h5>
+<ol start="2">
 <li>animation 动画</li>
 </ol>
-
 <ul>
-<li><p>需先声明关键帧@keyframes</p>
-
-<pre><code class="language-css">@keyframes xxx {
-from {
-transform: translateX(100px);
-}
-to {
-transform: translateX(100px) translateY(100px);
-}
-}
-</code></pre>
-
-<pre><code class="language-css">0% {
-top: 0;
-left: 0;
-}
-50% {
-top: 50px;
-left: 50px;
-}
-100% {
-top: 100px;
-left: 100px;
-}
-</code></pre></li>
-
-<li><p>语法 :</p></li>
+<li>需先声明关键帧@keyframes</li>
 </ul>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">@<span style="color:#66d9ef">keyframes</span> <span style="color:#f92672">xxx</span> {
+  <span style="color:#f92672">from</span> {
+    <span style="color:#66d9ef">transform</span>: translateX(<span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>);
+  }
+  <span style="color:#f92672">to</span> {
+    <span style="color:#66d9ef">transform</span>: translateX(<span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>) translateY(<span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>);
+  }
+}
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">0</span><span style="color:#f92672">%</span> {
+  <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">0</span>;
+}
+<span style="color:#f92672">50</span><span style="color:#f92672">%</span> {
+  <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+}
+<span style="color:#f92672">100</span><span style="color:#f92672">%</span> {
+  <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;
+}
+</code></pre></div><ul>
+<li>语法 :</li>
+</ul>
 <p>animation : 时长 过渡方式 延迟 次数 方向 填充模式 是否暂停 动画名（xxx）</p>
-
 <p>时长：1s 或 1000ms</p>
-
 <p>过渡方式：跟 transition 取值一样</p>
-
 <p>次数：3 或 2.4 或 infinite（无穷尽）</p>
-
 <p>方向：reverse（相反）/alternate（轮流）/alternate-reverse（交替反转）</p>
-
 <p>填充模式：none/forwards/backwards/both</p>
-
 <p>是否暂停：paused/running</p>
-
 <h2 id="欣赏一下我做的爱心">欣赏一下我做的爱心</h2>
-
-<p><img src="/images/heart.gif" alt="爱心" /></p>
+<p><img src="/images/heart.gif" alt="爱心"></p>
 
                         </div>
 
@@ -410,6 +303,14 @@ left: 100px;
 <ul class="widget-list">
     
     <li>
+        <a href="http://jokerguo.top/posts/react%E7%9A%84%E4%B8%A4%E4%B8%AA%E7%BB%84%E4%BB%B6/" title="React的两个组件">React的两个组件</a>
+    </li>
+    
+    <li>
+        <a href="http://jokerguo.top/posts/react%E8%B5%B7%E6%AD%A5/" title="React起步">React起步</a>
+    </li>
+    
+    <li>
         <a href="http://jokerguo.top/posts/sync%E4%BF%AE%E9%A5%B0%E7%AC%A6/" title="Sync修饰符">Sync修饰符</a>
     </li>
     
@@ -439,14 +340,6 @@ left: 100px;
     
     <li>
         <a href="http://jokerguo.top/posts/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" title="JS的基本语法">JS的基本语法</a>
-    </li>
-    
-    <li>
-        <a href="http://jokerguo.top/posts/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/" title="JavaScript的诞生">JavaScript的诞生</a>
-    </li>
-    
-    <li>
-        <a href="http://jokerguo.top/posts/%E6%B5%85%E6%9E%90url/" title="浅析URL">浅析URL</a>
     </li>
     
 </ul>

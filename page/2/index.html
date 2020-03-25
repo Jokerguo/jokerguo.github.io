@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.66.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -65,6 +65,66 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="http://jokerguo.top/posts/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/" title="JavaScript的诞生" >JavaScript的诞生</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年11月21日
+                            </date>
+                            
+                            <div class="post-content">
+                                JavaScript（通常缩写为JS）是一种高级的、解释型的编程语言。JavaScript是一门基于原型、函数先行的语言，是一门多范式的语言，它支持面向对象编程，命令式编程，以及函数式编程。它提供语法来操控文本、数组、日期以及正则表达式等，不支持I/O，比如网络、存储和图形等，但这些都可以由它的宿主环境提供支持。它已经由ECMA（欧洲电脑制造商协会）通过ECMAScript实现语言的标准化。它被世界上的绝大多数网站所使用，也被世界主流浏览器（Chrome、IE、Firefox、Safari、Opera）支持。
+javascript的诞生背景  1994年，在互联网刚兴起的时代，网景公司（Netscape）发布了Navigator浏览器0.9版。这是历史上第一个比较成熟的网络浏览器，轰动一时。但是，这个版本的浏览器只能用来浏览，不具备与访问者互动的能力。因此网景公司急需一种网页脚本语言，使得浏览器可以与网页互动。
+ 网页脚本语言到底是什么语言？网景公司当时有两个选择：一个是采用现有的语言，比如Perl、Python、Tcl、Scheme等等，允许它们直接嵌入网页；另一个是发明一种全新的语言。这两个选择各有利弊。第一个选择，有利于充分利用现有代码和程序员资源，推广起来比较容易；第二个选择，有利于开发出完全适用的语言，实现起来比较容易。
+ 1995年，Sun公司将Oak语言更名为Java并推向市场，并宣称“Write Once, Run Anywhere”。网景公司深受Java的影响，网景公司高层都非常信赖Java，所以网景公司决定要蹭Java的流量，新开发一门语言，用于浏览器的交互。
+javascript的诞生 1995年4月，Brendan Eich（布兰登·艾奇） 加入网景公司。Brendan原本研究方向是函数式编程与Scheme语言。但是1995年5月，网景公司指定Brendan成为了“新语言”的设计师。并且要求这个“新语言”要和Java足够的相似（面向对象思想），但是要比Java能够更加简单地上手。
+ Brendan志不在此，而且对Java完全不感兴趣，为了完成任务他花了10天时间便把这门“新语言”的最初版本设计了出来。总的来说他的设计思路是这样的：
+ 借鉴C语言的基本语法； 借鉴Java语言的数据类型和内存管理； 借鉴Scheme语言，将函数提升到&quot;第一等公民&rdquo;（first class）的地位； 借鉴Self语言，使用基于原型（prototype）的继承机制。  所以，Javascript语言实际上是两种语言风格的混合产物——（简化的）函数式编程+（简化的）面向对象编程。
+javascript的缺陷 阮一峰&ndash;Javascript的10个设计缺陷
+ECMAScript  1997年6月，第一版ECMAScript发布。
+ 1999年12月，第三版ECMAScript发布，这也是应用最广泛的ECMAScript版本。
+ 第四版流产。
+ 第三版发布后，经过了10年，20019年12月第五版ECMAScript才发布，这正是因为这段时间IE浏览器正制霸着市场。
+ 随着Chrome的崛起，这些新的浏览器的JS引擎都根据ECMAScript标准进行实现。所以除了IE，其他浏览器与浏览器之间的兼容性得到大大提高。
+ 2015年6月，ECMAScript第六版（ES6）发布。并在之后每一年都发布一版。可见JS地位在不断提高。
+ JavaScript与ECMAScript的区别在于，ECMAScript是标准，JavaScript是实现（实际上JavaScript是由ECMAScript，DOM和BOM三者组成的），实现的功能不一定会出现在标准里面，不同的浏览器也有自己独特的JS实现。
+JavaScript的发展 兴起&ndash;Gmail  2004年愚人节，谷歌发布Gmail。Gmail是谷歌开发的一款具有发送接收邮件功能的在线网页。在Gmail出现以前，所有人都认为浏览器只能用 于浏览阅读。但是Gmail让用户重新认识了浏览器的功能。
+ 2005年，Jesse将谷歌实现Gmail的技术命名为AJAX。从此前端技术正式出现。
+ 2006年，JQuery发布，JQuery是最长寿的JS库，其主要是兼容IE，但随着IE的落寞，JQuery也逐渐淡出前端开发者的视野。
+爆发&ndash;V8引擎  Chrome的JS引擎是V8（V1~V7是不同语言的引擎），V8引擎超快的速度让chrome成为了最主流的浏览器。
+ 2009年，Ryan基于V8，创建了Node.js；2010年Issac基于Node.js写出了npm。有了node.js，前端工程师实现了在浏览器之外执行JS。
+ 2010年，TJ受Sinatra的启发，发布了Express.js。Node.js与Express.js让前端工程师可以完成后端的内容。虽然还比不上Java，但是 至少也具备了手段。
+ 借助Chrome的风，期间也爆发除了很多前端的技术：gulp、grunt、yeoman、require.js、webpack、Angular、React、Vue等。当然其中一些技术也已经过时了。……
+                            </div>
+                            <p class="readmore"><a href="http://jokerguo.top/posts/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/">阅读全文</a></p>
+                        </article>
+                    
+                    
+		    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://jokerguo.top/posts/%E6%B5%85%E6%9E%90url/" title="浅析URL" >浅析URL</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年11月18日
+                            </date>
+                            
+                            <div class="post-content">
+                                URL 的组成  协议： http(80) / https(443) 域名或 ip：域名对应一个 ip 的字符串 ip 对应一个设备 最大值 255 端口号：一个服务对应一个端口号 （最大 6 万多） 路径：一串字符串 判断访问什么网页 查询参数：查看网页中的什么内容 锚点 ： 文档内部的定位 （锚点不会传入服务器）  DNS 的作用 DNS 服务的作用是将域名解析为 IP 地址 DNS 是域名系统 (Domain Name System) 的缩写，是因特网的一项核心服务，它作为可以将域名和 IP 地址相互映射的一个分布式数据库，能够使人更方便的访问互联网，而不用去记住能够被机器直接读取的 IP 数串。这是 DNS 的官方说法。
+在互联网中通过 IP 地址来进行通信。但是 IP 地址的表示形式是数字，很难进行记忆（比如 116.213.120.232），所以为每个 IP 取一个人类更易记忆的域名形式（比如 www.google.com），而通过 DNS 来把解析域名成为 IP（将方便人理解的命名格式解析成计算机能够理解的格式，也可以将 IP 翻译成域名）
+DNS 过程
+ 客户端向 DNS 服务器（DNS 服务器有自己的 IP 地址）发送域名查询请求 DNS 服务器告知客户机 Web 服务器的 IP 地址  nslookup命令 nslookup 命令用于查询 DNS 的记录，查看域名解析是否正常……
+                            </div>
+                            <p class="readmore"><a href="http://jokerguo.top/posts/%E6%B5%85%E6%9E%90url/">阅读全文</a></p>
+                        </article>
+                    
+                    
+		    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="http://jokerguo.top/posts/css%E6%80%BB%E7%BB%93/" title="Css总结" >Css总结</a>
                                 </h1>
                             </header>
@@ -100,15 +160,15 @@ float 浮动
                             </date>
                             
                             <div class="post-content">
-                                《HTML 常用标签》 a 标签 href &nbsp;&nbsp; 超链接 填入相应的链接地址 1.&nbsp;&nbsp;网址 &nbsp;&nbsp; 推荐使用这种格式（//google.com）因为会自动选择协议，跳转到正确页面，减少 bug。
-2.&nbsp;&nbsp;绝对路径于相对路径
+                                《HTML 常用标签》 a 标签 href 超链接 填入相应的链接地址 1. 网址 推荐使用这种格式（//google.com）因为会自动选择协议，跳转到正确页面，减少 bug。
+2. 绝对路径于相对路径
 注:在哪里开启的 http 服务 哪里就是根目录
-3.&nbsp;&nbsp;伪协议
-javascript:代码; &nbsp;&nbsp; （可实现无任何操作的 a 标签 不加代码）
-mailto:&nbsp;&nbsp;发邮件
-tel:&nbsp;&nbsp;打电话
-4.&nbsp;&nbsp;#id&nbsp;&nbsp; 定位到页面中的 id 位置
-target  _blank &nbsp;&nbsp; 新建窗口打开 _top &nbsp;&nbsp; 级别最高的窗口打开 _parent &nbsp;&nbsp; 父级窗口打开 _self &nbsp;&nbsp; 默认值 &nbsp;&nbsp; 当前窗口打开 target=&ldquo;xxx&rdquo; 创建一个 xxx 窗口 会覆盖之前的窗口 iframe name=&ldquo;xxx&rdquo; 用 name 为 xxx 的 iframe 窗口打开  download 下载页面&nbsp;&nbsp;部分浏览器不支持
+3. 伪协议
+javascript:代码; （可实现无任何操作的 a 标签 不加代码）
+mailto: 发邮件
+tel: 打电话
+4. #id 定位到页面中的 id 位置
+target  _blank 新建窗口打开 _top 级别最高的窗口打开 _parent 父级窗口打开 _self 默认值 当前窗口打开 target=&quot;xxx&rdquo; 创建一个 xxx 窗口 会覆盖之前的窗口 iframe name=&quot;xxx&rdquo; 用 name 为 xxx 的 iframe 窗口打开  download 下载页面 部分浏览器不支持
 rel=noopener 现在还不清楚具体用处
 总结 a 标签的作用：跳转外部页面，内部锚点，邮箱和电话
 MDN a 标签……
@@ -129,10 +189,9 @@ MDN a 标签……
                             </date>
                             
                             <div class="post-content">
-                                 HTML入门笔记1 HTML是谁发明的 1991年由Tim Berners-Lee提出
-HTML的起手式 !  注：!会自动补齐代码
-常用的表章节标签  h1-h6 标题 section 章节 article 文章 p 段落 header 头部 footer 脚部 main 主要内容 aside 旁支内容 div 划分  全局属性  class 定义一个类 contenteditable 内容可修改 hidden 不可见
- id 尽量不使用id style 样式 tabindex 使用Tab键选中 -1（不选中） 0（最后一个选中） 正数（按大小选中 ） title 标题  常用内容标签  ol+li 有序列表 ul+li 无序列表 dl+dt+dd 自定义列表 pre code 通常一起使用 中间代码 hr 水平线 br 换行 a 超链接 em 语气强调 strong 内容重要 quote 表示内联引用 blockquote 表示块级引用 cite属性值：url  ……
+                                HTML入门笔记1 HTML是谁发明的 1991年由Tim Berners-Lee提出
+HTML的起手式 ! 注：!会自动补齐代码
+常用的表章节标签  h1-h6 标题 section 章节 article 文章 p 段落 header 头部 footer 脚部 main 主要内容 aside 旁支内容 div 划分  全局属性  class 定义一个类 contenteditable 内容可修改 hidden 不可见 id 尽量不使用id style 样式 tabindex 使用Tab键选中 -1（不选中） 0（最后一个选中） 正数（按大小选中 ） title 标题  常用内容标签  ol+li 有序列表 ul+li 无序列表 dl+dt+dd 自定义列表 pre code 通常一起使用 中间代码 hr 水平线 br 换行 a 超链接 em 语气强调 strong 内容重要 quote 表示内联引用 blockquote 表示块级引用 cite属性值：url  ……
                             </div>
                             <p class="readmore"><a href="http://jokerguo.top/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/">阅读全文</a></p>
                         </article>
@@ -153,11 +212,11 @@ HTML的起手式 !  注：!会自动补齐代码
                                 使用 hugo 搭建一个个人博客 首先进入 Hugo 官网按提示操作
 第一步 安装 Hugo
 第二步 执行该命令行
-hugo new site jokerguo.github.io-creator  第三步 执行下列命令行
-git init git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke echo 'theme = &quot;ananke&quot;' &gt;&gt; config.toml  第四步 新建一篇博客
-hugo new posts/开通博客啦.md  注意点: 将博客中 draft 的值修改为 false
-第五步 hugo server -D  第六步 找到配置文件 config.toml
- 将语言修改为&rdquo;zh-Hans&rdquo; 标题改为自己的博客名 主题看个人喜好更改  第七步 hugo -D  最终会生成 public 文件
+hugo new site jokerguo.github.io-creator 第三步 执行下列命令行
+git init git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke echo 'theme = &quot;ananke&quot;' &gt;&gt; config.toml 第四步 新建一篇博客
+hugo new posts/开通博客啦.md 注意点: 将博客中 draft 的值修改为 false
+第五步 hugo server -D 第六步 找到配置文件 config.toml
+ 将语言修改为&quot;zh-Hans&rdquo; 标题改为自己的博客名 主题看个人喜好更改  第七步 hugo -D 最终会生成 public 文件
  creator 目录下添加.gitignore 文件 写入/public/ 进入 public 创建本地仓库 在 GitHub 上创建 repo 仓库名：自己用户名.……
                             </div>
                             <p class="readmore"><a href="http://jokerguo.top/posts/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">阅读全文</a></p>
@@ -252,6 +311,14 @@ hugo new posts/开通博客啦.md  注意点: 将博客中 draft 的值修改为
 <ul class="widget-list">
     
     <li>
+        <a href="http://jokerguo.top/posts/react%E7%9A%84%E4%B8%A4%E4%B8%AA%E7%BB%84%E4%BB%B6/" title="React的两个组件">React的两个组件</a>
+    </li>
+    
+    <li>
+        <a href="http://jokerguo.top/posts/react%E8%B5%B7%E6%AD%A5/" title="React起步">React起步</a>
+    </li>
+    
+    <li>
         <a href="http://jokerguo.top/posts/sync%E4%BF%AE%E9%A5%B0%E7%AC%A6/" title="Sync修饰符">Sync修饰符</a>
     </li>
     
@@ -281,14 +348,6 @@ hugo new posts/开通博客啦.md  注意点: 将博客中 draft 的值修改为
     
     <li>
         <a href="http://jokerguo.top/posts/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" title="JS的基本语法">JS的基本语法</a>
-    </li>
-    
-    <li>
-        <a href="http://jokerguo.top/posts/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/" title="JavaScript的诞生">JavaScript的诞生</a>
-    </li>
-    
-    <li>
-        <a href="http://jokerguo.top/posts/%E6%B5%85%E6%9E%90url/" title="浅析URL">浅析URL</a>
     </li>
     
 </ul>

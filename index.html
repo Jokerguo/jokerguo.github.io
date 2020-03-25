@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.66.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -65,6 +65,48 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="http://jokerguo.top/posts/react%E7%9A%84%E4%B8%A4%E4%B8%AA%E7%BB%84%E4%BB%B6/" title="React的两个组件" >React的两个组件</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2020年3月11日
+                            </date>
+                            
+                            <div class="post-content">
+                                ……
+                            </div>
+                            <p class="readmore"><a href="http://jokerguo.top/posts/react%E7%9A%84%E4%B8%A4%E4%B8%AA%E7%BB%84%E4%BB%B6/">阅读全文</a></p>
+                        </article>
+                    
+                    
+		    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://jokerguo.top/posts/react%E8%B5%B7%E6%AD%A5/" title="React起步" >React起步</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2020年3月10日
+                            </date>
+                            
+                            <div class="post-content">
+                                React的创建 (我都是使用yarn)  使用CDN (不推荐)  react react-dom 两个都要引入
+通过webpack引入React (不推荐)   yarn add react react-dom //引入 import React from 'react' import ReactDOM from 'react-dom' create-react-app直接创建一个react项目 (就用这个)  //安装 yarn add create-react-app //使用 create-react-app my-app cd my-app yarn start //看到react界面说明创建成功了 JSX JSX是什么 JSX说直白点，就是美化了react代码,让我们能更舒服的写react项目，就像是Vue有vue-loader，React有JSX。
+JSX怎么使用那 create-react-app 默认会将js 当作jsx
+webpack里内置的babel-loader
+所以直接写
+JSX的注意事项  使用className   &lt;div className='red'&gt;n&lt;/div&gt;  变量,函数要加上大括号 return () （写react在return后面加括号）  想先试试手可以点下面的链接
+在线转换JSX……
+                            </div>
+                            <p class="readmore"><a href="http://jokerguo.top/posts/react%E8%B5%B7%E6%AD%A5/">阅读全文</a></p>
+                        </article>
+                    
+                    
+		    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="http://jokerguo.top/posts/sync%E4%BF%AE%E9%A5%B0%E7%AC%A6/" title="Sync修饰符" >Sync修饰符</a>
                                 </h1>
                             </header>
@@ -73,12 +115,12 @@
                             </date>
                             
                             <div class="post-content">
-                                 理解vue的.sync修饰符 .sync会被扩展为一个自动更新父组件属性的 v-on 监听器，是一个语法糖的存在
+                                理解vue的.sync修饰符 .sync会被扩展为一个自动更新父组件属性的 v-on 监听器，是一个语法糖的存在
 代码示例
-&lt;Child :money.sync = &quot;total&quot;/&gt; //扩展为 &lt;Child :money = &quot;total&quot; @update:money = &quot;total = $event&quot;/&gt; //子组件要触发的事件 (需要100元) &lt;button @click = &quot;$emit('update:money',total - 100)&quot;&gt;&lt;/button&gt;  子组件向父组件发了一个update:money的方法，父组件监听了这个方法，然后更新了prop
+&lt;Child :money.sync = &#34;total&#34;/&gt; //扩展为  &lt;Child :money = &#34;total&#34; @update:money = &#34;total = $event&#34;/&gt; //子组件要触发的事件 (需要100元)  &lt;button @click = &#34;$emit(&#39;update:money&#39;,total - 100)&#34;&gt;&lt;/button&gt; 子组件向父组件发了一个update:money的方法，父组件监听了这个方法，然后更新了prop
 //index.vue
-&lt;template&gt; &lt;div&gt; App.vue 我现在有 {{total}} &lt;hr&gt; &lt;Child :money.sync=&quot;total&quot;/&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; import Child from &quot;./child.vue&quot;; export default { data() { return { total: 10000 }; }, components: { Child: Child } }; &lt;/script&gt;  //child.vue
-&lt;template&gt; &lt;div&gt; &lt;button @click=&quot;$emit('update:money', money-100)&quot;&gt;花钱&lt;/button&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; export default { props: [&quot;money&quot;] }; &lt;/script&gt;  ……
+&lt;template&gt; &lt;div&gt; App.vue 我现在有 {{total}} &lt;hr&gt; &lt;Child :money.sync=&#34;total&#34;/&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; import Child from &#34;./child.vue&#34;; export default { data() { return { total: 10000 }; }, components: { Child: Child } }; &lt;/script&gt; //child.vue
+&lt;template&gt; &lt;div&gt; &lt;button @click=&#34;$emit(&#39;update:money&#39;, money-100)&#34;&gt;花钱&lt;/button&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; export default { props: [&#34;money&#34;] }; &lt;/script&gt; ……
                             </div>
                             <p class="readmore"><a href="http://jokerguo.top/posts/sync%E4%BF%AE%E9%A5%B0%E7%AC%A6/">阅读全文</a></p>
                         </article>
@@ -97,12 +139,10 @@
                             
                             <div class="post-content">
                                 @vue/cli的安装与使用 在选择vue版本之前，需要有一个vue项目，这里就需要使用@vue/cli
- npm install -g @vue/cli //or yarn global add @vue/cli //安装好后创建项目 vue create 项目名 //根据需求选择配置 //yarn serve / webpack-dev-server /npm run serve 预览  vue两个版本区别  完整版的引入方式 :  cdn引入 vue.js/vue.min.js webpack / @vue/cli 引入 ： 查看文档，确保正确
-   完整版可以从HTML或template直接得到视图,有compiler（编译器）可以将含有占位符{{}}或者条件语句变成真实的DOM节点，compiler会占用一定的代码体积，比不完整版大40%
- 完整版的引入方式 :  cdn引入 vue.runtime.js/vue.runtime.min.js webpack / @vue/cli 引入 ： 查看文档，确保正确
-   没有compiler,不能得到HTML,template的视图。需要自己写h函数，也可以将html写在vue文件中 在通过vue-loader将vue文件中的html转换为h函数 （h函数就是createElement的缩写）
+ npm install -g @vue/cli //or yarn global add @vue/cli //安装好后创建项目 vue create 项目名 //根据需求选择配置 //yarn serve / webpack-dev-server /npm run serve 预览 vue两个版本区别  完整版的引入方式 :  cdn引入 vue.js/vue.min.js webpack / @vue/cli 引入 ： 查看文档，确保正确    完整版可以从HTML或template直接得到视图,有compiler（编译器）可以将含有占位符{{}}或者条件语句变成真实的DOM节点，compiler会占用一定的代码体积，比不完整版大40%
+ 完整版的引入方式 :  cdn引入 vue.runtime.js/vue.runtime.min.js webpack / @vue/cli 引入 ： 查看文档，确保正确    没有compiler,不能得到HTML,template的视图。需要自己写h函数，也可以将html写在vue文件中 在通过vue-loader将vue文件中的html转换为h函数 （h函数就是createElement的缩写）
 template怎么用 template只有在完整版中有用
-//vue文件中的template标签 &lt;template&gt; &lt;div id=&quot;app&quot;&gt; {{n}} &lt;button @click=&quot;add&quot;&gt;+1&lt;/button&gt; &lt;/div&gt; &lt;/template&gt; //js中的template template : ` &lt;div id=&quot;app&quot;&gt; {{n}} &lt;button @click=&quot;add&quot;&gt;+1&lt;/button&gt; &lt;/div&gt; `  render的使用方法 //不完整版在js中构建视图 render(h){ return h('div', [this.……
+//vue文件中的template标签 &lt;template&gt; &lt;div id=&quot;app&quot;&gt; {{n}} &lt;button @click=&quot;add&quot;&gt;+1&lt;/button&gt; &lt;/div&gt; &lt;/template&gt; //js中的template template : ` &lt;div id=&quot;app&quot;&gt; {{n}} &lt;button @click=&quot;add&quot;&gt;+1&lt;/button&gt; &lt;/div&gt; ` render的使用方法 //不完整版在js中构建视图 render(h){ return h('div', [this.……
                             </div>
                             <p class="readmore"><a href="http://jokerguo.top/posts/vue%E7%9A%84%E4%B8%A4%E4%B8%AA%E7%89%88%E6%9C%AC/">阅读全文</a></p>
                         </article>
@@ -120,8 +160,7 @@ template怎么用 template只有在完整版中有用
                             </date>
                             
                             <div class="post-content">
-                                浅析MVC 什么是MVC  M是model（数据模型）的简称，用于操作数据 V是view（视图）的简称，用于负责UI界面 C是controller（控制器）的简称，用于其他
-// 伪代码 Model = { data: { 程序需要操作的数据或信息 }, create: { 增数据 }, delete: { 删数据 }, update() {改数据 }, get:{ 获取数据 } } View = { el: 需要刷新的元素, html: `html内容` init(){ v.el: 需要刷新的元素 }, render(){ 刷新页面 } } Controller = { init(){ v.init() // View初始化 v.render() // 第一次渲染 c.autoBindEvents() // 自动的事件绑定 eventBus.on('m:update', () =&gt; { v.render() }) // 当eventBus触发'm:update'时View刷新 }, events:{ 事件以哈希表方式记录 }， method() { data = 改变后的新数据 m.……
+                                浅析MVC 什么是MVC  M是model（数据模型）的简称，用于操作数据 V是view（视图）的简称，用于负责UI界面 C是controller（控制器）的简称，用于其他  // 伪代码 Model = { data: { 程序需要操作的数据或信息 }, create: { 增数据 }, delete: { 删数据 }, update() {改数据 }, get:{ 获取数据 } } View = { el: 需要刷新的元素, html: `html内容` init(){ v.el: 需要刷新的元素 }, render(){ 刷新页面 } } Controller = { init(){ v.init() // View初始化 v.render() // 第一次渲染 c.autoBindEvents() // 自动的事件绑定 eventBus.on('m:update', () =&gt; { v.render() }) // 当eventBus触发'm:update'时View刷新 }, events:{ 事件以哈希表方式记录 }， method() { data = 改变后的新数据 m.……
                             </div>
                             <p class="readmore"><a href="http://jokerguo.top/posts/%E6%B5%85%E6%9E%90mvc/">阅读全文</a></p>
                         </article>
@@ -139,14 +178,14 @@ template怎么用 template只有在完整版中有用
                             </date>
                             
                             <div class="post-content">
-                                 目录  jQuery 如何获取元素 jQuery 的链式操作是怎样的 jQuery 如何创建元素 jQuery 如何移动元素 jQuery 如何修改元素的属性  正文 一、如何获取元素 将一个选择表达式，放进构造函数jQuery()（简写为$），然后得到被选中的元素。
-$(document) //选择整个文档 $('#myId') //选择id为myId的网页元素 $('.myClass') //选择class为myClass的网页元素  二、链式操作是什么 最终选中网页元素以后，可以对它进行一系列操作，并且所有操作可以连接在一起，以链条的形式写出来
-$('#id').find('.child').addClass('red')  分解后
-$('#id') //找到id .find('.child') //选中child .addClass('red') //增加red类  三、如何创建元素 $('&lt;p&gt;Hello&lt;/p&gt;'); $('&lt;li class=&quot;new&quot;&gt;new list item&lt;/li&gt;'); $('ul').append('&lt;li&gt;list item&lt;/li&gt;');  四、如何移动元素 提供两组方法，来操作元素在网页中的位置移动。一组方法是直接移动该元素，另一组方法是移动其他元素，使得目标元素达到我们想要的位置。
+                                目录  jQuery 如何获取元素 jQuery 的链式操作是怎样的 jQuery 如何创建元素 jQuery 如何移动元素 jQuery 如何修改元素的属性  正文 一、如何获取元素 将一个选择表达式，放进构造函数jQuery()（简写为$），然后得到被选中的元素。
+$(document) //选择整个文档  $(&#39;#myId&#39;) //选择id为myId的网页元素  $(&#39;.myClass&#39;) //选择class为myClass的网页元素  二、链式操作是什么 最终选中网页元素以后，可以对它进行一系列操作，并且所有操作可以连接在一起，以链条的形式写出来
+$(&#39;#id&#39;).find(&#39;.child&#39;).addClass(&#39;red&#39;) 分解后
+$(&#39;#id&#39;) //找到id  .find(&#39;.child&#39;) //选中child  .addClass(&#39;red&#39;) //增加red类 三、如何创建元素 $(&#39;&lt;p&gt;Hello&lt;/p&gt;&#39;); $(&#39;&lt;li class=&#34;new&#34;&gt;new list item&lt;/li&gt;&#39;); $(&#39;ul&#39;).append(&#39;&lt;li&gt;list item&lt;/li&gt;&#39;); 四、如何移动元素 提供两组方法，来操作元素在网页中的位置移动。一组方法是直接移动该元素，另一组方法是移动其他元素，使得目标元素达到我们想要的位置。
 假定我们选中了一个div元素，需要把它移动到p元素后面。
 第一种方法是使用.insertAfter()，把div元素移动p元素后面：
-$('div').insertAfter($('p'));  第二种方法是使用.after()，把p元素加到div元素前面：
-$('p').after($('div'));  五、如何修改元素的属性 $('#p').attr('class') //获取id为p的标签的属性值 $('#p').attr('class','red') //如果存在就是修改，如果不存在就是添加 $('#p').removeAttr('name') //删除属性 $('#p').addClass('blue') //添加class  ……
+$(&#39;div&#39;).insertAfter($(&#39;p&#39;)); 第二种方法是使用.after()，把p元素加到div元素前面：
+$(&#39;p&#39;).after($(&#39;div&#39;)); 五、如何修改元素的属性 $(&#39;#p&#39;).attr(&#39;class&#39;) //获取id为p的标签的属性值  $(&#39;#p&#39;).attr(&#39;class&#39;,&#39;red&#39;) //如果存在就是修改，如果不存在就是添加  $(&#39;#p&#39;).removeAttr(&#39;name&#39;) //删除属性  $(&#39;#p&#39;).addClass(&#39;blue&#39;) //添加class ……
                             </div>
                             <p class="readmore"><a href="http://jokerguo.top/posts/jquery%E7%9A%84%E5%8A%9F%E8%83%BD/">阅读全文</a></p>
                         </article>
@@ -164,9 +203,9 @@ $('p').after($('div'));  五、如何修改元素的属性 $('#p').attr('class')
                             </date>
                             
                             <div class="post-content">
-                                 JS函数的调用时机不同，得到的结果也是不同的 setTimeout()方法用于在指定的毫秒后调用函数或者计算表达式，其含义就是尽快执行，而不是马上执行 为什么打印的是6个6 let i = 0 for(i = 0; i&lt;6; i++){ setTimeout(()=&gt;{ console.log(i) },0) } //输出 6,6,6,6,6,6  解释: 浏览器在执行到setTimeout时，不会直接去执行setTimeout里面的函数，而是继续执行for循环，将里面的函数放在一边。直到循环结束，才会去执行setTimeout里面的函数，而此时i的值等于6（for循环的原因）。所有最后打印i的值6次都是6
-如何输出 0,1,2,3,4,5 for(let i = 0; i&lt;6; i++){ setTimeout(()=&gt;{ console.log(i) },0) }  解释 每次执行for循环，都会复制一个新的i ,打印的每一次i都不是同一个i
-其他方法 let i for (i=0; i&lt;6; i++) { (function(j){ setTimeout(()=&gt;{ console.log( j ); }, 0 ); })(i); }  ……
+                                JS函数的调用时机不同，得到的结果也是不同的 setTimeout()方法用于在指定的毫秒后调用函数或者计算表达式，其含义就是尽快执行，而不是马上执行 为什么打印的是6个6 let i = 0 for(i = 0; i&lt;6; i++){ setTimeout(()=&gt;{ console.log(i) },0) } //输出 6,6,6,6,6,6 解释: 浏览器在执行到setTimeout时，不会直接去执行setTimeout里面的函数，而是继续执行for循环，将里面的函数放在一边。直到循环结束，才会去执行setTimeout里面的函数，而此时i的值等于6（for循环的原因）。所有最后打印i的值6次都是6
+如何输出 0,1,2,3,4,5 for(let i = 0; i&lt;6; i++){ setTimeout(()=&gt;{ console.log(i) },0) } 解释 每次执行for循环，都会复制一个新的i ,打印的每一次i都不是同一个i
+其他方法 let i for (i=0; i&lt;6; i++) { (function(j){ setTimeout(()=&gt;{ console.log( j ); }, 0 ); })(i); } ……
                             </div>
                             <p class="readmore"><a href="http://jokerguo.top/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/">阅读全文</a></p>
                         </article>
@@ -185,11 +224,11 @@ $('p').after($('div'));  五、如何修改元素的属性 $('#p').attr('class')
                             
                             <div class="post-content">
                                 如何声明一个对象 简单写法
-let obj = {name:'guo',age:21,gender:'man'}  正规写法
-let obj = new Object({name:'guo',age:21,gender:'man'})  提示： 属性名（键名）是字符串，不是标识符
-如何删除对象的属性 delete操作符 delete obj.xxx delete obj['xxx']  in操作符 'xxx' in obj ===false //判断属性在不在对象中  提示： 1. 给属性赋值undefined，只是删除了属性值
-如何查看对象的属性 查看自身所有属性 Object.keys(obj) //查看所有属性名 Object.values(obj) //查看所有属性值 Object.entries(obj) //查看所有属性名和属性值  可查看自身和共有属性 console.dir(obj)  判断是自身还是共有属性 obj.hasOwnProperty('属性名')  查看对象的个别属性 obj['key'] obj.key  提示： key是字符串！！！
-修改和增加对象属性 直接赋值 let obj = {name : 'guo'} obj.name = 'guo' obj['name'] = 'name'  批量赋值 Object.……
+let obj = {name:&#39;guo&#39;,age:21,gender:&#39;man&#39;} 正规写法
+let obj = new Object({name:&#39;guo&#39;,age:21,gender:&#39;man&#39;}) 提示： 属性名（键名）是字符串，不是标识符
+如何删除对象的属性 delete操作符 delete obj.xxx delete obj[&#39;xxx&#39;] in操作符 &#39;xxx&#39; in obj ===false //判断属性在不在对象中 提示：
+ 给属性赋值undefined，只是删除了属性值  如何查看对象的属性 查看自身所有属性 Object.keys(obj) //查看所有属性名  Object.values(obj) //查看所有属性值  Object.entries(obj) //查看所有属性名和属性值  可查看自身和共有属性 console.dir(obj) 判断是自身还是共有属性 obj.hasOwnProperty(&#39;属性名&#39;) 查看对象的个别属性 obj[&#39;key&#39;] obj.key 提示： key是字符串！！！
+修改和增加对象属性 直接赋值 let obj = {name : &#39;guo&#39;} obj.name = &#39;guo&#39; obj[&#39;name&#39;] = &#39;name&#39; 批量赋值 Object.assign(obj,{p1:1,p2:2}) //ES6新内容 修改原型 let obj = Object.……
                             </div>
                             <p class="readmore"><a href="http://jokerguo.top/posts/js%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/">阅读全文</a></p>
                         </article>
@@ -207,24 +246,21 @@ let obj = new Object({name:'guo',age:21,gender:'man'})  提示： 属性名（�
                             </date>
                             
                             <div class="post-content">
-                                JS中的数据类型分别是：  number string null undefined symbol bool object  number 写法  整数写法
+                                JS中的数据类型分别是：  number string null undefined symbol bool object  number 写法   整数写法
 1
- 小数写法
+  小数写法
 0.1
- 科学计数法
+  科学计数法
 1.23e4
- 八进制写法(0/00/0o)
+  八进制写法(0/00/0o)
 0123或00123或0o123
- 十六进制写法（0x/0X）
+  十六进制写法（0x/0X）
 0x3F或0X3F
- 二进制写法（0b/0B）
+  二进制写法（0b/0B）
 ob11或0B11
   特殊值  正0和负0（都等于0） 无穷（infinity / +infinity / -infinity） NaN (Not a Number)  JS数字使用64位浮点数进行存储
 string 转义字符 空字符串和空格字符串是不同的
-读取字符  string[index]
-let s = 'hello' s[0] //'h'  index从0开始
-s[0] 是第一个字符  index的length
-let s = 'hello' s[5] //undefined 不会报错 s[4] // 'o'   bool  否定运算……
+读取字符  string[index]  let s = &#39;hello&#39; s[0] //&#39;h&#39;  index从0开始  s[0] 是第一个字符  index的length  let s = &#39;hello&#39; s[5] //undefined 不会报错  s[4] // &#39;o&#39; bool   否定运算……
                             </div>
                             <p class="readmore"><a href="http://jokerguo.top/posts/js%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">阅读全文</a></p>
                         </article>
@@ -242,81 +278,20 @@ let s = 'hello' s[5] //undefined 不会报错 s[4] // 'o'   bool  否定运算�
                             </date>
                             
                             <div class="post-content">
-                                语句与表达式 var a = 1 + 3  1 + 3叫做表达式，指一个为了得到返回值的计算式。语句和表达式的区别在于，前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。凡是 JavaScript 语言中预期为值的地方，都可以使用表达式。比如，赋值语句的等号右边，预期是一个值，因此可以放置各种表达式。
+                                语句与表达式 var a = 1 + 3 1 + 3叫做表达式，指一个为了得到返回值的计算式。语句和表达式的区别在于，前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。凡是 JavaScript 语言中预期为值的地方，都可以使用表达式。比如，赋值语句的等号右边，预期是一个值，因此可以放置各种表达式。
 标识符的规则 JavaScript 语言的标识符对大小写敏感，所以a和A是两个不同的标识符。
- 第一个字符，可以是任意 Unicode 字母（包括英文字母和其他语言的字母），以及美元符号（$）和下划线（_）和中文。 第二个字符及后面的字符，除了 Unicode 字母、美元符号和下划线，还可以用数字0-9。  if else 语法 if(表达式){ //表达式为真执行 }else{ //表达式为假执行 }  注意：使用（===）运算符
-可替代if else的方法  问好冒号表达式（三元运算符）
+ 第一个字符，可以是任意 Unicode 字母（包括英文字母和其他语言的字母），以及美元符号（$）和下划线（_）和中文。 第二个字符及后面的字符，除了 Unicode 字母、美元符号和下划线，还可以用数字0-9。  if else 语法 if(表达式){ //表达式为真执行  }else{ //表达式为假执行  } 注意：使用（===）运算符
+可替代if else的方法   问好冒号表达式（三元运算符）
 表达式 ？ 表达式1 ： 表达式2
- &amp;&amp;
+  &amp;&amp;
 A &amp;&amp; B &amp;&amp; C &amp;&amp; D
 取第一个假值或者D
- ||
+  ||
 A || B || C || D
 取第一个真值或者D
-  while for循环语句 循环语句用于重复执行某个操作。
-while循环 while(表达式){语句}   判断表达式的真假 为真执行语句。执行完后再判断真假，在执行 当表达式为假时，执行while语句后面的代码  do while循环 do{ 语句 } while(表达式)   先执行语句 再判断表达式真假，为真时执行语句。执行完后再判断真假，在执行 当表达式为假时，执行while语句后面的代码  for循环 for(语句1,表达式,语句2){ 循环体 }   先执行语句1 判断表达式，为真时执行循环体，再执行语句2 为假时，跳出循环，执行后面的语句  break和continue break语句用于跳出代码块或循环……
+  while for循环语句 循环语句用于重复执行某个操作。……
                             </div>
                             <p class="readmore"><a href="http://jokerguo.top/posts/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">阅读全文</a></p>
-                        </article>
-                    
-                    
-		    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="http://jokerguo.top/posts/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/" title="JavaScript的诞生" >JavaScript的诞生</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年11月21日
-                            </date>
-                            
-                            <div class="post-content">
-                                JavaScript（通常缩写为JS）是一种高级的、解释型的编程语言。JavaScript是一门基于原型、函数先行的语言，是一门多范式的语言，它支持面向对象编程，命令式编程，以及函数式编程。它提供语法来操控文本、数组、日期以及正则表达式等，不支持I/O，比如网络、存储和图形等，但这些都可以由它的宿主环境提供支持。它已经由ECMA（欧洲电脑制造商协会）通过ECMAScript实现语言的标准化。它被世界上的绝大多数网站所使用，也被世界主流浏览器（Chrome、IE、Firefox、Safari、Opera）支持。
-javascript的诞生背景  1994年，在互联网刚兴起的时代，网景公司（Netscape）发布了Navigator浏览器0.9版。这是历史上第一个比较成熟的网络浏览器，轰动一时。但是，这个版本的浏览器只能用来浏览，不具备与访问者互动的能力。因此网景公司急需一种网页脚本语言，使得浏览器可以与网页互动。
- 网页脚本语言到底是什么语言？网景公司当时有两个选择：一个是采用现有的语言，比如Perl、Python、Tcl、Scheme等等，允许它们直接嵌入网页；另一个是发明一种全新的语言。这两个选择各有利弊。第一个选择，有利于充分利用现有代码和程序员资源，推广起来比较容易；第二个选择，有利于开发出完全适用的语言，实现起来比较容易。
- 1995年，Sun公司将Oak语言更名为Java并推向市场，并宣称“Write Once, Run Anywhere”。网景公司深受Java的影响，网景公司高层都非常信赖Java，所以网景公司决定要蹭Java的流量，新开发一门语言，用于浏览器的交互。
-javascript的诞生 1995年4月，Brendan Eich（布兰登·艾奇） 加入网景公司。Brendan原本研究方向是函数式编程与Scheme语言。但是1995年5月，网景公司指定Brendan成为了“新语言”的设计师。并且要求这个“新语言”要和Java足够的相似（面向对象思想），但是要比Java能够更加简单地上手。
- Brendan志不在此，而且对Java完全不感兴趣，为了完成任务他花了10天时间便把这门“新语言”的最初版本设计了出来。总的来说他的设计思路是这样的：
- 借鉴C语言的基本语法； 借鉴Java语言的数据类型和内存管理； 借鉴Scheme语言，将函数提升到&rdquo;第一等公民&rdquo;（first class）的地位； 借鉴Self语言，使用基于原型（prototype）的继承机制。  所以，Javascript语言实际上是两种语言风格的混合产物——（简化的）函数式编程+（简化的）面向对象编程。
-javascript的缺陷 阮一峰&ndash;Javascript的10个设计缺陷
-ECMAScript  1997年6月，第一版ECMAScript发布。
- 1999年12月，第三版ECMAScript发布，这也是应用最广泛的ECMAScript版本。
- 第四版流产。
- 第三版发布后，经过了10年，20019年12月第五版ECMAScript才发布，这正是因为这段时间IE浏览器正制霸着市场。
- 随着Chrome的崛起，这些新的浏览器的JS引擎都根据ECMAScript标准进行实现。所以除了IE，其他浏览器与浏览器之间的兼容性得到大大提高。
- 2015年6月，ECMAScript第六版（ES6）发布。并在之后每一年都发布一版。可见JS地位在不断提高。
- JavaScript与ECMAScript的区别在于，ECMAScript是标准，JavaScript是实现（实际上JavaScript是由ECMAScript，DOM和BOM三者组成的），实现的功能不一定会出现在标准里面，不同的浏览器也有自己独特的JS实现。
-JavaScript的发展 兴起&ndash;Gmail  2004年愚人节，谷歌发布Gmail。Gmail是谷歌开发的一款具有发送接收邮件功能的在线网页。在Gmail出现以前，所有人都认为浏览器只能用 于浏览阅读。但是Gmail让用户重新认识了浏览器的功能。
- 2005年，Jesse将谷歌实现Gmail的技术命名为AJAX。从此前端技术正式出现。
- 2006年，JQuery发布，JQuery是最长寿的JS库，其主要是兼容IE，但随着IE的落寞，JQuery也逐渐淡出前端开发者的视野。
-爆发&ndash;V8引擎  Chrome的JS引擎是V8（V1~V7是不同语言的引擎），V8引擎超快的速度让chrome成为了最主流的浏览器。
- 2009年，Ryan基于V8，创建了Node.js；2010年Issac基于Node.js写出了npm。有了node.js，前端工程师实现了在浏览器之外执行JS。
- 2010年，TJ受Sinatra的启发，发布了Express.js。Node.js与Express.js让前端工程师可以完成后端的内容。虽然还比不上Java，但是 至少也具备了手段。
- 借助Chrome的风，期间也爆发除了很多前端的技术：gulp、grunt、yeoman、require.js、webpack、Angular、React、Vue等。当然其中一些技术也已经过时了。……
-                            </div>
-                            <p class="readmore"><a href="http://jokerguo.top/posts/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/">阅读全文</a></p>
-                        </article>
-                    
-                    
-		    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="http://jokerguo.top/posts/%E6%B5%85%E6%9E%90url/" title="浅析URL" >浅析URL</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年11月18日
-                            </date>
-                            
-                            <div class="post-content">
-                                URL 的组成  协议： http(80) / https(443) 域名或 ip：域名对应一个 ip 的字符串 ip 对应一个设备 最大值 255 端口号：一个服务对应一个端口号 （最大 6 万多） 路径：一串字符串 判断访问什么网页 查询参数：查看网页中的什么内容 锚点 ： 文档内部的定位 （锚点不会传入服务器）  DNS 的作用 DNS 服务的作用是将域名解析为 IP 地址 DNS 是域名系统 (Domain Name System) 的缩写，是因特网的一项核心服务，它作为可以将域名和 IP 地址相互映射的一个分布式数据库，能够使人更方便的访问互联网，而不用去记住能够被机器直接读取的 IP 数串。这是 DNS 的官方说法。
-在互联网中通过 IP 地址来进行通信。但是 IP 地址的表示形式是数字，很难进行记忆（比如 116.213.120.232），所以为每个 IP 取一个人类更易记忆的域名形式（比如 www.google.com），而通过 DNS 来把解析域名成为 IP（将方便人理解的命名格式解析成计算机能够理解的格式，也可以将 IP 翻译成域名）
-DNS 过程
- 客户端向 DNS 服务器（DNS 服务器有自己的 IP 地址）发送域名查询请求 DNS 服务器告知客户机 Web 服务器的 IP 地址  nslookup命令 nslookup 命令用于查询 DNS 的记录，查看域名解析是否正常……
-                            </div>
-                            <p class="readmore"><a href="http://jokerguo.top/posts/%E6%B5%85%E6%9E%90url/">阅读全文</a></p>
                         </article>
                     
                     
@@ -372,6 +347,14 @@ DNS 过程
 <ul class="widget-list">
     
     <li>
+        <a href="http://jokerguo.top/posts/react%E7%9A%84%E4%B8%A4%E4%B8%AA%E7%BB%84%E4%BB%B6/" title="React的两个组件">React的两个组件</a>
+    </li>
+    
+    <li>
+        <a href="http://jokerguo.top/posts/react%E8%B5%B7%E6%AD%A5/" title="React起步">React起步</a>
+    </li>
+    
+    <li>
         <a href="http://jokerguo.top/posts/sync%E4%BF%AE%E9%A5%B0%E7%AC%A6/" title="Sync修饰符">Sync修饰符</a>
     </li>
     
@@ -401,14 +384,6 @@ DNS 过程
     
     <li>
         <a href="http://jokerguo.top/posts/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" title="JS的基本语法">JS的基本语法</a>
-    </li>
-    
-    <li>
-        <a href="http://jokerguo.top/posts/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/" title="JavaScript的诞生">JavaScript的诞生</a>
-    </li>
-    
-    <li>
-        <a href="http://jokerguo.top/posts/%E6%B5%85%E6%9E%90url/" title="浅析URL">浅析URL</a>
     </li>
     
 </ul>

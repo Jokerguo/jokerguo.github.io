@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.66.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -79,10 +79,7 @@
                         
                         
                         <div class="post-content">
-                            
-
-<h2 id="js中的数据类型分别是">JS中的数据类型分别是：</h2>
-
+                            <h2 id="js中的数据类型分别是">JS中的数据类型分别是：</h2>
 <ol>
 <li>number</li>
 <li>string</li>
@@ -92,133 +89,103 @@
 <li>bool</li>
 <li>object</li>
 </ol>
-
 <h1 id="number">number</h1>
-
 <h4 id="写法">写法</h4>
-
 <ul>
-<li><p>整数写法</p>
-
-<p>1</p></li>
-
-<li><p>小数写法</p>
-
-<p>0.1</p></li>
-
-<li><p>科学计数法</p>
-
-<p>1.23e4</p></li>
-
-<li><p>八进制写法(0/00/0o)</p>
-
-<p>0123或00123或0o123</p></li>
-
-<li><p>十六进制写法（0x/0X）</p>
-
-<p>0x3F或0X3F</p></li>
-
-<li><p>二进制写法（0b/0B）</p>
-
-<p>ob11或0B11</p></li>
+<li>
+<p>整数写法</p>
+<p>1</p>
+</li>
+<li>
+<p>小数写法</p>
+<p>0.1</p>
+</li>
+<li>
+<p>科学计数法</p>
+<p>1.23e4</p>
+</li>
+<li>
+<p>八进制写法(0/00/0o)</p>
+<p>0123或00123或0o123</p>
+</li>
+<li>
+<p>十六进制写法（0x/0X）</p>
+<p>0x3F或0X3F</p>
+</li>
+<li>
+<p>二进制写法（0b/0B）</p>
+<p>ob11或0B11</p>
+</li>
 </ul>
-
 <h4 id="特殊值">特殊值</h4>
-
 <ol>
 <li>正0和负0（都等于0）</li>
 <li>无穷（infinity / +infinity / -infinity）</li>
 <li>NaN (Not a Number)</li>
 </ol>
-
 <p>JS数字使用64位浮点数进行存储</p>
-
 <h1 id="string">string</h1>
-
 <h4 id="转义字符">转义字符</h4>
-
-<p><img src="/images/string.png" alt="转义字符" /></p>
-
-<p><img src="/images/string-kong.png" alt="空字符串" /></p>
-
+<p><img src="/images/string.png" alt="转义字符"></p>
+<p><img src="/images/string-kong.png" alt="空字符串"></p>
 <p>空字符串和空格字符串是不同的</p>
-
 <h4 id="读取字符">读取字符</h4>
-
 <ul>
-<li><p>string[index]</p>
-
-<pre><code class="language-javascript">let s = 'hello'
-s[0] //'h'
-</code></pre></li>
-
-<li><p>index从0开始</p>
-
-<pre><code class="language-javascript">s[0] 是第一个字符
-</code></pre></li>
-
-<li><p>index的length</p>
-
-<pre><code class="language-javascript">let s = 'hello'
-s[5] //undefined  不会报错
-s[4]  // 'o'
-</code></pre></li>
+<li>string[index]</li>
 </ul>
-
-<h1 id="bool">bool</h1>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">s</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;hello&#39;</span>
+    <span style="color:#a6e22e">s</span>[<span style="color:#ae81ff">0</span>] <span style="color:#75715e">//&#39;h&#39;
+</span></code></pre></div><ul>
+<li>index从0开始</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#a6e22e">s</span>[<span style="color:#ae81ff">0</span>] <span style="color:#a6e22e">是第一个字符</span>
+</code></pre></div><ul>
+<li>index的length</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">s</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;hello&#39;</span>
+    <span style="color:#a6e22e">s</span>[<span style="color:#ae81ff">5</span>] <span style="color:#75715e">//undefined  不会报错
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">s</span>[<span style="color:#ae81ff">4</span>]  <span style="color:#75715e">// &#39;o&#39;
+</span></code></pre></div><h1 id="bool">bool</h1>
 <ul>
-<li><p>否定运算</p>
-
-<p>！value</p></li>
-
-<li><p>相等运算</p>
-
-<p>1==2,1!=2,3===4,3!==4</p></li>
-
-<li><p>比较运算</p>
-
-<p>1&gt;2 , 3&lt;4</p></li>
+<li>
+<p>否定运算</p>
+<p>！value</p>
+</li>
+<li>
+<p>相等运算</p>
+<p>1==2,1!=2,3===4,3!==4</p>
+</li>
+<li>
+<p>比较运算</p>
+<p>1&gt;2 , 3&lt;4</p>
+</li>
 </ul>
-
 <h4 id="5个falsy值">5个falsy值</h4>
-
 <ol>
 <li>undefined</li>
 <li>null</li>
 <li>0</li>
 <li>NaN</li>
-<li>&rdquo;(空字符串)</li>
+<li>&lsquo;'(空字符串)</li>
 </ol>
-
-<h1 id="undefined-null">undefined,null</h1>
-
+<h1 id="undefinednull">undefined,null</h1>
 <p>没有本质区别</p>
-
 <ul>
 <li>细节一</li>
 </ul>
-
 <p>如果一个变量声明了，但没有赋值，那么默认值是undefined</p>
-
 <ul>
 <li>细节二</li>
 </ul>
-
 <p>如果一个函数，没有写return，那么默认return undefined</p>
-
 <ul>
 <li>细节三</li>
 </ul>
-
 <p>前端程序员习惯将非对象的空值写为undefined，把对象的空值写为null（仅仅是习惯）</p>
-
 <h1 id="symbol">symbol</h1>
-
 <p>就是生成一个全局唯一的值
 <a href="https://zhuanlan.zhihu.com/p/22652486">点击这里了解更详细的资料</a></p>
-
-<h5 id="至于最重要的object-会单独写一篇博客">至于最重要的object，会单独写一篇博客</h5>
+<h5 id="至于最重要的object会单独写一篇博客">至于最重要的object，会单独写一篇博客</h5>
 
                         </div>
 
@@ -264,6 +231,14 @@ s[4]  // 'o'
 <ul class="widget-list">
     
     <li>
+        <a href="http://jokerguo.top/posts/react%E7%9A%84%E4%B8%A4%E4%B8%AA%E7%BB%84%E4%BB%B6/" title="React的两个组件">React的两个组件</a>
+    </li>
+    
+    <li>
+        <a href="http://jokerguo.top/posts/react%E8%B5%B7%E6%AD%A5/" title="React起步">React起步</a>
+    </li>
+    
+    <li>
         <a href="http://jokerguo.top/posts/sync%E4%BF%AE%E9%A5%B0%E7%AC%A6/" title="Sync修饰符">Sync修饰符</a>
     </li>
     
@@ -293,14 +268,6 @@ s[4]  // 'o'
     
     <li>
         <a href="http://jokerguo.top/posts/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" title="JS的基本语法">JS的基本语法</a>
-    </li>
-    
-    <li>
-        <a href="http://jokerguo.top/posts/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/" title="JavaScript的诞生">JavaScript的诞生</a>
-    </li>
-    
-    <li>
-        <a href="http://jokerguo.top/posts/%E6%B5%85%E6%9E%90url/" title="浅析URL">浅析URL</a>
     </li>
     
 </ul>

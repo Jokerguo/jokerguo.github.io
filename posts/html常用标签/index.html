@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.66.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -79,124 +79,67 @@
                         
                         
                         <div class="post-content">
-                            
-
-<h1 id="html-常用标签">《HTML 常用标签》</h1>
-
+                            <h1 id="html-常用标签">《HTML 常用标签》</h1>
 <h1 id="a-标签">a 标签</h1>
-
-<h2 id="href-nbsp-nbsp-超链接">href &nbsp;&nbsp; 超链接</h2>
-
+<h2 id="href-nbspnbsp-超链接">href    超链接</h2>
 <h5 id="填入相应的链接地址">填入相应的链接地址</h5>
-
-<p>1.&nbsp;&nbsp;网址 &nbsp;&nbsp; 推荐使用这种格式（//google.com）因为会自动选择协议，跳转到正确页面，减少 bug。</p>
-
-<p>2.&nbsp;&nbsp;绝对路径于相对路径</p>
-
+<p>1.  网址    推荐使用这种格式（//google.com）因为会自动选择协议，跳转到正确页面，减少 bug。</p>
+<p>2.  绝对路径于相对路径</p>
 <p>注:在哪里开启的 http 服务 哪里就是根目录</p>
-
-<p>3.&nbsp;&nbsp;伪协议</p>
-
-<p>javascript:代码; &nbsp;&nbsp; （可实现无任何操作的 a 标签 不加代码）</p>
-
-<p>mailto:&nbsp;&nbsp;发邮件</p>
-
-<p>tel:&nbsp;&nbsp;打电话</p>
-
-<p>4.&nbsp;&nbsp;#id&nbsp;&nbsp; 定位到页面中的 id 位置</p>
-
+<p>3.  伪协议</p>
+<p>javascript:代码;    （可实现无任何操作的 a 标签 不加代码）</p>
+<p>mailto:  发邮件</p>
+<p>tel:  打电话</p>
+<p>4.  #id   定位到页面中的 id 位置</p>
 <h2 id="target">target</h2>
-
 <ul>
-<li>_blank &nbsp;&nbsp; 新建窗口打开</li>
-<li>_top &nbsp;&nbsp; 级别最高的窗口打开</li>
-<li>_parent &nbsp;&nbsp; 父级窗口打开</li>
-<li>_self &nbsp;&nbsp; 默认值 &nbsp;&nbsp; 当前窗口打开</li>
-<li>target=&ldquo;xxx&rdquo; 创建一个 xxx 窗口 会覆盖之前的窗口</li>
-<li>iframe name=&ldquo;xxx&rdquo; 用 name 为 xxx 的 iframe 窗口打开</li>
+<li>_blank    新建窗口打开</li>
+<li>_top    级别最高的窗口打开</li>
+<li>_parent    父级窗口打开</li>
+<li>_self    默认值    当前窗口打开</li>
+<li>target=&quot;xxx&rdquo; 创建一个 xxx 窗口 会覆盖之前的窗口</li>
+<li>iframe name=&quot;xxx&rdquo; 用 name 为 xxx 的 iframe 窗口打开</li>
 </ul>
-
 <h2 id="download">download</h2>
-
-<p>下载页面&nbsp;&nbsp;部分浏览器不支持</p>
-
-<h2 id="rel-noopener">rel=noopener</h2>
-
+<p>下载页面  部分浏览器不支持</p>
+<h2 id="relnoopener">rel=noopener</h2>
 <p>现在还不清楚具体用处</p>
-
 <h2 id="总结">总结</h2>
-
 <p>a 标签的作用：跳转外部页面，内部锚点，邮箱和电话</p>
-
 <p><a href="https://blog.csdn.net/u012260238/article/details/85218098">MDN a 标签</a></p>
-
 <h1 id="img-标签">img 标签</h1>
-
 <p>原理：发出一个 get 请求 展示一张图片</p>
-
 <h2 id="alt">alt</h2>
-
 <p>替代文本</p>
-
 <h2 id="width-height">width height</h2>
-
 <p>宽高</p>
-
 <h2 id="src">src</h2>
-
 <p>图片路径</p>
-
 <h2 id="onload-事件">onload 事件</h2>
-
-<p><img src="/images/onload.png" alt="" /></p>
-
+<p><img src="/images/onload.png" alt=""></p>
 <h2 id="onerror-事件">onerror 事件</h2>
-
-<p><img src="/images/onerror.png" alt="" /></p>
-
+<p><img src="/images/onerror.png" alt=""></p>
 <p>图片加载失败后 展示一张准备好的报错图片</p>
-
 <h2 id="响应式">响应式</h2>
-
 <p>给 img 设置最大宽度</p>
-
 <pre><code>max-width:100%;
-</code></pre>
-
-<h1 id="table-标签">table 标签</h1>
-
+</code></pre><h1 id="table-标签">table 标签</h1>
 <p>牢记：table 的子元素只能是 thead tbody tfoot</p>
-
 <h2 id="tr">tr</h2>
-
 <p>table row 表示表的一行</p>
-
 <h2 id="th">th</h2>
-
 <p>table head 表头 （有加粗 居中样式）</p>
-
 <h2 id="td">td</h2>
-
 <p>table data 数据</p>
-
 <h2 id="表格样式">表格样式</h2>
-
 <h3 id="table-layout">table-layout</h3>
-
-<p>默认值：auto &nbsp;&nbsp;</p>
-
+<p>默认值：auto   </p>
 <p>fixed 平均宽度</p>
-
 <h3 id="border-spacing">border-spacing</h3>
-
 <p>边框间隙 一般设置为 0</p>
-
 <h3 id="border-collapse">border-collapse</h3>
-
 <p>值为：collapse 表示合并边框</p>
-
 <h1 id="感想">感想</h1>
-
 <p>对我来说这一章的内容还是很有收获的，不仅学习到了一些以前不知道的知识点，也重新巩固了一下原本学过的知识。希望以后继续努力。</p>
 
                         </div>
@@ -243,6 +186,14 @@
 <ul class="widget-list">
     
     <li>
+        <a href="http://jokerguo.top/posts/react%E7%9A%84%E4%B8%A4%E4%B8%AA%E7%BB%84%E4%BB%B6/" title="React的两个组件">React的两个组件</a>
+    </li>
+    
+    <li>
+        <a href="http://jokerguo.top/posts/react%E8%B5%B7%E6%AD%A5/" title="React起步">React起步</a>
+    </li>
+    
+    <li>
         <a href="http://jokerguo.top/posts/sync%E4%BF%AE%E9%A5%B0%E7%AC%A6/" title="Sync修饰符">Sync修饰符</a>
     </li>
     
@@ -272,14 +223,6 @@
     
     <li>
         <a href="http://jokerguo.top/posts/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" title="JS的基本语法">JS的基本语法</a>
-    </li>
-    
-    <li>
-        <a href="http://jokerguo.top/posts/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/" title="JavaScript的诞生">JavaScript的诞生</a>
-    </li>
-    
-    <li>
-        <a href="http://jokerguo.top/posts/%E6%B5%85%E6%9E%90url/" title="浅析URL">浅析URL</a>
     </li>
     
 </ul>

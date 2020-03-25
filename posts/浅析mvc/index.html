@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.66.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -79,76 +79,63 @@
                         
                         
                         <div class="post-content">
-                            
-
-<h2 id="浅析mvc">浅析MVC</h2>
-
+                            <h2 id="浅析mvc">浅析MVC</h2>
 <h4 id="什么是mvc">什么是MVC</h4>
-
 <ul>
 <li>M是model（数据模型）的简称，用于操作数据</li>
 <li>V是view（视图）的简称，用于负责UI界面</li>
-
-<li><p>C是controller（控制器）的简称，用于其他</p>
-
+<li>C是controller（控制器）的简称，用于其他</li>
+</ul>
 <pre><code>// 伪代码
-Model = {
-  data: { 程序需要操作的数据或信息 },
-  create: { 增数据 },
-  delete: { 删数据 },
-  update() {改数据 },
-  get:{ 获取数据 } 
-}
+  Model = {
+      data: { 程序需要操作的数据或信息 },
+      create: { 增数据 },
+      delete: { 删数据 },
+      update() {改数据 },
+      get:{ 获取数据 } 
+  }
 
-View = {
-el: 需要刷新的元素,
-html: `html内容`
-init(){
-    v.el: 需要刷新的元素
-},
-render(){ 刷新页面 }
+  View = {
+    el: 需要刷新的元素,
+    html: `html内容`
+    init(){
+        v.el: 需要刷新的元素
+    },
+    render(){ 刷新页面 }
 }
-Controller = {
- init(){
-    v.init() // View初始化
-    v.render() // 第一次渲染
-    c.autoBindEvents() // 自动的事件绑定
-    eventBus.on('m:update', () =&gt; { v.render() }) // 当eventBus触发'm:update'时View刷新
- },
- events:{ 事件以哈希表方式记录 }，
- method() {
-    data = 改变后的新数据
-    m.update(data)
- }，
- autoBindEvents() { 自动绑定事件 }
-}
-</code></pre></li>
-</ul>
-
-<h4 id="eventbus是什么">eventBus是什么</h4>
-
+  Controller = {
+     init(){
+        v.init() // View初始化
+        v.render() // 第一次渲染
+        c.autoBindEvents() // 自动的事件绑定
+        eventBus.on('m:update', () =&gt; { v.render() }) // 当eventBus触发'm:update'时View刷新
+     },
+     events:{ 事件以哈希表方式记录 }，
+     method() {
+        data = 改变后的新数据
+        m.update(data)
+     }，
+     autoBindEvents() { 自动绑定事件 }
+  }
+</code></pre><h4 id="eventbus是什么">eventBus是什么</h4>
 <ul>
-<li><p>eventBus的作用</p>
-
-<p>主要是用于模块之间的通信</p></li>
-
-<li><p>引入eventBus</p>
-
-<pre><code>const eventBus = $(window) //只是一个空对象
-</code></pre></li>
-
-<li><p>eventBus的api
-// on(监听事件)  trigger（触发事件） off（取消监听）</p>
-
-<pre><code>eventBus.trigger('m:update') //触发事件
-eventBus.on('m:update',()=&gt;{})  //监听触发
-</code></pre></li>
+<li>
+<p>eventBus的作用</p>
+<p>主要是用于模块之间的通信</p>
+</li>
+<li>
+<p>引入eventBus</p>
+</li>
 </ul>
-
-<h4 id="表驱动编程是什么">表驱动编程是什么</h4>
-
+<pre><code>    const eventBus = $(window) //只是一个空对象
+</code></pre><ul>
+<li>eventBus的api
+// on(监听事件)  trigger（触发事件） off（取消监听）</li>
+</ul>
+<pre><code>    eventBus.trigger('m:update') //触发事件
+    eventBus.on('m:update',()=&gt;{})  //监听触发
+</code></pre><h4 id="表驱动编程是什么">表驱动编程是什么</h4>
 <p>使用查表（哈希表）的方式来获取信息而不是使用逻辑语句</p>
-
 <pre><code>  events:{  // 哈希表
      'click #app1': 'a事件'，
      'click #app2': 'b事件'，
@@ -165,10 +152,7 @@ eventBus.on('m:update',()=&gt;{})  //监听触发
           }
       }
   }
-</code></pre>
-
-<h4 id="对模块化的理解">对模块化的理解</h4>
-
+</code></pre><h4 id="对模块化的理解">对模块化的理解</h4>
 <p>我对模块化的理解就是每一句代码都待在了它应该待的地方，没有重复多余的代码，模块化不仅有利于后期更好的维护代码也提高使用性能和下载速度，按需求加载需要的模块，模块化能使模块内的任何形式的命名都不会再和其他模块有冲突。使用模块化，只需要在模块内部申明好依赖的就行，增加删除都直接修改模块即可，在调用的时候也不用管该模块依赖了哪些其他模块</p>
 
                         </div>
@@ -215,6 +199,14 @@ eventBus.on('m:update',()=&gt;{})  //监听触发
 <ul class="widget-list">
     
     <li>
+        <a href="http://jokerguo.top/posts/react%E7%9A%84%E4%B8%A4%E4%B8%AA%E7%BB%84%E4%BB%B6/" title="React的两个组件">React的两个组件</a>
+    </li>
+    
+    <li>
+        <a href="http://jokerguo.top/posts/react%E8%B5%B7%E6%AD%A5/" title="React起步">React起步</a>
+    </li>
+    
+    <li>
         <a href="http://jokerguo.top/posts/sync%E4%BF%AE%E9%A5%B0%E7%AC%A6/" title="Sync修饰符">Sync修饰符</a>
     </li>
     
@@ -244,14 +236,6 @@ eventBus.on('m:update',()=&gt;{})  //监听触发
     
     <li>
         <a href="http://jokerguo.top/posts/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" title="JS的基本语法">JS的基本语法</a>
-    </li>
-    
-    <li>
-        <a href="http://jokerguo.top/posts/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/" title="JavaScript的诞生">JavaScript的诞生</a>
-    </li>
-    
-    <li>
-        <a href="http://jokerguo.top/posts/%E6%B5%85%E6%9E%90url/" title="浅析URL">浅析URL</a>
     </li>
     
 </ul>

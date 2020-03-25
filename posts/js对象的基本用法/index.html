@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.66.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -79,92 +79,49 @@
                         
                         
                         <div class="post-content">
-                            
-
-<h2 id="如何声明一个对象">如何声明一个对象</h2>
-
+                            <h2 id="如何声明一个对象">如何声明一个对象</h2>
 <p>简单写法</p>
-
-<pre><code class="language-javascript">    let obj = {name:'guo',age:21,gender:'man'}
-</code></pre>
-
-<p>正规写法</p>
-
-<pre><code class="language-javascript">    let obj = new Object({name:'guo',age:21,gender:'man'}) 
-</code></pre>
-
-<p>提示： 属性名（键名）是字符串，不是标识符</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;guo&#39;</span>,<span style="color:#a6e22e">age</span><span style="color:#f92672">:</span><span style="color:#ae81ff">21</span>,<span style="color:#a6e22e">gender</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;man&#39;</span>}
+</code></pre></div><p>正规写法</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Object({<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;guo&#39;</span>,<span style="color:#a6e22e">age</span><span style="color:#f92672">:</span><span style="color:#ae81ff">21</span>,<span style="color:#a6e22e">gender</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;man&#39;</span>}) 
+</code></pre></div><p>提示： 属性名（键名）是字符串，不是标识符</p>
 <h2 id="如何删除对象的属性">如何删除对象的属性</h2>
-
 <h4 id="delete操作符">delete操作符</h4>
-
-<pre><code class="language-javascript">    delete obj.xxx
-    delete obj['xxx']
-</code></pre>
-
-<h4 id="in操作符">in操作符</h4>
-
-<pre><code class="language-javascript">    'xxx' in obj ===false  //判断属性在不在对象中
-</code></pre>
-
-<p>提示：
-1. 给属性赋值undefined，只是删除了属性值</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">xxx</span>
+    <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">obj</span>[<span style="color:#e6db74">&#39;xxx&#39;</span>]
+</code></pre></div><h4 id="in操作符">in操作符</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#e6db74">&#39;xxx&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">===</span><span style="color:#66d9ef">false</span>  <span style="color:#75715e">//判断属性在不在对象中
+</span></code></pre></div><p>提示：</p>
+<ol>
+<li>给属性赋值undefined，只是删除了属性值</li>
+</ol>
 <h2 id="如何查看对象的属性">如何查看对象的属性</h2>
-
 <h4 id="查看自身所有属性">查看自身所有属性</h4>
-
-<pre><code class="language-javascript">    Object.keys(obj)  //查看所有属性名
-    Object.values(obj)  //查看所有属性值
-    Object.entries(obj)  //查看所有属性名和属性值
-
-</code></pre>
-
-<h4 id="可查看自身和共有属性">可查看自身和共有属性</h4>
-
-<pre><code class="language-javascript">    console.dir(obj)
-</code></pre>
-
-<h4 id="判断是自身还是共有属性">判断是自身还是共有属性</h4>
-
-<pre><code class="language-javascript">    obj.hasOwnProperty('属性名')
-</code></pre>
-
-<h5 id="查看对象的个别属性">查看对象的个别属性</h5>
-
-<pre><code class="language-javascript">    obj['key']
-    obj.key
-</code></pre>
-
-<p>提示： key是字符串！！！</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">obj</span>)  <span style="color:#75715e">//查看所有属性名
+</span><span style="color:#75715e"></span>    Object.<span style="color:#a6e22e">values</span>(<span style="color:#a6e22e">obj</span>)  <span style="color:#75715e">//查看所有属性值
+</span><span style="color:#75715e"></span>    Object.<span style="color:#a6e22e">entries</span>(<span style="color:#a6e22e">obj</span>)  <span style="color:#75715e">//查看所有属性名和属性值
+</span><span style="color:#75715e"></span>
+</code></pre></div><h4 id="可查看自身和共有属性">可查看自身和共有属性</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">dir</span>(<span style="color:#a6e22e">obj</span>)
+</code></pre></div><h4 id="判断是自身还是共有属性">判断是自身还是共有属性</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">hasOwnProperty</span>(<span style="color:#e6db74">&#39;属性名&#39;</span>)
+</code></pre></div><h5 id="查看对象的个别属性">查看对象的个别属性</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#a6e22e">obj</span>[<span style="color:#e6db74">&#39;key&#39;</span>]
+    <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">key</span>
+</code></pre></div><p>提示： key是字符串！！！</p>
 <h2 id="修改和增加对象属性">修改和增加对象属性</h2>
-
 <h4 id="直接赋值">直接赋值</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">name</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;guo&#39;</span>} 
+    <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;guo&#39;</span>
+    <span style="color:#a6e22e">obj</span>[<span style="color:#e6db74">&#39;name&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;name&#39;</span>
 
-<pre><code class="language-javascript">    let obj = {name : 'guo'} 
-    obj.name = 'guo'
-    obj['name'] = 'name'
-
-</code></pre>
-
-<h4 id="批量赋值">批量赋值</h4>
-
-<pre><code class="language-javascript">    Object.assign(obj,{p1:1,p2:2})   //ES6新内容
-</code></pre>
-
-<h4 id="修改原型">修改原型</h4>
-
-<pre><code class="language-javascript">    let obj = Object.create({p1:1})  //p1现在就是obj的原型
-</code></pre>
-
-<p>提示：不要修改原型，不推荐使用&ndash;proto&ndash;</p>
-
-<h2 id="name-in-obj和obj-hasownproperty-name-的区别">&lsquo;name&rsquo; in obj和obj.hasOwnProperty(&lsquo;name&rsquo;) 的区别</h2>
-
+</code></pre></div><h4 id="批量赋值">批量赋值</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    Object.<span style="color:#a6e22e">assign</span>(<span style="color:#a6e22e">obj</span>,{<span style="color:#a6e22e">p1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#a6e22e">p2</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span>})   <span style="color:#75715e">//ES6新内容
+</span></code></pre></div><h4 id="修改原型">修改原型</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">create</span>({<span style="color:#a6e22e">p1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>})  <span style="color:#75715e">//p1现在就是obj的原型
+</span></code></pre></div><p>提示：不要修改原型，不推荐使用&ndash;proto&ndash;</p>
+<h2 id="name-in-obj和objhasownpropertyname-的区别">&lsquo;name&rsquo; in obj和obj.hasOwnProperty(&lsquo;name&rsquo;) 的区别</h2>
 <p>&lsquo;name&rsquo; in obj 是判断对象中是否有name属性</p>
-
 <p>obj.hasOwnProperty(&lsquo;name&rsquo;) 是判断obj中的name属性是自身属性还是共有属性</p>
 
                         </div>
@@ -211,6 +168,14 @@
 <ul class="widget-list">
     
     <li>
+        <a href="http://jokerguo.top/posts/react%E7%9A%84%E4%B8%A4%E4%B8%AA%E7%BB%84%E4%BB%B6/" title="React的两个组件">React的两个组件</a>
+    </li>
+    
+    <li>
+        <a href="http://jokerguo.top/posts/react%E8%B5%B7%E6%AD%A5/" title="React起步">React起步</a>
+    </li>
+    
+    <li>
         <a href="http://jokerguo.top/posts/sync%E4%BF%AE%E9%A5%B0%E7%AC%A6/" title="Sync修饰符">Sync修饰符</a>
     </li>
     
@@ -240,14 +205,6 @@
     
     <li>
         <a href="http://jokerguo.top/posts/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" title="JS的基本语法">JS的基本语法</a>
-    </li>
-    
-    <li>
-        <a href="http://jokerguo.top/posts/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/" title="JavaScript的诞生">JavaScript的诞生</a>
-    </li>
-    
-    <li>
-        <a href="http://jokerguo.top/posts/%E6%B5%85%E6%9E%90url/" title="浅析URL">浅析URL</a>
     </li>
     
 </ul>

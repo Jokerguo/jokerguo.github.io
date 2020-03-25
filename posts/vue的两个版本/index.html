@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.66.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -79,12 +79,8 @@
                         
                         
                         <div class="post-content">
-                            
-
-<h2 id="vue-cli的安装与使用">@vue/cli的安装与使用</h2>
-
+                            <h2 id="vuecli的安装与使用">@vue/cli的安装与使用</h2>
 <p>在选择vue版本之前，需要有一个vue项目，这里就需要使用@vue/cli</p>
-
 <pre><code>    npm install -g @vue/cli
     //or
     yarn global add @vue/cli
@@ -95,40 +91,28 @@
     //根据需求选择配置
 
     //yarn serve  /  webpack-dev-server  /npm run serve   预览
-</code></pre>
-
-<h2 id="vue两个版本区别">vue两个版本区别</h2>
-
-<p><img src="/images/vue.png" alt="" /></p>
-
+</code></pre><h2 id="vue两个版本区别">vue两个版本区别</h2>
+<p><img src="/images/vue.png" alt=""></p>
 <ul>
 <li>完整版的引入方式 :
-
 <ol>
 <li>cdn引入 vue.js/vue.min.js</li>
-<li>webpack / @vue/cli 引入 ： 查看文档，确保正确<br />
-<br /></li>
-</ol></li>
+<li>webpack / @vue/cli 引入 ： 查看文档，确保正确</li>
+</ol>
+</li>
 </ul>
-
 <p>完整版可以从HTML或template直接得到视图,有compiler（编译器）可以将含有占位符{{}}或者条件语句变成真实的DOM节点，compiler会占用一定的代码体积，比不完整版大40%</p>
-
 <ul>
 <li>完整版的引入方式 :
-
 <ol>
 <li>cdn引入 vue.runtime.js/vue.runtime.min.js</li>
-<li>webpack / @vue/cli 引入 ： 查看文档，确保正确<br />
-<br /></li>
-</ol></li>
+<li>webpack / @vue/cli 引入 ： 查看文档，确保正确</li>
+</ol>
+</li>
 </ul>
-
 <p>没有compiler,不能得到HTML,template的视图。需要自己写h函数，也可以将html写在vue文件中 在通过vue-loader将vue文件中的html转换为h函数 （h函数就是createElement的缩写）</p>
-
 <h2 id="template怎么用">template怎么用</h2>
-
 <p>template只有在完整版中有用</p>
-
 <pre><code>//vue文件中的template标签
   &lt;template&gt;
       &lt;div id=&quot;app&quot;&gt;      
@@ -144,10 +128,7 @@
           &lt;button @click=&quot;add&quot;&gt;+1&lt;/button&gt;   
         &lt;/div&gt; 
     `
-</code></pre>
-
-<h2 id="render的使用方法">render的使用方法</h2>
-
+</code></pre><h2 id="render的使用方法">render的使用方法</h2>
 <pre><code>//不完整版在js中构建视图
   render(h){ 
        return h('div', [this.n,h（'{on:{click:this.add}’,'+1'])
@@ -163,26 +144,18 @@
          return h(demo)
        }
      })
-</code></pre>
-
-<h2 id="使用codesandbox-io">使用codesandbox.io</h2>
-
+</code></pre><h2 id="使用codesandboxio">使用codesandbox.io</h2>
 <p>这是一个网页版的vscode
 <a href="https://codesandbox.io/">传送门</a></p>
-
 <p>建议：不要注册，直接用。不然项目会有数量限制</p>
-
 <ol>
 <li>进入网站后选择创建项目（create sandbox）</li>
 <li>选择vue</li>
 <li>一个vue项目就创建完成了！！！</li>
 </ol>
-
 <p>如果要保存这个项目</p>
-
 <p>点击file里的export to ZIP 就会下载这个项目的压缩包
 只要解压缩就能在本地打开了。</p>
-
 <p>这是一个非常适合动手学习的网站，还有一些功能大家可以自己深入了解一下。</p>
 
                         </div>
@@ -229,6 +202,14 @@
 <ul class="widget-list">
     
     <li>
+        <a href="http://jokerguo.top/posts/react%E7%9A%84%E4%B8%A4%E4%B8%AA%E7%BB%84%E4%BB%B6/" title="React的两个组件">React的两个组件</a>
+    </li>
+    
+    <li>
+        <a href="http://jokerguo.top/posts/react%E8%B5%B7%E6%AD%A5/" title="React起步">React起步</a>
+    </li>
+    
+    <li>
         <a href="http://jokerguo.top/posts/sync%E4%BF%AE%E9%A5%B0%E7%AC%A6/" title="Sync修饰符">Sync修饰符</a>
     </li>
     
@@ -258,14 +239,6 @@
     
     <li>
         <a href="http://jokerguo.top/posts/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" title="JS的基本语法">JS的基本语法</a>
-    </li>
-    
-    <li>
-        <a href="http://jokerguo.top/posts/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/" title="JavaScript的诞生">JavaScript的诞生</a>
-    </li>
-    
-    <li>
-        <a href="http://jokerguo.top/posts/%E6%B5%85%E6%9E%90url/" title="浅析URL">浅析URL</a>
     </li>
     
 </ul>
