@@ -6,18 +6,49 @@
     <description>Recent content in Posts on joker的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Wed, 11 Mar 2020 19:50:33 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 15 Mar 2020 21:18:38 +0800</lastBuildDate>
     
 	<atom:link href="http://jokerguo.top/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>React的两个组件</title>
-      <link>http://jokerguo.top/posts/react%E7%9A%84%E4%B8%A4%E4%B8%AA%E7%BB%84%E4%BB%B6/</link>
+      <title>React的生命周期</title>
+      <link>http://jokerguo.top/posts/react%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</link>
+      <pubDate>Sun, 15 Mar 2020 21:18:38 +0800</pubDate>
+      
+      <guid>http://jokerguo.top/posts/react%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</guid>
+      <description>钩子的意思相当于特殊的函数
+常用的生命周期钩子 constructor 组件在创建之后调用constructor
+初始化props,state
+这个时候不能调用setState
+shouldComponentUpdate 可以手动判断是否要更新组件
+返回true:更新 false:不更新
+可是使用PureComponent替代
+class Component extends React.PureComponent{ } render 展示视图
+return (&amp;lt;div&amp;gt;&amp;lt;/div&amp;gt;) 这个div不是dom元素，是一个虚拟dom
+注意：只能有一个根元素
+componentDidMount 在元素挂载到页面后执行代码
+加载数据推荐在这里
+首次render会执行
+componentDidUpdate 视图更新后执行
+更新数据在这里
+首次渲染不会执行
+注意： setState在这里可能会死循环,须添加判断
+shouldComponentUpdate返回false 不触发此钩子
+componentWillUnmount 组件将被卸载时执行
+componentWillReceiveProps 当组件接受新的props是,会触发这个钩子
+不过这个钩子被弃用了，不要使用的好
+更名为 UNSAFE_componentWillReceiveProps
+总结 这里是主要的几个钩子，想了解更多直接去看文档</description>
+    </item>
+    
+    <item>
+      <title>React两种组件的数据读写</title>
+      <link>http://jokerguo.top/posts/react%E4%B8%A4%E7%A7%8D%E7%BB%84%E4%BB%B6%E7%9A%84%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%86%99/</link>
       <pubDate>Wed, 11 Mar 2020 19:50:33 +0800</pubDate>
       
-      <guid>http://jokerguo.top/posts/react%E7%9A%84%E4%B8%A4%E4%B8%AA%E7%BB%84%E4%BB%B6/</guid>
-      <description>今天简单分享一下React中的两种组件
+      <guid>http://jokerguo.top/posts/react%E4%B8%A4%E7%A7%8D%E7%BB%84%E4%BB%B6%E7%9A%84%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%86%99/</guid>
+      <description>今天简单分享一下React中组件的数据读写
 类组件 //定义一个类组件 class Component extends React.Component { render() { return ( &amp;lt;div&amp;gt;类组件&amp;lt;/div&amp;gt; ); } } //使用类组件 &amp;lt;Component/&amp;gt; 类组件中使用外部数据props //父组件给我传了一个data class Component extends React.Component { constructor(props){ //没有数据时可以省略 super(props) } render() { return ( &amp;lt;div&amp;gt; {this.props.data} &amp;lt;/div&amp;gt; ); } } 类组件中读写数据 class Component extends React.Component { constructor(props){ super(props) this.state = { //初始化数据 data : 0 } } add = ()=&amp;gt;{ this.setState({data : this.state.data + 1}) } render() { return ( &amp;lt;div&amp;gt; &amp;lt;button onClick={this.</description>
     </item>
     

@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>JS函数的执行时机 | joker的博客</title>
-    <meta property="og:title" content="JS函数的执行时机 - joker的博客">
+    <title>React的生命周期 | joker的博客</title>
+    <meta property="og:title" content="React的生命周期 - joker的博客">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2019-12-04T16:53:41&#43;08:00">
+    <meta property="article:published_time" content="2020-03-15T21:18:38&#43;08:00">
         
         
-    <meta property="article:modified_time" content="2019-12-04T16:53:41&#43;08:00">
+    <meta property="article:modified_time" content="2020-03-15T21:18:38&#43;08:00">
         
     <meta name="Keywords" content="">
-    <meta name="description" content="JS函数的执行时机">
+    <meta name="description" content="React的生命周期">
         
     <meta name="author" content="">
-    <meta property="og:url" content="http://jokerguo.top/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/">
+    <meta property="og:url" content="http://jokerguo.top/posts/react%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
@@ -70,45 +70,52 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">JS函数的执行时机</h1>
+                            <h1 class="post-title">React的生命周期</h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2019年12月4日
+                            2020年3月15日
                         </date>
                         
                         
                         
                         <div class="post-content">
-                            <h4 id="js函数的调用时机不同得到的结果也是不同的">JS函数的调用时机不同，得到的结果也是不同的</h4>
-<h4 id="settimeout方法用于在指定的毫秒后调用函数或者计算表达式其含义就是尽快执行而不是马上执行">setTimeout()方法用于在指定的毫秒后调用函数或者计算表达式，其含义就是尽快执行，而不是马上执行</h4>
-<h2 id="为什么打印的是6个6">为什么打印的是6个6</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-    <span style="color:#66d9ef">for</span>(<span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">6</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>){
-        <span style="color:#a6e22e">setTimeout</span>(()=&gt;{
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">i</span>)
-        },<span style="color:#ae81ff">0</span>)
-    }
-<span style="color:#75715e">//输出 6,6,6,6,6,6
-</span></code></pre></div><h4 id="解释">解释:</h4>
-<p>浏览器在执行到setTimeout时，不会直接去执行setTimeout里面的函数，而是继续执行for循环，将里面的函数放在一边。直到循环结束，才会去执行setTimeout里面的函数，而此时i的值等于6（for循环的原因）。所有最后打印i的值6次都是6</p>
-<h2 id="如何输出-012345">如何输出 0,1,2,3,4,5</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">6</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>){
-        <span style="color:#a6e22e">setTimeout</span>(()=&gt;{
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">i</span>)
-        },<span style="color:#ae81ff">0</span>)
-    }
-</code></pre></div><h4 id="解释-1">解释</h4>
-<p>每次执行for循环，都会复制一个新的i ,打印的每一次i都不是同一个i</p>
-<h4 id="其他方法">其他方法</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span>
-    <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">i</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">6</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
-        (<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">j</span>){
-            <span style="color:#a6e22e">setTimeout</span>(()=&gt;{
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>( <span style="color:#a6e22e">j</span> );
-            }, <span style="color:#ae81ff">0</span> );
-        })(<span style="color:#a6e22e">i</span>);
-    }
-</code></pre></div>
+                            <p>钩子的意思相当于特殊的函数</p>
+<h2 id="常用的生命周期钩子">常用的生命周期钩子</h2>
+<h4 id="constructor">constructor</h4>
+<p>组件在创建之后调用constructor</p>
+<p>初始化props,state</p>
+<p>这个时候不能调用setState</p>
+<h4 id="shouldcomponentupdate">shouldComponentUpdate</h4>
+<p>可以手动判断是否要更新组件</p>
+<p>返回true:更新  false:不更新</p>
+<p>可是使用PureComponent替代</p>
+<pre><code>class Component extends React.PureComponent{
+
+}
+</code></pre><h4 id="render">render</h4>
+<p>展示视图</p>
+<pre><code>return (&lt;div&gt;&lt;/div&gt;)
+</code></pre><p>这个div不是dom元素，是一个虚拟dom</p>
+<p>注意：只能有一个根元素</p>
+<h4 id="componentdidmount">componentDidMount</h4>
+<p>在元素挂载到页面后执行代码</p>
+<p>加载数据推荐在这里</p>
+<p>首次render会执行</p>
+<h4 id="componentdidupdate">componentDidUpdate</h4>
+<p>视图更新后执行</p>
+<p>更新数据在这里</p>
+<p>首次渲染不会执行</p>
+<p>注意： setState在这里可能会死循环,须添加判断</p>
+<p>shouldComponentUpdate返回false 不触发此钩子</p>
+<h4 id="componentwillunmount">componentWillUnmount</h4>
+<p>组件将被卸载时执行</p>
+<h4 id="componentwillreceiveprops">componentWillReceiveProps</h4>
+<p>当组件接受新的props是,会触发这个钩子</p>
+<p>不过这个钩子被弃用了，不要使用的好</p>
+<p>更名为 UNSAFE_componentWillReceiveProps</p>
+<h4 id="总结">总结</h4>
+<p>这里是主要的几个钩子，想了解更多直接去看<a href="https://zh-hans.reactjs.org/docs/state-and-lifecycle.html">文档</a></p>
+
                         </div>
 
                         

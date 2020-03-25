@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>JS函数的执行时机 | joker的博客</title>
-    <meta property="og:title" content="JS函数的执行时机 - joker的博客">
+    <title>React两种组件的数据读写 | joker的博客</title>
+    <meta property="og:title" content="React两种组件的数据读写 - joker的博客">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2019-12-04T16:53:41&#43;08:00">
+    <meta property="article:published_time" content="2020-03-11T19:50:33&#43;08:00">
         
         
-    <meta property="article:modified_time" content="2019-12-04T16:53:41&#43;08:00">
+    <meta property="article:modified_time" content="2020-03-11T19:50:33&#43;08:00">
         
     <meta name="Keywords" content="">
-    <meta name="description" content="JS函数的执行时机">
+    <meta name="description" content="React两种组件的数据读写">
         
     <meta name="author" content="">
-    <meta property="og:url" content="http://jokerguo.top/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/">
+    <meta property="og:url" content="http://jokerguo.top/posts/react%E4%B8%A4%E7%A7%8D%E7%BB%84%E4%BB%B6%E7%9A%84%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%86%99/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
@@ -70,45 +70,106 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">JS函数的执行时机</h1>
+                            <h1 class="post-title">React两种组件的数据读写</h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2019年12月4日
+                            2020年3月11日
                         </date>
                         
                         
                         
                         <div class="post-content">
-                            <h4 id="js函数的调用时机不同得到的结果也是不同的">JS函数的调用时机不同，得到的结果也是不同的</h4>
-<h4 id="settimeout方法用于在指定的毫秒后调用函数或者计算表达式其含义就是尽快执行而不是马上执行">setTimeout()方法用于在指定的毫秒后调用函数或者计算表达式，其含义就是尽快执行，而不是马上执行</h4>
-<h2 id="为什么打印的是6个6">为什么打印的是6个6</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-    <span style="color:#66d9ef">for</span>(<span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">6</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>){
-        <span style="color:#a6e22e">setTimeout</span>(()=&gt;{
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">i</span>)
-        },<span style="color:#ae81ff">0</span>)
+                            <p>今天简单分享一下React中组件的数据读写</p>
+<h2 id="类组件">类组件</h2>
+<pre><code>//定义一个类组件
+
+class Component extends React.Component {
+    render() {
+        return (
+            &lt;div&gt;类组件&lt;/div&gt;
+        );
     }
-<span style="color:#75715e">//输出 6,6,6,6,6,6
-</span></code></pre></div><h4 id="解释">解释:</h4>
-<p>浏览器在执行到setTimeout时，不会直接去执行setTimeout里面的函数，而是继续执行for循环，将里面的函数放在一边。直到循环结束，才会去执行setTimeout里面的函数，而此时i的值等于6（for循环的原因）。所有最后打印i的值6次都是6</p>
-<h2 id="如何输出-012345">如何输出 0,1,2,3,4,5</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">6</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>){
-        <span style="color:#a6e22e">setTimeout</span>(()=&gt;{
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">i</span>)
-        },<span style="color:#ae81ff">0</span>)
+}
+
+//使用类组件
+
+&lt;Component/&gt;
+</code></pre><h4 id="类组件中使用外部数据props">类组件中使用外部数据props</h4>
+<pre><code>//父组件给我传了一个data
+
+class Component extends React.Component {
+    constructor(props){   //没有数据时可以省略
+        super(props)
     }
-</code></pre></div><h4 id="解释-1">解释</h4>
-<p>每次执行for循环，都会复制一个新的i ,打印的每一次i都不是同一个i</p>
-<h4 id="其他方法">其他方法</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span>
-    <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">i</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">6</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
-        (<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">j</span>){
-            <span style="color:#a6e22e">setTimeout</span>(()=&gt;{
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>( <span style="color:#a6e22e">j</span> );
-            }, <span style="color:#ae81ff">0</span> );
-        })(<span style="color:#a6e22e">i</span>);
+    render() {
+        return (
+            &lt;div&gt;
+            {this.props.data}    
+            &lt;/div&gt;
+        );
     }
-</code></pre></div>
+}
+</code></pre><h4 id="类组件中读写数据">类组件中读写数据</h4>
+<pre><code>class Component extends React.Component {
+    constructor(props){   
+        super(props)
+        this.state = {   //初始化数据
+            data : 0
+        }
+    }
+    add = ()=&gt;{
+        this.setState({data : this.state.data + 1})  
+    }
+    render() {
+        return (
+            &lt;div&gt;
+                &lt;button onClick={this.add}&gt; +1 &lt;/button&gt;
+            &lt;/div&gt;
+        );
+    }
+}
+</code></pre><p>!!!! 类组件中修改数据要使用setState</p>
+<h2 id="函数组件">函数组件</h2>
+<pre><code>//定义一个函数组件
+
+function Component(){
+    return (
+        &lt;div&gt;函数组件&lt;/div&gt;
+    )
+}
+
+//使用
+
+&lt;Component/&gt;
+</code></pre><h4 id="函数组件中使用外部数据props">函数组件中使用外部数据props</h4>
+<pre><code>//父组件传了一个data
+
+function Component(props){
+    return (
+        &lt;div&gt;
+            {props.data}
+        &lt;/div&gt;
+    )
+}
+</code></pre><h4 id="函数组件中读写数据">函数组件中读写数据</h4>
+<pre><code>function Component(){
+    const [n,setN] = React.useState(0)(0)
+    return (
+        &lt;div&gt;
+           {n}
+           &lt;button onClick={()=&gt;setN(n+1)}&gt; +1 &lt;/button&gt;
+        &lt;/div&gt;
+    )
+}
+</code></pre><p>const [n,setN] = React.useState(0)(0)</p>
+<ul>
+<li>n 用来读取数据</li>
+<li>setN 用来修改数据</li>
+<li>React.useState(0) 初始化数据</li>
+</ul>
+<p>React.useState(0) 可以先引入useState，这样就能直接使用useState</p>
+<pre><code>import {useState} from 'react'
+</code></pre>
                         </div>
 
                         

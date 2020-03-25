@@ -65,7 +65,47 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
-                                    <a href="http://jokerguo.top/posts/react%E7%9A%84%E4%B8%A4%E4%B8%AA%E7%BB%84%E4%BB%B6/" title="React的两个组件" >React的两个组件</a>
+                                    <a href="http://jokerguo.top/posts/react%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" title="React的生命周期" >React的生命周期</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2020年3月15日
+                            </date>
+                            
+                            <div class="post-content">
+                                钩子的意思相当于特殊的函数
+常用的生命周期钩子 constructor 组件在创建之后调用constructor
+初始化props,state
+这个时候不能调用setState
+shouldComponentUpdate 可以手动判断是否要更新组件
+返回true:更新 false:不更新
+可是使用PureComponent替代
+class Component extends React.PureComponent{ } render 展示视图
+return (&lt;div&gt;&lt;/div&gt;) 这个div不是dom元素，是一个虚拟dom
+注意：只能有一个根元素
+componentDidMount 在元素挂载到页面后执行代码
+加载数据推荐在这里
+首次render会执行
+componentDidUpdate 视图更新后执行
+更新数据在这里
+首次渲染不会执行
+注意： setState在这里可能会死循环,须添加判断
+shouldComponentUpdate返回false 不触发此钩子
+componentWillUnmount 组件将被卸载时执行
+componentWillReceiveProps 当组件接受新的props是,会触发这个钩子
+不过这个钩子被弃用了，不要使用的好
+更名为 UNSAFE_componentWillReceiveProps
+总结 这里是主要的几个钩子，想了解更多直接去看文档……
+                            </div>
+                            <p class="readmore"><a href="http://jokerguo.top/posts/react%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">阅读全文</a></p>
+                        </article>
+                    
+                    
+		    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://jokerguo.top/posts/react%E4%B8%A4%E7%A7%8D%E7%BB%84%E4%BB%B6%E7%9A%84%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%86%99/" title="React两种组件的数据读写" >React两种组件的数据读写</a>
                                 </h1>
                             </header>
                             <date class="post-meta meta-date">
@@ -73,10 +113,10 @@
                             </date>
                             
                             <div class="post-content">
-                                今天简单分享一下React中的两种组件
+                                今天简单分享一下React中组件的数据读写
 类组件 //定义一个类组件 class Component extends React.Component { render() { return ( &lt;div&gt;类组件&lt;/div&gt; ); } } //使用类组件 &lt;Component/&gt; 类组件中使用外部数据props //父组件给我传了一个data class Component extends React.Component { constructor(props){ //没有数据时可以省略 super(props) } render() { return ( &lt;div&gt; {this.props.data} &lt;/div&gt; ); } } 类组件中读写数据 class Component extends React.Component { constructor(props){ super(props) this.state = { //初始化数据 data : 0 } } add = ()=&gt;{ this.setState({data : this.state.data + 1}) } render() { return ( &lt;div&gt; &lt;button onClick={this.……
                             </div>
-                            <p class="readmore"><a href="http://jokerguo.top/posts/react%E7%9A%84%E4%B8%A4%E4%B8%AA%E7%BB%84%E4%BB%B6/">阅读全文</a></p>
+                            <p class="readmore"><a href="http://jokerguo.top/posts/react%E4%B8%A4%E7%A7%8D%E7%BB%84%E4%BB%B6%E7%9A%84%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%86%99/">阅读全文</a></p>
                         </article>
                     
                     
@@ -267,35 +307,6 @@ string 转义字符 空字符串和空格字符串是不同的
                         </article>
                     
                     
-		    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="http://jokerguo.top/posts/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" title="JS的基本语法" >JS的基本语法</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年11月26日
-                            </date>
-                            
-                            <div class="post-content">
-                                语句与表达式 var a = 1 + 3 1 + 3叫做表达式，指一个为了得到返回值的计算式。语句和表达式的区别在于，前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。凡是 JavaScript 语言中预期为值的地方，都可以使用表达式。比如，赋值语句的等号右边，预期是一个值，因此可以放置各种表达式。
-标识符的规则 JavaScript 语言的标识符对大小写敏感，所以a和A是两个不同的标识符。
- 第一个字符，可以是任意 Unicode 字母（包括英文字母和其他语言的字母），以及美元符号（$）和下划线（_）和中文。 第二个字符及后面的字符，除了 Unicode 字母、美元符号和下划线，还可以用数字0-9。  if else 语法 if(表达式){ //表达式为真执行  }else{ //表达式为假执行  } 注意：使用（===）运算符
-可替代if else的方法   问好冒号表达式（三元运算符）
-表达式 ？ 表达式1 ： 表达式2
-  &amp;&amp;
-A &amp;&amp; B &amp;&amp; C &amp;&amp; D
-取第一个假值或者D
-  ||
-A || B || C || D
-取第一个真值或者D
-  while for循环语句 循环语句用于重复执行某个操作。……
-                            </div>
-                            <p class="readmore"><a href="http://jokerguo.top/posts/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">阅读全文</a></p>
-                        </article>
-                    
-                    
                     
 
 
@@ -348,7 +359,11 @@ A || B || C || D
 <ul class="widget-list">
     
     <li>
-        <a href="http://jokerguo.top/posts/react%E7%9A%84%E4%B8%A4%E4%B8%AA%E7%BB%84%E4%BB%B6/" title="React的两个组件">React的两个组件</a>
+        <a href="http://jokerguo.top/posts/react%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" title="React的生命周期">React的生命周期</a>
+    </li>
+    
+    <li>
+        <a href="http://jokerguo.top/posts/react%E4%B8%A4%E7%A7%8D%E7%BB%84%E4%BB%B6%E7%9A%84%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%86%99/" title="React两种组件的数据读写">React两种组件的数据读写</a>
     </li>
     
     <li>
@@ -381,10 +396,6 @@ A || B || C || D
     
     <li>
         <a href="http://jokerguo.top/posts/js%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" title="JS的数据类型">JS的数据类型</a>
-    </li>
-    
-    <li>
-        <a href="http://jokerguo.top/posts/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" title="JS的基本语法">JS的基本语法</a>
     </li>
     
 </ul>
