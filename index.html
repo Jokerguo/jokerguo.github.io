@@ -65,6 +65,24 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="http://jokerguo.top/posts/vue%E7%9A%84%E8%BF%9B%E9%98%B6%E5%B1%9E%E6%80%A7/" title="Vue的进阶属性" >Vue的进阶属性</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2020年3月20日
+                            </date>
+                            
+                            <div class="post-content">
+                                computed - 计算属性 watch - 监听 mixin - 混入 console.log('111') extends - 继承 provide/inject ……
+                            </div>
+                            <p class="readmore"><a href="http://jokerguo.top/posts/vue%E7%9A%84%E8%BF%9B%E9%98%B6%E5%B1%9E%E6%80%A7/">阅读全文</a></p>
+                        </article>
+                    
+                    
+		    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="http://jokerguo.top/posts/vue%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E5%85%A5%E9%97%A8%E5%B1%9E%E6%80%A7/" title="Vue需要知道的入门属性" >Vue需要知道的入门属性</a>
                                 </h1>
                             </header>
@@ -180,10 +198,10 @@ JSX的注意事项  使用className   &lt;div className='red'&gt;n&lt;/div&gt;  
                             <div class="post-content">
                                 理解vue的.sync修饰符 .sync会被扩展为一个自动更新父组件属性的 v-on 监听器，是一个语法糖的存在
 代码示例
-&lt;Child :money.sync = &#34;total&#34;/&gt; //扩展为  &lt;Child :money = &#34;total&#34; @update:money = &#34;total = $event&#34;/&gt; //子组件要触发的事件 (需要100元)  &lt;button @click = &#34;$emit(&#39;update:money&#39;,total - 100)&#34;&gt;&lt;/button&gt; 子组件向父组件发了一个update:money的方法，父组件监听了这个方法，然后更新了prop
+ &lt;Child :money.sync = &quot;total&quot;/&gt; //扩展为 &lt;Child :money = &quot;total&quot; @update:money = &quot;total = $event&quot;/&gt; //子组件要触发的事件 (需要100元) &lt;button @click = &quot;$emit('update:money',total - 100)&quot;&gt;&lt;/button&gt; 子组件向父组件发了一个update:money的方法，父组件监听了这个方法，然后更新了prop
 //index.vue
-&lt;template&gt; &lt;div&gt; App.vue 我现在有 {{total}} &lt;hr&gt; &lt;Child :money.sync=&#34;total&#34;/&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; import Child from &#34;./child.vue&#34;; export default { data() { return { total: 10000 }; }, components: { Child: Child } }; &lt;/script&gt; //child.vue
-&lt;template&gt; &lt;div&gt; &lt;button @click=&#34;$emit(&#39;update:money&#39;, money-100)&#34;&gt;花钱&lt;/button&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; export default { props: [&#34;money&#34;] }; &lt;/script&gt; ……
+ &lt;template&gt; &lt;div&gt; App.vue 我现在有 {{total}} &lt;hr&gt; &lt;Child :money.sync=&quot;total&quot;/&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; import Child from &quot;./child.vue&quot;; export default { data() { return { total: 10000 }; }, components: { Child: Child } }; &lt;/script&gt; //child.vue
+ &lt;template&gt; &lt;div&gt; &lt;button @click=&quot;$emit('update:money', money-100)&quot;&gt;花钱&lt;/button&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; export default { props: [&quot;money&quot;] }; &lt;/script&gt; ……
                             </div>
                             <p class="readmore"><a href="http://jokerguo.top/posts/sync%E4%BF%AE%E9%A5%B0%E7%AC%A6/">阅读全文</a></p>
                         </article>
@@ -242,13 +260,13 @@ template怎么用 template只有在完整版中有用
                             
                             <div class="post-content">
                                 目录  jQuery 如何获取元素 jQuery 的链式操作是怎样的 jQuery 如何创建元素 jQuery 如何移动元素 jQuery 如何修改元素的属性  正文 一、如何获取元素 将一个选择表达式，放进构造函数jQuery()（简写为$），然后得到被选中的元素。
-$(document) //选择整个文档  $(&#39;#myId&#39;) //选择id为myId的网页元素  $(&#39;.myClass&#39;) //选择class为myClass的网页元素  二、链式操作是什么 最终选中网页元素以后，可以对它进行一系列操作，并且所有操作可以连接在一起，以链条的形式写出来
-$(&#39;#id&#39;).find(&#39;.child&#39;).addClass(&#39;red&#39;) 分解后
-$(&#39;#id&#39;) //找到id  .find(&#39;.child&#39;) //选中child  .addClass(&#39;red&#39;) //增加red类 三、如何创建元素 $(&#39;&lt;p&gt;Hello&lt;/p&gt;&#39;); $(&#39;&lt;li class=&#34;new&#34;&gt;new list item&lt;/li&gt;&#39;); $(&#39;ul&#39;).append(&#39;&lt;li&gt;list item&lt;/li&gt;&#39;); 四、如何移动元素 提供两组方法，来操作元素在网页中的位置移动。一组方法是直接移动该元素，另一组方法是移动其他元素，使得目标元素达到我们想要的位置。
+ $(document) //选择整个文档 $('#myId') //选择id为myId的网页元素 $('.myClass') //选择class为myClass的网页元素 二、链式操作是什么 最终选中网页元素以后，可以对它进行一系列操作，并且所有操作可以连接在一起，以链条的形式写出来
+ $('#id').find('.child').addClass('red') 分解后
+ $('#id') //找到id .find('.child') //选中child .addClass('red') //增加red类 三、如何创建元素  $('&lt;p&gt;Hello&lt;/p&gt;'); $('&lt;li class=&quot;new&quot;&gt;new list item&lt;/li&gt;'); $('ul').append('&lt;li&gt;list item&lt;/li&gt;'); 四、如何移动元素 提供两组方法，来操作元素在网页中的位置移动。一组方法是直接移动该元素，另一组方法是移动其他元素，使得目标元素达到我们想要的位置。
 假定我们选中了一个div元素，需要把它移动到p元素后面。
 第一种方法是使用.insertAfter()，把div元素移动p元素后面：
-$(&#39;div&#39;).insertAfter($(&#39;p&#39;)); 第二种方法是使用.after()，把p元素加到div元素前面：
-$(&#39;p&#39;).after($(&#39;div&#39;)); 五、如何修改元素的属性 $(&#39;#p&#39;).attr(&#39;class&#39;) //获取id为p的标签的属性值  $(&#39;#p&#39;).attr(&#39;class&#39;,&#39;red&#39;) //如果存在就是修改，如果不存在就是添加  $(&#39;#p&#39;).removeAttr(&#39;name&#39;) //删除属性  $(&#39;#p&#39;).addClass(&#39;blue&#39;) //添加class ……
+ $('div').insertAfter($('p')); 第二种方法是使用.after()，把p元素加到div元素前面：
+ $('p').after($('div')); 五、如何修改元素的属性 $('#p').attr('class') //获取id为p的标签的属性值 $('#p').attr('class','red') //如果存在就是修改，如果不存在就是添加 $('#p').removeAttr('name') //删除属性 $('#p').addClass('blue') //添加class ……
                             </div>
                             <p class="readmore"><a href="http://jokerguo.top/posts/jquery%E7%9A%84%E5%8A%9F%E8%83%BD/">阅读全文</a></p>
                         </article>
@@ -266,34 +284,11 @@ $(&#39;p&#39;).after($(&#39;div&#39;)); 五、如何修改元素的属性 $(&#39
                             </date>
                             
                             <div class="post-content">
-                                JS函数的调用时机不同，得到的结果也是不同的 setTimeout()方法用于在指定的毫秒后调用函数或者计算表达式，其含义就是尽快执行，而不是马上执行 为什么打印的是6个6 let i = 0 for(i = 0; i&lt;6; i++){ setTimeout(()=&gt;{ console.log(i) },0) } //输出 6,6,6,6,6,6 解释: 浏览器在执行到setTimeout时，不会直接去执行setTimeout里面的函数，而是继续执行for循环，将里面的函数放在一边。直到循环结束，才会去执行setTimeout里面的函数，而此时i的值等于6（for循环的原因）。所有最后打印i的值6次都是6
-如何输出 0,1,2,3,4,5 for(let i = 0; i&lt;6; i++){ setTimeout(()=&gt;{ console.log(i) },0) } 解释 每次执行for循环，都会复制一个新的i ,打印的每一次i都不是同一个i
-其他方法 let i for (i=0; i&lt;6; i++) { (function(j){ setTimeout(()=&gt;{ console.log( j ); }, 0 ); })(i); } ……
+                                JS函数的调用时机不同，得到的结果也是不同的 setTimeout()方法用于在指定的毫秒后调用函数或者计算表达式，其含义就是尽快执行，而不是马上执行 为什么打印的是6个6  let i = 0 for(i = 0; i&lt;6; i++){ setTimeout(()=&gt;{ console.log(i) },0) } //输出 6,6,6,6,6,6 解释: 浏览器在执行到setTimeout时，不会直接去执行setTimeout里面的函数，而是继续执行for循环，将里面的函数放在一边。直到循环结束，才会去执行setTimeout里面的函数，而此时i的值等于6（for循环的原因）。所有最后打印i的值6次都是6
+如何输出 0,1,2,3,4,5  for(let i = 0; i&lt;6; i++){ setTimeout(()=&gt;{ console.log(i) },0) } 解释 每次执行for循环，都会复制一个新的i ,打印的每一次i都不是同一个i
+其他方法  let i for (i=0; i&lt;6; i++) { (function(j){ setTimeout(()=&gt;{ console.log( j ); }, 0 ); })(i); } ……
                             </div>
                             <p class="readmore"><a href="http://jokerguo.top/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/">阅读全文</a></p>
-                        </article>
-                    
-                    
-		    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="http://jokerguo.top/posts/js%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" title="JS对象的基本用法" >JS对象的基本用法</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年11月28日
-                            </date>
-                            
-                            <div class="post-content">
-                                如何声明一个对象 简单写法
-let obj = {name:&#39;guo&#39;,age:21,gender:&#39;man&#39;} 正规写法
-let obj = new Object({name:&#39;guo&#39;,age:21,gender:&#39;man&#39;}) 提示： 属性名（键名）是字符串，不是标识符
-如何删除对象的属性 delete操作符 delete obj.xxx delete obj[&#39;xxx&#39;] in操作符 &#39;xxx&#39; in obj ===false //判断属性在不在对象中 提示：
- 给属性赋值undefined，只是删除了属性值  如何查看对象的属性 查看自身所有属性 Object.keys(obj) //查看所有属性名  Object.values(obj) //查看所有属性值  Object.entries(obj) //查看所有属性名和属性值  可查看自身和共有属性 console.dir(obj) 判断是自身还是共有属性 obj.hasOwnProperty(&#39;属性名&#39;) 查看对象的个别属性 obj[&#39;key&#39;] obj.key 提示： key是字符串！！！
-修改和增加对象属性 直接赋值 let obj = {name : &#39;guo&#39;} obj.name = &#39;guo&#39; obj[&#39;name&#39;] = &#39;name&#39; 批量赋值 Object.assign(obj,{p1:1,p2:2}) //ES6新内容 修改原型 let obj = Object.……
-                            </div>
-                            <p class="readmore"><a href="http://jokerguo.top/posts/js%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/">阅读全文</a></p>
                         </article>
                     
                     
@@ -311,6 +306,10 @@ let obj = new Object({name:&#39;guo&#39;,age:21,gender:&#39;man&#39;}) 提示：
     
     <li >
         <a href="http://jokerguo.top/page/2/">2</a>
+    </li>
+    
+    <li >
+        <a href="http://jokerguo.top/page/3/">3</a>
     </li>
     
 
@@ -349,6 +348,10 @@ let obj = new Object({name:&#39;guo&#39;,age:21,gender:&#39;man&#39;}) 提示：
 <ul class="widget-list">
     
     <li>
+        <a href="http://jokerguo.top/posts/vue%E7%9A%84%E8%BF%9B%E9%98%B6%E5%B1%9E%E6%80%A7/" title="Vue的进阶属性">Vue的进阶属性</a>
+    </li>
+    
+    <li>
         <a href="http://jokerguo.top/posts/vue%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E5%85%A5%E9%97%A8%E5%B1%9E%E6%80%A7/" title="Vue需要知道的入门属性">Vue需要知道的入门属性</a>
     </li>
     
@@ -382,10 +385,6 @@ let obj = new Object({name:&#39;guo&#39;,age:21,gender:&#39;man&#39;}) 提示：
     
     <li>
         <a href="http://jokerguo.top/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" title="JS函数的执行时机">JS函数的执行时机</a>
-    </li>
-    
-    <li>
-        <a href="http://jokerguo.top/posts/js%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" title="JS对象的基本用法">JS对象的基本用法</a>
     </li>
     
 </ul>

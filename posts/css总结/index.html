@@ -115,30 +115,30 @@
 <h3 id="float-布局-兼容-ie">float 布局 （兼容 ie）</h3>
 <p>使用 float:left / right 对子元素进行布局</p>
 <p>在父元素中加入.clearfix 用于清除浮动</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">clearfix</span> {
-  <span style="color:#66d9ef">content</span>: <span style="color:#e6db74">&#34;&#34;</span>;
-  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">block</span>;
-  <span style="color:#66d9ef">clear</span>: <span style="color:#66d9ef">both</span>;
+<pre><code>.clearfix {
+  content: &quot;&quot;;
+  display: block;
+  clear: both;
 }
-</code></pre></div><p><img src="/images/float.png" alt="float"></p>
+</code></pre><p><img src="/images/float.png" alt="float"></p>
 <p><a href="https://www.cnblogs.com/iyangyuan/archive/2013/03/27/2983813.html">float 布局详细介绍</a></p>
 <h3 id="flex-布局">flex 布局</h3>
 <h4 id="container-容器">container (容器)</h4>
 <p>如何成为 flex 容器</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">display</span><span style="color:#f92672">:</span> <span style="color:#f92672">flex</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*inline-flex*/</span>
-</code></pre></div><p>控制 items 的流向（主轴）</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">flex-direction</span><span style="color:#f92672">:</span> <span style="color:#f92672">row-reverse</span> <span style="color:#f92672">/</span> <span style="color:#f92672">row</span> <span style="color:#f92672">/</span> <span style="color:#f92672">column</span> <span style="color:#f92672">/</span> <span style="color:#f92672">column-reverse</span><span style="color:#f92672">;</span>
-</code></pre></div><p>是否换行</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">flex-wrap</span><span style="color:#f92672">:</span> <span style="color:#f92672">wrap</span> <span style="color:#f92672">/</span> <span style="color:#f92672">nowrap</span> <span style="color:#f92672">/</span> <span style="color:#f92672">wrap-reverse</span><span style="color:#f92672">;</span>
-</code></pre></div><p>主轴对齐方式</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">justify-content</span><span style="color:#f92672">:</span> <span style="color:#f92672">flex-start</span> <span style="color:#f92672">/</span> <span style="color:#f92672">flex-end</span> <span style="color:#f92672">/</span> <span style="color:#f92672">center</span> <span style="color:#f92672">/</span> <span style="color:#f92672">space-between</span> <span style="color:#f92672">/</span> <span style="color:#f92672">space-around</span> <span style="color:#f92672">/</span>
-  <span style="color:#f92672">space-evenly</span><span style="color:#f92672">;</span>
-</code></pre></div><p>次轴对齐方式</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">align-items</span><span style="color:#f92672">:</span> <span style="color:#f92672">flex-start</span> <span style="color:#f92672">/</span> <span style="color:#f92672">flex-end</span> <span style="color:#f92672">/</span> <span style="color:#f92672">center</span> <span style="color:#f92672">/</span> <span style="color:#f92672">stretch</span><span style="color:#f92672">;</span>
-</code></pre></div><p>多行内容对齐</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">algin-content</span><span style="color:#f92672">:</span> <span style="color:#f92672">flex-start</span> <span style="color:#f92672">/</span> <span style="color:#f92672">center</span> <span style="color:#f92672">/</span> <span style="color:#f92672">flex-end</span><span style="color:#f92672">/</span> <span style="color:#f92672">stretch</span><span style="color:#f92672">/</span> <span style="color:#f92672">space-between</span> <span style="color:#f92672">/</span>
-  <span style="color:#f92672">space-around</span><span style="color:#f92672">;</span>
-</code></pre></div><h4 id="items">items</h4>
+<pre><code>display: flex; /*inline-flex*/
+</code></pre><p>控制 items 的流向（主轴）</p>
+<pre><code>flex-direction: row-reverse / row / column / column-reverse;
+</code></pre><p>是否换行</p>
+<pre><code>flex-wrap: wrap / nowrap / wrap-reverse;
+</code></pre><p>主轴对齐方式</p>
+<pre><code>justify-content: flex-start / flex-end / center / space-between / space-around /
+  space-evenly;
+</code></pre><p>次轴对齐方式</p>
+<pre><code>align-items: flex-start / flex-end / center / stretch;
+</code></pre><p>多行内容对齐</p>
+<pre><code>algin-content: flex-start / center / flex-end/ stretch/ space-between /
+  space-around;
+</code></pre><h4 id="items">items</h4>
 <ul>
 <li>order</li>
 </ul>
@@ -170,11 +170,11 @@
 </ul>
 <h3 id="grid-布局">grid 布局</h3>
 <p>如何成为 grid 容器</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">display</span><span style="color:#f92672">:</span> <span style="color:#f92672">grid</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*inline-grid*/</span>
-</code></pre></div><p>创建四行三列的网格</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">grid-template-columns</span><span style="color:#f92672">:</span> <span style="color:#f92672">40px</span> <span style="color:#f92672">50px</span> <span style="color:#f92672">auto</span> <span style="color:#f92672">50px</span><span style="color:#f92672">;</span>
-<span style="color:#f92672">grid-template-rows</span><span style="color:#f92672">:</span> <span style="color:#f92672">25</span><span style="color:#f92672">%</span> <span style="color:#f92672">100px</span> <span style="color:#f92672">auto</span><span style="color:#f92672">;</span>
-</code></pre></div><h5 id="tips">Tips:</h5>
+<pre><code>display: grid; /*inline-grid*/
+</code></pre><p>创建四行三列的网格</p>
+<pre><code>grid-template-columns: 40px 50px auto 50px;
+grid-template-rows: 25% 100px auto;
+</code></pre><h5 id="tips">Tips:</h5>
 <ol>
 <li>
 <p>fr-free space 主要用于平均布局</p>
@@ -184,11 +184,11 @@
 </li>
 </ol>
 <p>控制行列数</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">grid-row-start</span><span style="color:#f92672">:</span> <span style="color:#f92672">1</span><span style="color:#f92672">;</span>
-<span style="color:#f92672">grid-row-end</span><span style="color:#f92672">:</span> <span style="color:#f92672">4</span><span style="color:#f92672">;</span>
-<span style="color:#f92672">grid-column-start</span><span style="color:#f92672">:</span> <span style="color:#f92672">1</span><span style="color:#f92672">;</span>
-<span style="color:#f92672">grid-column-end</span><span style="color:#f92672">:</span> <span style="color:#f92672">4</span><span style="color:#f92672">;</span>
-</code></pre></div><h5 id="tips-可以取负值">Tips: 可以取负值</h5>
+<pre><code>grid-row-start: 1;
+grid-row-end: 4;
+grid-column-start: 1;
+grid-column-end: 4;
+</code></pre><h5 id="tips-可以取负值">Tips: 可以取负值</h5>
 <p><img src="/images/grid.png" alt="grid网格"></p>
 <p>使用分区</p>
 <p><img src="/images/grid-template-areas.png" alt="grid分区"></p>
@@ -226,27 +226,27 @@
 <ul>
 <li>需先声明关键帧@keyframes</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">@<span style="color:#66d9ef">keyframes</span> <span style="color:#f92672">xxx</span> {
-  <span style="color:#f92672">from</span> {
-    <span style="color:#66d9ef">transform</span>: translateX(<span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>);
+<pre><code>@keyframes xxx {
+  from {
+    transform: translateX(100px);
   }
-  <span style="color:#f92672">to</span> {
-    <span style="color:#66d9ef">transform</span>: translateX(<span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>) translateY(<span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>);
+  to {
+    transform: translateX(100px) translateY(100px);
   }
 }
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">0</span><span style="color:#f92672">%</span> {
-  <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">0</span>;
-  <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">0</span>;
+</code></pre><pre><code>0% {
+  top: 0;
+  left: 0;
 }
-<span style="color:#f92672">50</span><span style="color:#f92672">%</span> {
-  <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
-  <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+50% {
+  top: 50px;
+  left: 50px;
 }
-<span style="color:#f92672">100</span><span style="color:#f92672">%</span> {
-  <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;
-  <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;
+100% {
+  top: 100px;
+  left: 100px;
 }
-</code></pre></div><ul>
+</code></pre><ul>
 <li>语法 :</li>
 </ul>
 <p>animation : 时长 过渡方式 延迟 次数 方向 填充模式 是否暂停 动画名（xxx）</p>
@@ -303,6 +303,10 @@
 <ul class="widget-list">
     
     <li>
+        <a href="http://jokerguo.top/posts/vue%E7%9A%84%E8%BF%9B%E9%98%B6%E5%B1%9E%E6%80%A7/" title="Vue的进阶属性">Vue的进阶属性</a>
+    </li>
+    
+    <li>
         <a href="http://jokerguo.top/posts/vue%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E5%85%A5%E9%97%A8%E5%B1%9E%E6%80%A7/" title="Vue需要知道的入门属性">Vue需要知道的入门属性</a>
     </li>
     
@@ -336,10 +340,6 @@
     
     <li>
         <a href="http://jokerguo.top/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" title="JS函数的执行时机">JS函数的执行时机</a>
-    </li>
-    
-    <li>
-        <a href="http://jokerguo.top/posts/js%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" title="JS对象的基本用法">JS对象的基本用法</a>
     </li>
     
 </ul>

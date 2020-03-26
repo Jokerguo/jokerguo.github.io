@@ -80,8 +80,8 @@
                         
                         <div class="post-content">
                             <h2 id="语句与表达式">语句与表达式</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">3</span>
-</code></pre></div><p>1 + 3叫做表达式，指一个为了得到返回值的计算式。语句和表达式的区别在于，前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。凡是 JavaScript 语言中预期为值的地方，都可以使用表达式。比如，赋值语句的等号右边，预期是一个值，因此可以放置各种表达式。</p>
+<pre><code>    var a = 1 + 3
+</code></pre><p>1 + 3叫做表达式，指一个为了得到返回值的计算式。语句和表达式的区别在于，前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。凡是 JavaScript 语言中预期为值的地方，都可以使用表达式。比如，赋值语句的等号右边，预期是一个值，因此可以放置各种表达式。</p>
 <h2 id="标识符的规则">标识符的规则</h2>
 <p>JavaScript 语言的标识符对大小写敏感，所以a和A是两个不同的标识符。</p>
 <ul>
@@ -90,12 +90,12 @@
 </ul>
 <h2 id="if--else">if  else</h2>
 <h4 id="语法">语法</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">表达式</span>){
-        <span style="color:#75715e">//表达式为真执行
-</span><span style="color:#75715e"></span>    }<span style="color:#66d9ef">else</span>{
-        <span style="color:#75715e">//表达式为假执行
-</span><span style="color:#75715e"></span>    }
-</code></pre></div><p>注意：使用（===）运算符</p>
+<pre><code>    if(表达式){
+        //表达式为真执行
+    }else{
+        //表达式为假执行
+    }
+</code></pre><p>注意：使用（===）运算符</p>
 <h4 id="可替代if-else的方法">可替代if else的方法</h4>
 <ol>
 <li>
@@ -148,15 +148,15 @@ while(表达式)
 <p>break语句用于跳出代码块或循环</p>
 <p>continue语句用于立即终止本轮循环，返回循环结构的头部，开始下一轮循环。</p>
 <h2 id="label">label</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">1</span>);
-    <span style="color:#66d9ef">break</span> <span style="color:#a6e22e">foo</span>;
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;本行不会输出&#39;</span>);
+<pre><code>    foo: {
+    console.log(1);
+    break foo;
+    console.log('本行不会输出');
    }
-   <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">2</span>);
-   <span style="color:#75715e">// 1
-</span><span style="color:#75715e"></span>   <span style="color:#75715e">// 2
-</span></code></pre></div><p>上面代码执行到break foo，就会跳出区块。</p>
+   console.log(2);
+   // 1
+   // 2
+</code></pre><p>上面代码执行到break foo，就会跳出区块。</p>
 <pre><code>{
     foo : 1
 }
@@ -207,6 +207,10 @@ while(表达式)
 <ul class="widget-list">
     
     <li>
+        <a href="http://jokerguo.top/posts/vue%E7%9A%84%E8%BF%9B%E9%98%B6%E5%B1%9E%E6%80%A7/" title="Vue的进阶属性">Vue的进阶属性</a>
+    </li>
+    
+    <li>
         <a href="http://jokerguo.top/posts/vue%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E5%85%A5%E9%97%A8%E5%B1%9E%E6%80%A7/" title="Vue需要知道的入门属性">Vue需要知道的入门属性</a>
     </li>
     
@@ -240,10 +244,6 @@ while(表达式)
     
     <li>
         <a href="http://jokerguo.top/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" title="JS函数的执行时机">JS函数的执行时机</a>
-    </li>
-    
-    <li>
-        <a href="http://jokerguo.top/posts/js%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" title="JS对象的基本用法">JS对象的基本用法</a>
     </li>
     
 </ul>

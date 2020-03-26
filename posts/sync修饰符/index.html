@@ -82,48 +82,48 @@
                             <h2 id="理解vue的sync修饰符">理解vue的.sync修饰符</h2>
 <p>.sync会被扩展为一个自动更新父组件属性的 v-on 监听器，是一个语法糖的存在</p>
 <p>代码示例</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Child</span> <span style="color:#f92672">:</span><span style="color:#a6e22e">money</span>.<span style="color:#a6e22e">sync</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;total&#34;</span><span style="color:#f92672">/&gt;</span>
+<pre><code>    &lt;Child :money.sync = &quot;total&quot;/&gt;
 
-    <span style="color:#75715e">//扩展为
-</span><span style="color:#75715e"></span>
-    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Child</span> <span style="color:#f92672">:</span><span style="color:#a6e22e">money</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;total&#34;</span> <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">update</span><span style="color:#f92672">:</span><span style="color:#a6e22e">money</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;total = $event&#34;</span><span style="color:#f92672">/&gt;</span>
+    //扩展为
 
-    <span style="color:#75715e">//子组件要触发的事件 (需要100元)
-</span><span style="color:#75715e"></span>
-    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">click</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;$emit(&#39;update:money&#39;,total - 100)&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/button&gt;</span>
-</code></pre></div><p>子组件向父组件发了一个update:money的方法，父组件监听了这个方法，然后更新了prop</p>
+    &lt;Child :money = &quot;total&quot; @update:money = &quot;total = $event&quot;/&gt;
+
+    //子组件要触发的事件 (需要100元)
+
+    &lt;button @click = &quot;$emit('update:money',total - 100)&quot;&gt;&lt;/button&gt;
+</code></pre><p>子组件向父组件发了一个update:money的方法，父组件监听了这个方法，然后更新了prop</p>
 <p>//index.vue</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">template</span><span style="color:#f92672">&gt;</span>
-        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
-            <span style="color:#a6e22e">App</span>.<span style="color:#a6e22e">vue</span> <span style="color:#a6e22e">我现在有</span> {{<span style="color:#a6e22e">total</span>}}
-            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">hr</span><span style="color:#f92672">&gt;</span>
-            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Child</span> <span style="color:#f92672">:</span><span style="color:#a6e22e">money</span>.<span style="color:#a6e22e">sync</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;total&#34;</span><span style="color:#f92672">/&gt;</span>
-        <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
-    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/template&gt;</span>
+<pre><code>    &lt;template&gt;
+        &lt;div&gt;
+            App.vue 我现在有 {{total}}
+            &lt;hr&gt;
+            &lt;Child :money.sync=&quot;total&quot;/&gt;
+        &lt;/div&gt;
+    &lt;/template&gt;
 
-    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
-        <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Child</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;./child.vue&#34;</span>;
-        <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
-        <span style="color:#a6e22e">data</span>() {
-            <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">total</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10000</span> };
+    &lt;script&gt;
+        import Child from &quot;./child.vue&quot;;
+        export default {
+        data() {
+            return { total: 10000 };
         },
-        <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">Child</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Child</span> }
+        components: { Child: Child }
         };
-    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+    &lt;/script&gt;
 
-</code></pre></div><p>//child.vue</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">template</span><span style="color:#f92672">&gt;</span>
-        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
-            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;$emit(&#39;update:money&#39;, money-100)&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">花钱</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/button&gt;</span>
-        <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
-    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/template&gt;</span>
+</code></pre><p>//child.vue</p>
+<pre><code>    &lt;template&gt;
+        &lt;div&gt;
+            &lt;button @click=&quot;$emit('update:money', money-100)&quot;&gt;花钱&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/template&gt;
 
-    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
-        <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
-            <span style="color:#a6e22e">props</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;money&#34;</span>]
+    &lt;script&gt;
+        export default {
+            props: [&quot;money&quot;]
         };
-    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
-</code></pre></div>
+    &lt;/script&gt;
+</code></pre>
                         </div>
 
                         
@@ -168,6 +168,10 @@
 <ul class="widget-list">
     
     <li>
+        <a href="http://jokerguo.top/posts/vue%E7%9A%84%E8%BF%9B%E9%98%B6%E5%B1%9E%E6%80%A7/" title="Vue的进阶属性">Vue的进阶属性</a>
+    </li>
+    
+    <li>
         <a href="http://jokerguo.top/posts/vue%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E5%85%A5%E9%97%A8%E5%B1%9E%E6%80%A7/" title="Vue需要知道的入门属性">Vue需要知道的入门属性</a>
     </li>
     
@@ -201,10 +205,6 @@
     
     <li>
         <a href="http://jokerguo.top/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" title="JS函数的执行时机">JS函数的执行时机</a>
-    </li>
-    
-    <li>
-        <a href="http://jokerguo.top/posts/js%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" title="JS对象的基本用法">JS对象的基本用法</a>
     </li>
     
 </ul>
