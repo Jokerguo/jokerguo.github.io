@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>我的第一篇博客 | joker的博客</title>
-    <meta property="og:title" content="我的第一篇博客 - joker的博客">
+    <title>Vue需要知道的入门属性 | joker的博客</title>
+    <meta property="og:title" content="Vue需要知道的入门属性 - joker的博客">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2019-11-07T14:22:01&#43;08:00">
+    <meta property="article:published_time" content="2020-03-20T08:48:21&#43;08:00">
         
         
-    <meta property="article:modified_time" content="2019-11-07T14:22:01&#43;08:00">
+    <meta property="article:modified_time" content="2020-03-20T08:48:21&#43;08:00">
         
     <meta name="Keywords" content="">
-    <meta name="description" content="我的第一篇博客">
+    <meta name="description" content="Vue需要知道的入门属性">
         
     <meta name="author" content="">
-    <meta property="og:url" content="http://jokerguo.top/posts/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
+    <meta property="og:url" content="http://jokerguo.top/posts/vue%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E5%85%A5%E9%97%A8%E5%B1%9E%E6%80%A7/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
@@ -70,18 +70,101 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">我的第一篇博客</h1>
+                            <h1 class="post-title">Vue需要知道的入门属性</h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2019年11月7日
+                            2020年3月20日
                         </date>
                         
                         
                         
                         <div class="post-content">
-                            <p>下面是我的女朋友</p>
-<p><img src="/images/1.jpg" alt=""></p>
+                            <p>这里介绍一下Vue比较简单的，也是一定要知道的属性</p>
+<h4 id="el---挂载点">el - 挂载点</h4>
+<pre><code>new Vue({
+    el : '#App'
+})
 
+//可以使用$mount代替
+
+new Vue({
+
+}).$mount('#App')
+</code></pre><h4 id="data---内部数据">data - 内部数据</h4>
+<p>注意: 在组件中使用data必须是函数</p>
+<pre><code>new Vue({
+    data(){
+        return {
+            data : 0
+        }
+    }
+})
+</code></pre><h4 id="methods---方法">methods - 方法</h4>
+<pre><code>new Vue({
+    data{
+        data : 0
+    }
+
+    methods : {
+        add(){
+            this.data++
+        }
+    }
+})
+
+this.add()   //1
+</code></pre><h4 id="components---组件">components - 组件</h4>
+<ul>
+<li>
+<p>引入一个vue文件，就是一个组件</p>
+</li>
+<li>
+<p>声明</p>
+</li>
+</ul>
+<pre><code>Vue.component('Demo',{
+    template : `&lt;div&gt;组件&lt;/div&gt; `
+})
+</code></pre><ul>
+<li>在实例中添加component对象</li>
+</ul>
+<p>使用方法</p>
+<pre><code>&lt;Demo/&gt;
+</code></pre><h4 id="四个钩子">四个钩子</h4>
+<ul>
+<li>created</li>
+</ul>
+<p>当实例出现在内存时执行</p>
+<ul>
+<li>mounted</li>
+</ul>
+<p>当实例出现在页面时执行</p>
+<ul>
+<li>updated</li>
+</ul>
+<p>实例更新后执行</p>
+<ul>
+<li>destroyed</li>
+</ul>
+<p>实例消亡</p>
+<h5 id="相应的钩子还有">相应的钩子还有</h5>
+<p>beforeCreate、beforeMount、beforeUpdate、beforeDestroy</p>
+<h4 id="props---外部数据">props - 外部数据</h4>
+<pre><code>//父组件传了一个data
+
+&lt;template&gt;
+    &lt;div&gt;
+        {data}
+    &lt;/div&gt;
+&lt;/template&gt;
+
+export default {
+    props : ['data']
+}
+</code></pre><p>在传data的时候</p>
+<pre><code>&lt;Demo data='n' /&gt;  //传了字符串n
+&lt;Demo :data='n' /&gt;  //传了变量n
+</code></pre>
                         </div>
 
                         

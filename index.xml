@@ -6,10 +6,23 @@
     <description>Recent content on joker的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Sun, 15 Mar 2020 21:18:38 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2020 08:48:21 +0800</lastBuildDate>
     
 	<atom:link href="http://jokerguo.top/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vue需要知道的入门属性</title>
+      <link>http://jokerguo.top/posts/vue%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E5%85%A5%E9%97%A8%E5%B1%9E%E6%80%A7/</link>
+      <pubDate>Fri, 20 Mar 2020 08:48:21 +0800</pubDate>
+      
+      <guid>http://jokerguo.top/posts/vue%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E5%85%A5%E9%97%A8%E5%B1%9E%E6%80%A7/</guid>
+      <description>这里介绍一下Vue比较简单的，也是一定要知道的属性
+el - 挂载点 new Vue({ el : &#39;#App&#39; }) //可以使用$mount代替 new Vue({ }).$mount(&#39;#App&#39;) data - 内部数据 注意: 在组件中使用data必须是函数
+new Vue({ data(){ return { data : 0 } } }) methods - 方法 new Vue({ data{ data : 0 } methods : { add(){ this.data++ } } }) this.add() //1 components - 组件   引入一个vue文件，就是一个组件
+  声明
+  Vue.component(&#39;Demo&#39;,{ template : `&amp;lt;div&amp;gt;组件&amp;lt;/div&amp;gt; ` })  在实例中添加component对象  使用方法</description>
+    </item>
     
     <item>
       <title>React的生命周期</title>
