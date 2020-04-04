@@ -148,6 +148,26 @@ JSX的注意事项  使用className   &lt;div className='red'&gt;n&lt;/div&gt;  
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="http://jokerguo.top/posts/vue%E7%9A%84%E6%8C%87%E4%BB%A4/" title="Vue的指令" >Vue的指令</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2020年3月14日
+                            </date>
+                            
+                            <div class="post-content">
+                                什么是directive (指令) 以 v- 开头的东西就是指令
+Vue指令的主要目的就是原生DOM的操作
+常用的directive  v-html  data.x = &lt;strong&gt;hi&lt;/strong&gt; &lt;div v-html='x'&gt;&lt;/div&gt; //显示粗体的hi  v-pre  &lt;div v-pre&gt;{{n}}&lt;/div&gt; //显示{{n}}  v-bind (缩写为 :)  data.x = '图片地址' &lt;img :src='x'&gt; // x是一个变量,而不是字符串x  v-on (缩写为@)  &lt;button @click='add'&gt;按钮&lt;/button&gt; //点击会触发methods里的add事件 &lt;button @click='n+1'&gt;按钮&lt;/button&gt; //点击会执行n+1  v-if v-else-if v-else  &lt;div v-if='x&gt;0'&gt; x大于0 &lt;/div&gt; &lt;div v-else-if='x===0'&gt; x等于0 &lt;/div&gt; &lt;div v-else='x&lt;0'&gt; x小于0 &lt;/div&gt;  v-for (必须加上key)  &lt;ul&gt; &lt;li v-for='(user,index) in users' :key='index'&gt; {{user.……
+                            </div>
+                            <p class="readmore"><a href="http://jokerguo.top/posts/vue%E7%9A%84%E6%8C%87%E4%BB%A4/">阅读全文</a></p>
+                        </article>
+                    
+                    
+		    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="http://jokerguo.top/posts/vue%E7%9A%84%E8%BF%9B%E9%98%B6%E5%B1%9E%E6%80%A7/" title="Vue的进阶属性" >Vue的进阶属性</a>
                                 </h1>
                             </header>
@@ -279,26 +299,6 @@ template怎么用 template只有在完整版中有用
                         </article>
                     
                     
-		    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="http://jokerguo.top/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" title="JS函数的执行时机" >JS函数的执行时机</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年12月4日
-                            </date>
-                            
-                            <div class="post-content">
-                                JS函数的调用时机不同，得到的结果也是不同的 setTimeout()方法用于在指定的毫秒后调用函数或者计算表达式，其含义就是尽快执行，而不是马上执行 为什么打印的是6个6  let i = 0 for(i = 0; i&lt;6; i++){ setTimeout(()=&gt;{ console.log(i) },0) } //输出 6,6,6,6,6,6 解释: 浏览器在执行到setTimeout时，不会直接去执行setTimeout里面的函数，而是继续执行for循环，将里面的函数放在一边。直到循环结束，才会去执行setTimeout里面的函数，而此时i的值等于6（for循环的原因）。所有最后打印i的值6次都是6
-如何输出 0,1,2,3,4,5  for(let i = 0; i&lt;6; i++){ setTimeout(()=&gt;{ console.log(i) },0) } 解释 每次执行for循环，都会复制一个新的i ,打印的每一次i都不是同一个i
-其他方法  let i for (i=0; i&lt;6; i++) { (function(j){ setTimeout(()=&gt;{ console.log( j ); }, 0 ); })(i); } ……
-                            </div>
-                            <p class="readmore"><a href="http://jokerguo.top/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/">阅读全文</a></p>
-                        </article>
-                    
-                    
                     
 
 
@@ -367,6 +367,10 @@ template怎么用 template只有在完整版中有用
     </li>
     
     <li>
+        <a href="http://jokerguo.top/posts/vue%E7%9A%84%E6%8C%87%E4%BB%A4/" title="Vue的指令">Vue的指令</a>
+    </li>
+    
+    <li>
         <a href="http://jokerguo.top/posts/vue%E7%9A%84%E8%BF%9B%E9%98%B6%E5%B1%9E%E6%80%A7/" title="Vue的进阶属性">Vue的进阶属性</a>
     </li>
     
@@ -388,10 +392,6 @@ template怎么用 template只有在完整版中有用
     
     <li>
         <a href="http://jokerguo.top/posts/jquery%E7%9A%84%E5%8A%9F%E8%83%BD/" title="JQuery的功能">JQuery的功能</a>
-    </li>
-    
-    <li>
-        <a href="http://jokerguo.top/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" title="JS函数的执行时机">JS函数的执行时机</a>
     </li>
     
 </ul>

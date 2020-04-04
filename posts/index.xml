@@ -68,6 +68,17 @@ JSX的注意事项  使用className   &amp;lt;div className=&#39;red&#39;&amp;gt
     </item>
     
     <item>
+      <title>Vue的指令</title>
+      <link>http://jokerguo.top/posts/vue%E7%9A%84%E6%8C%87%E4%BB%A4/</link>
+      <pubDate>Sat, 14 Mar 2020 20:01:05 +0800</pubDate>
+      
+      <guid>http://jokerguo.top/posts/vue%E7%9A%84%E6%8C%87%E4%BB%A4/</guid>
+      <description>什么是directive (指令) 以 v- 开头的东西就是指令
+Vue指令的主要目的就是原生DOM的操作
+常用的directive  v-html  data.x = &amp;lt;strong&amp;gt;hi&amp;lt;/strong&amp;gt; &amp;lt;div v-html=&#39;x&#39;&amp;gt;&amp;lt;/div&amp;gt; //显示粗体的hi  v-pre  &amp;lt;div v-pre&amp;gt;{{n}}&amp;lt;/div&amp;gt; //显示{{n}}  v-bind (缩写为 :)  data.x = &#39;图片地址&#39; &amp;lt;img :src=&#39;x&#39;&amp;gt; // x是一个变量,而不是字符串x  v-on (缩写为@)  &amp;lt;button @click=&#39;add&#39;&amp;gt;按钮&amp;lt;/button&amp;gt; //点击会触发methods里的add事件 &amp;lt;button @click=&#39;n+1&#39;&amp;gt;按钮&amp;lt;/button&amp;gt; //点击会执行n+1  v-if v-else-if v-else  &amp;lt;div v-if=&#39;x&amp;gt;0&#39;&amp;gt; x大于0 &amp;lt;/div&amp;gt; &amp;lt;div v-else-if=&#39;x===0&#39;&amp;gt; x等于0 &amp;lt;/div&amp;gt; &amp;lt;div v-else=&#39;x&amp;lt;0&#39;&amp;gt; x小于0 &amp;lt;/div&amp;gt;  v-for (必须加上key)  &amp;lt;ul&amp;gt; &amp;lt;li v-for=&#39;(user,index) in users&#39; :key=&#39;index&#39;&amp;gt; {{user.</description>
+    </item>
+    
+    <item>
       <title>Vue的进阶属性</title>
       <link>http://jokerguo.top/posts/vue%E7%9A%84%E8%BF%9B%E9%98%B6%E5%B1%9E%E6%80%A7/</link>
       <pubDate>Thu, 12 Mar 2020 10:01:23 +0800</pubDate>
