@@ -6,10 +6,23 @@
     <description>Recent content in Posts on joker的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Sun, 22 Mar 2020 21:18:38 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 25 Mar 2020 23:04:08 +0800</lastBuildDate>
     
 	<atom:link href="http://jokerguo.top/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>单元测试</title>
+      <link>http://jokerguo.top/posts/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Wed, 25 Mar 2020 23:04:08 +0800</pubDate>
+      
+      <guid>http://jokerguo.top/posts/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
+      <description>准备工作
+npm i -D karma karma-chrome-launcher karma-mocha karma-sinon-chai mocha sinon sinon-chai karma-chai karma-chai-spies 单元测试 单元测试就是使用代码验证我们的代码是否正确．这里使用chai这个库
+const expect = chai.expect expect(foo).to.be.a(&#39;string&#39;);　//期待foo是一个string expect(foo).to.equal(&#39;bar&#39;); //期待foo等于bar expect(foo).to.have.lengthOf(3);　//期待foo长度是3 expect(tea).to.have.property(&#39;flavors&#39;) //期待tea有个flavors属性并且长度是3 .with.lengthOf(3); 更多API请查看官方文档
+自动化测试  配置Karma  Karma的作用是打开浏览器,加载测试脚本，运行测试用例
+ // 新建 karma.conf.js，内容如下 module.exports = function (config) { config.set({ // base path that will be used to resolve all patterns (eg. files, exclude) basePath: &#39;&#39;, // frameworks to use // available frameworks: https://npmjs.org/browse/keyword/karma-adapter frameworks: [&#39;mocha&#39;, &#39;sinon-chai&#39;], client: { chai: { includeStack: true } }, // list of files / patterns to load in the browser files: [ &#39;dist/**/*.</description>
+    </item>
     
     <item>
       <title>React的生命周期</title>

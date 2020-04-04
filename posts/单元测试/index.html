@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>HTML入门笔记1 | joker的博客</title>
-    <meta property="og:title" content="HTML入门笔记1 - joker的博客">
+    <title>单元测试 | joker的博客</title>
+    <meta property="og:title" content="单元测试 - joker的博客">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2019-11-08T09:49:08&#43;08:00">
+    <meta property="article:published_time" content="2020-03-25T23:04:08&#43;08:00">
         
         
-    <meta property="article:modified_time" content="2019-11-08T09:49:08&#43;08:00">
+    <meta property="article:modified_time" content="2020-03-25T23:04:08&#43;08:00">
         
     <meta name="Keywords" content="">
-    <meta name="description" content="HTML入门笔记1">
+    <meta name="description" content="单元测试">
         
     <meta name="author" content="">
-    <meta property="og:url" content="http://jokerguo.top/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/">
+    <meta property="og:url" content="http://jokerguo.top/posts/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
@@ -70,57 +70,149 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">HTML入门笔记1</h1>
+                            <h1 class="post-title">单元测试</h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2019年11月8日
+                            2020年3月25日
                         </date>
                         
                         
                         
                         <div class="post-content">
-                            <h1 id="html入门笔记1">HTML入门笔记1</h1>
-<h3 id="html是谁发明的">HTML是谁发明的</h3>
-<p>1991年由Tim Berners-Lee提出</p>
-<h3 id="html的起手式">HTML的起手式</h3>
-<pre><code>!
-</code></pre><p>注：!会自动补齐代码</p>
-<h3 id="常用的表章节标签">常用的表章节标签</h3>
+                            <p>准备工作</p>
+<pre><code>npm i -D karma karma-chrome-launcher karma-mocha karma-sinon-chai mocha sinon sinon-chai karma-chai karma-chai-spies
+</code></pre><h4 id="单元测试">单元测试</h4>
+<p>单元测试就是使用代码验证我们的代码是否正确．这里使用chai这个库</p>
+<pre><code>const expect = chai.expect
+
+expect(foo).to.be.a('string');　//期待foo是一个string
+expect(foo).to.equal('bar');  //期待foo等于bar
+expect(foo).to.have.lengthOf(3);　//期待foo长度是3
+expect(tea).to.have.property('flavors') //期待tea有个flavors属性并且长度是3
+  .with.lengthOf(3);
+</code></pre><p>更多API请查看<a href="https://www.chaijs.com/api/bdd/">官方文档</a></p>
+<h4 id="自动化测试">自动化测试</h4>
+<ol>
+<li>配置Karma</li>
+</ol>
+<p>Karma的作用是打开浏览器,加载测试脚本，运行测试用例</p>
+<pre><code> // 新建 karma.conf.js，内容如下
+ module.exports = function (config) {
+     config.set({
+
+         // base path that will be used to resolve all patterns (eg. files, exclude)
+         basePath: '',
+            // frameworks to use
+            // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
+            frameworks: ['mocha', 'sinon-chai'],
+            client: {
+                chai: {
+                    includeStack: true
+                }
+            },
+
+            // list of files / patterns to load in the browser
+            files: [
+                'dist/**/*.test.js',
+                'dist/**/*.test.css'
+            ],
+
+            // list of files / patterns to exclude
+            exclude: [],
+
+            // preprocess matching files before serving them to the browser
+            // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
+            preprocessors: {},
+
+            // test results reporter to use
+            // possible values: 'dots', 'progress'
+            // available reporters: https://npmjs.org/browse/keyword/karma-reporter
+            reporters: ['progress'],
+
+            // web server port
+            port: 9876,
+
+            // enable / disable colors in the output (reporters and logs)
+            colors: true,
+
+            // level of logging
+            // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+            logLevel: config.LOG_INFO,
+
+            // enable / disable watching file and executing tests whenever any file changes
+            autoWatch: true,
+
+            // start these browsers
+            // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
+            browsers: ['ChromeHeadless'],
+
+            // Continuous Integration mode
+            // if true, Karma captures browsers, runs the tests and exits
+            singleRun: false,
+
+            // Concurrency level
+            // how many browser should be started simultaneous
+            concurrency: Infinity
+        })
+    }
+
+</code></pre><ol start="2">
+<li>创建单元测试用例</li>
+</ol>
+<p>Mocha是一个单元测试框架,用来写单元测试</p>
+<pre><code>// 创建一个test/button.test.js
+
+const expect = chai.expect;
+import Vue from 'vue'
+import Button from '../src/button'
+
+Vue.config.productionTip = false
+Vue.config.devtools = false
+
+describe('Button', () =&gt; {
+  it('存在.', () =&gt; {
+    expect(Button).to.exist
+  })
+  it('可以设置icon.', () =&gt; {
+    const Constructor = Vue.extend(Button)
+    const vm = new Constructor({
+      propsData: {
+        icon: 'settings'
+      }
+    }).$mount()
+    const useElement = vm.$el.querySelector('use')
+    expect(useElement.getAttribute('xlink:href')).to.equal('#i-settings')
+    vm.$destroy()
+  })
+})
+</code></pre><p>describe,it 都是Mocha提供的</p>
+<ol start="3">
+<li>创建运行脚本</li>
+</ol>
+<p>找到package.json中的scripts</p>
+<pre><code>//添加这两行脚本
+    &quot;dev-test&quot;: &quot;parcel watch test/* --no-cache &amp; karma start&quot;,
+    &quot;test&quot;: &quot;parcel build test/* --no-minify &amp;&amp; karma start --single-run&quot;
+</code></pre><p>dev-test 开启测试 (在window环境中有bug 不能正常运行)</p>
+<p>test 须在每次测试时运行</p>
+<h4 id="持续集成">持续集成</h4>
 <ul>
-<li>h1-h6      标题</li>
-<li>section    章节</li>
-<li>article    文章</li>
-<li>p          段落</li>
-<li>header     头部</li>
-<li>footer     脚部</li>
-<li>main       主要内容</li>
-<li>aside      旁支内容</li>
-<li>div        划分</li>
+<li>需要使用到Travis Ci / Circle Ci　</li>
 </ul>
-<h3 id="全局属性">全局属性</h3>
-<ul>
-<li>class             定义一个类</li>
-<li>contenteditable   内容可修改</li>
-<li>hidden            不可见</li>
-<li>id                尽量不使用id</li>
-<li>style             样式</li>
-<li>tabindex          使用Tab键选中 -1（不选中） 0（最后一个选中） 正数（按大小选中 ）</li>
-<li>title             标题</li>
-</ul>
-<h3 id="常用内容标签">常用内容标签</h3>
-<ul>
-<li>ol+li       有序列表</li>
-<li>ul+li       无序列表</li>
-<li>dl+dt+dd    自定义列表</li>
-<li>pre  code   通常一起使用  中间代码</li>
-<li>hr          水平线</li>
-<li>br          换行</li>
-<li>a           超链接</li>
-<li>em          语气强调</li>
-<li>strong      内容重要</li>
-<li>quote       表示内联引用</li>
-<li>blockquote  表示块级引用     cite属性值：url</li>
-</ul>
+<p>使用Github账户登录Travis Ci</p>
+<p>找到需要持续集成的仓库,点亮设置就可以了</p>
+<p>在项目更目录中添加.travis.yml文件</p>
+<pre><code>    language: node_js
+    node_js:
+    - &quot;10&quot;
+    addons:
+    chrome: stable
+    sudo: required
+    before_script:
+    - &quot;sudo chown root /opt/google/chrome/chrome-sandbox&quot;
+    - &quot;sudo chmod 4755 /opt/google/chrome/chrome-sandbox&quot;
+</code></pre><p>每次git push之后都会执行,结果会发邮件通知</p>
+<p>一般test测试通过,travis ci也会通过</p>
 
                         </div>
 

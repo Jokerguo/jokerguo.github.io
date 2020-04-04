@@ -65,6 +65,28 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="http://jokerguo.top/posts/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" title="单元测试" >单元测试</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2020年3月25日
+                            </date>
+                            
+                            <div class="post-content">
+                                准备工作
+npm i -D karma karma-chrome-launcher karma-mocha karma-sinon-chai mocha sinon sinon-chai karma-chai karma-chai-spies 单元测试 单元测试就是使用代码验证我们的代码是否正确．这里使用chai这个库
+const expect = chai.expect expect(foo).to.be.a('string');　//期待foo是一个string expect(foo).to.equal('bar'); //期待foo等于bar expect(foo).to.have.lengthOf(3);　//期待foo长度是3 expect(tea).to.have.property('flavors') //期待tea有个flavors属性并且长度是3 .with.lengthOf(3); 更多API请查看官方文档
+自动化测试  配置Karma  Karma的作用是打开浏览器,加载测试脚本，运行测试用例
+ // 新建 karma.conf.js，内容如下 module.exports = function (config) { config.set({ // base path that will be used to resolve all patterns (eg. files, exclude) basePath: '', // frameworks to use // available frameworks: https://npmjs.org/browse/keyword/karma-adapter frameworks: ['mocha', 'sinon-chai'], client: { chai: { includeStack: true } }, // list of files / patterns to load in the browser files: [ 'dist/**/*.……
+                            </div>
+                            <p class="readmore"><a href="http://jokerguo.top/posts/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/">阅读全文</a></p>
+                        </article>
+                    
+                    
+		    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="http://jokerguo.top/posts/react%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" title="React的生命周期" >React的生命周期</a>
                                 </h1>
                             </header>
@@ -274,31 +296,6 @@ template怎么用 template只有在完整版中有用
                         </article>
                     
                     
-		    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="http://jokerguo.top/posts/jquery%E7%9A%84%E5%8A%9F%E8%83%BD/" title="JQuery的功能" >JQuery的功能</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2020年1月10日
-                            </date>
-                            
-                            <div class="post-content">
-                                目录  jQuery 如何获取元素 jQuery 的链式操作是怎样的 jQuery 如何创建元素 jQuery 如何移动元素 jQuery 如何修改元素的属性  正文 一、如何获取元素 将一个选择表达式，放进构造函数jQuery()（简写为$），然后得到被选中的元素。
- $(document) //选择整个文档 $('#myId') //选择id为myId的网页元素 $('.myClass') //选择class为myClass的网页元素 二、链式操作是什么 最终选中网页元素以后，可以对它进行一系列操作，并且所有操作可以连接在一起，以链条的形式写出来
- $('#id').find('.child').addClass('red') 分解后
- $('#id') //找到id .find('.child') //选中child .addClass('red') //增加red类 三、如何创建元素  $('&lt;p&gt;Hello&lt;/p&gt;'); $('&lt;li class=&quot;new&quot;&gt;new list item&lt;/li&gt;'); $('ul').append('&lt;li&gt;list item&lt;/li&gt;'); 四、如何移动元素 提供两组方法，来操作元素在网页中的位置移动。一组方法是直接移动该元素，另一组方法是移动其他元素，使得目标元素达到我们想要的位置。
-假定我们选中了一个div元素，需要把它移动到p元素后面。
-第一种方法是使用.insertAfter()，把div元素移动p元素后面：
- $('div').insertAfter($('p')); 第二种方法是使用.after()，把p元素加到div元素前面：
- $('p').after($('div')); 五、如何修改元素的属性 $('#p').attr('class') //获取id为p的标签的属性值 $('#p').attr('class','red') //如果存在就是修改，如果不存在就是添加 $('#p').removeAttr('name') //删除属性 $('#p').addClass('blue') //添加class ……
-                            </div>
-                            <p class="readmore"><a href="http://jokerguo.top/posts/jquery%E7%9A%84%E5%8A%9F%E8%83%BD/">阅读全文</a></p>
-                        </article>
-                    
-                    
                     
 
 
@@ -355,6 +352,10 @@ template怎么用 template只有在完整版中有用
 <ul class="widget-list">
     
     <li>
+        <a href="http://jokerguo.top/posts/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" title="单元测试">单元测试</a>
+    </li>
+    
+    <li>
         <a href="http://jokerguo.top/posts/react%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" title="React的生命周期">React的生命周期</a>
     </li>
     
@@ -388,10 +389,6 @@ template怎么用 template只有在完整版中有用
     
     <li>
         <a href="http://jokerguo.top/posts/%E6%B5%85%E6%9E%90mvc/" title="浅析MVC">浅析MVC</a>
-    </li>
-    
-    <li>
-        <a href="http://jokerguo.top/posts/jquery%E7%9A%84%E5%8A%9F%E8%83%BD/" title="JQuery的功能">JQuery的功能</a>
     </li>
     
 </ul>
