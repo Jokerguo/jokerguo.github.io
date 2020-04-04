@@ -65,51 +65,11 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
-                                    <a href="http://jokerguo.top/posts/vue%E7%9A%84%E8%BF%9B%E9%98%B6%E5%B1%9E%E6%80%A7/" title="Vue的进阶属性" >Vue的进阶属性</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2020年3月20日
-                            </date>
-                            
-                            <div class="post-content">
-                                computed - 计算属性 watch - 监听 mixin - 混入 console.log('111') extends - 继承 provide/inject ……
-                            </div>
-                            <p class="readmore"><a href="http://jokerguo.top/posts/vue%E7%9A%84%E8%BF%9B%E9%98%B6%E5%B1%9E%E6%80%A7/">阅读全文</a></p>
-                        </article>
-                    
-                    
-		    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="http://jokerguo.top/posts/vue%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E5%85%A5%E9%97%A8%E5%B1%9E%E6%80%A7/" title="Vue需要知道的入门属性" >Vue需要知道的入门属性</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2020年3月20日
-                            </date>
-                            
-                            <div class="post-content">
-                                这里介绍一下Vue比较简单的，也是一定要知道的属性
-el - 挂载点 new Vue({ el : '#App' }) //可以使用$mount代替 new Vue({ }).$mount('#App') data - 内部数据 注意: 在组件中使用data必须是函数
-new Vue({ data(){ return { data : 0 } } }) methods - 方法 new Vue({ data{ data : 0 } methods : { add(){ this.data++ } } }) this.add() //1 components - 组件   引入一个vue文件，就是一个组件
-  声明
-  Vue.component('Demo',{ template : `&lt;div&gt;组件&lt;/div&gt; ` })  在实例中添加component对象  使用方法……
-                            </div>
-                            <p class="readmore"><a href="http://jokerguo.top/posts/vue%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E5%85%A5%E9%97%A8%E5%B1%9E%E6%80%A7/">阅读全文</a></p>
-                        </article>
-                    
-                    
-		    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
                                     <a href="http://jokerguo.top/posts/react%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" title="React的生命周期" >React的生命周期</a>
                                 </h1>
                             </header>
                             <date class="post-meta meta-date">
-                                2020年3月15日
+                                2020年3月22日
                             </date>
                             
                             <div class="post-content">
@@ -149,7 +109,7 @@ componentWillReceiveProps 当组件接受新的props是,会触发这个钩子
                                 </h1>
                             </header>
                             <date class="post-meta meta-date">
-                                2020年3月11日
+                                2020年3月21日
                             </date>
                             
                             <div class="post-content">
@@ -168,7 +128,7 @@ componentWillReceiveProps 当组件接受新的props是,会触发这个钩子
                                 </h1>
                             </header>
                             <date class="post-meta meta-date">
-                                2020年3月10日
+                                2020年3月20日
                             </date>
                             
                             <div class="post-content">
@@ -181,6 +141,53 @@ JSX的注意事项  使用className   &lt;div className='red'&gt;n&lt;/div&gt;  
 在线转换JSX……
                             </div>
                             <p class="readmore"><a href="http://jokerguo.top/posts/react%E8%B5%B7%E6%AD%A5/">阅读全文</a></p>
+                        </article>
+                    
+                    
+		    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://jokerguo.top/posts/vue%E7%9A%84%E8%BF%9B%E9%98%B6%E5%B1%9E%E6%80%A7/" title="Vue的进阶属性" >Vue的进阶属性</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2020年3月12日
+                            </date>
+                            
+                            <div class="post-content">
+                                computed - 计算属性 当其依赖的值发生变化时，计算属性会重新计算，反之则使用缓存中的属性值
+var vm = new Vue({ el: '#example', data: { message: 'Hello' }, computed: { //getter reversedMessage(){ return this.message.split('').reverse().join('') } } }) 因为时getter函数,所以调用不用加括号
+watch - 监听 一旦data发生变化,就执行的函数
+加上immediate : true　第一次也运行
+加deep ： true 监听对象 如果是true 那么对象里面的改变了 也算对象变了
+语法
+function(value,oldValue){} (){} [f1,f2] //依次执行f1 f2函数 'methodName' //调用methods里的事件 vm.$watch('xxx',fn {deep:true,immediate:true}) mixin - 混入 mixin是一个可以复用的组件
+//定义一个mixin组件 const myMixin = { created: function () { this.hello() }, methods: { hello: function () { console.……
+                            </div>
+                            <p class="readmore"><a href="http://jokerguo.top/posts/vue%E7%9A%84%E8%BF%9B%E9%98%B6%E5%B1%9E%E6%80%A7/">阅读全文</a></p>
+                        </article>
+                    
+                    
+		    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://jokerguo.top/posts/vue%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E5%85%A5%E9%97%A8%E5%B1%9E%E6%80%A7/" title="Vue需要知道的入门属性" >Vue需要知道的入门属性</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2020年3月10日
+                            </date>
+                            
+                            <div class="post-content">
+                                这里介绍一下Vue比较简单的，也是一定要知道的属性
+el - 挂载点 new Vue({ el : '#App' }) //可以使用$mount代替 new Vue({ }).$mount('#App') data - 内部数据 注意: 在组件中使用data必须是函数
+new Vue({ data(){ return { data : 0 } } }) methods - 方法 new Vue({ data{ data : 0 } methods : { add(){ this.data++ } } }) this.add() //1 components - 组件   引入一个vue文件，就是一个组件
+  声明
+  Vue.component('Demo',{ template : `&lt;div&gt;组件&lt;/div&gt; ` })  在实例中添加component对象  使用方法……
+                            </div>
+                            <p class="readmore"><a href="http://jokerguo.top/posts/vue%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E5%85%A5%E9%97%A8%E5%B1%9E%E6%80%A7/">阅读全文</a></p>
                         </article>
                     
                     
@@ -348,14 +355,6 @@ template怎么用 template只有在完整版中有用
 <ul class="widget-list">
     
     <li>
-        <a href="http://jokerguo.top/posts/vue%E7%9A%84%E8%BF%9B%E9%98%B6%E5%B1%9E%E6%80%A7/" title="Vue的进阶属性">Vue的进阶属性</a>
-    </li>
-    
-    <li>
-        <a href="http://jokerguo.top/posts/vue%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E5%85%A5%E9%97%A8%E5%B1%9E%E6%80%A7/" title="Vue需要知道的入门属性">Vue需要知道的入门属性</a>
-    </li>
-    
-    <li>
         <a href="http://jokerguo.top/posts/react%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" title="React的生命周期">React的生命周期</a>
     </li>
     
@@ -365,6 +364,14 @@ template怎么用 template只有在完整版中有用
     
     <li>
         <a href="http://jokerguo.top/posts/react%E8%B5%B7%E6%AD%A5/" title="React起步">React起步</a>
+    </li>
+    
+    <li>
+        <a href="http://jokerguo.top/posts/vue%E7%9A%84%E8%BF%9B%E9%98%B6%E5%B1%9E%E6%80%A7/" title="Vue的进阶属性">Vue的进阶属性</a>
+    </li>
+    
+    <li>
+        <a href="http://jokerguo.top/posts/vue%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E5%85%A5%E9%97%A8%E5%B1%9E%E6%80%A7/" title="Vue需要知道的入门属性">Vue需要知道的入门属性</a>
     </li>
     
     <li>

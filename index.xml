@@ -6,37 +6,15 @@
     <description>Recent content on joker的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Fri, 20 Mar 2020 10:01:23 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 22 Mar 2020 21:18:38 +0800</lastBuildDate>
     
 	<atom:link href="http://jokerguo.top/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Vue的进阶属性</title>
-      <link>http://jokerguo.top/posts/vue%E7%9A%84%E8%BF%9B%E9%98%B6%E5%B1%9E%E6%80%A7/</link>
-      <pubDate>Fri, 20 Mar 2020 10:01:23 +0800</pubDate>
-      
-      <guid>http://jokerguo.top/posts/vue%E7%9A%84%E8%BF%9B%E9%98%B6%E5%B1%9E%E6%80%A7/</guid>
-      <description>computed - 计算属性 watch - 监听 mixin - 混入 console.log(&#39;111&#39;) extends - 继承 provide/inject </description>
-    </item>
-    
-    <item>
-      <title>Vue需要知道的入门属性</title>
-      <link>http://jokerguo.top/posts/vue%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E5%85%A5%E9%97%A8%E5%B1%9E%E6%80%A7/</link>
-      <pubDate>Fri, 20 Mar 2020 08:48:21 +0800</pubDate>
-      
-      <guid>http://jokerguo.top/posts/vue%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E5%85%A5%E9%97%A8%E5%B1%9E%E6%80%A7/</guid>
-      <description>这里介绍一下Vue比较简单的，也是一定要知道的属性
-el - 挂载点 new Vue({ el : &#39;#App&#39; }) //可以使用$mount代替 new Vue({ }).$mount(&#39;#App&#39;) data - 内部数据 注意: 在组件中使用data必须是函数
-new Vue({ data(){ return { data : 0 } } }) methods - 方法 new Vue({ data{ data : 0 } methods : { add(){ this.data++ } } }) this.add() //1 components - 组件   引入一个vue文件，就是一个组件
-  声明
-  Vue.component(&#39;Demo&#39;,{ template : `&amp;lt;div&amp;gt;组件&amp;lt;/div&amp;gt; ` })  在实例中添加component对象  使用方法</description>
-    </item>
-    
-    <item>
       <title>React的生命周期</title>
       <link>http://jokerguo.top/posts/react%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</link>
-      <pubDate>Sun, 15 Mar 2020 21:18:38 +0800</pubDate>
+      <pubDate>Sun, 22 Mar 2020 21:18:38 +0800</pubDate>
       
       <guid>http://jokerguo.top/posts/react%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</guid>
       <description>钩子的意思相当于特殊的函数
@@ -67,7 +45,7 @@ componentWillReceiveProps 当组件接受新的props是,会触发这个钩子
     <item>
       <title>React两种组件的数据读写</title>
       <link>http://jokerguo.top/posts/react%E4%B8%A4%E7%A7%8D%E7%BB%84%E4%BB%B6%E7%9A%84%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%86%99/</link>
-      <pubDate>Wed, 11 Mar 2020 19:50:33 +0800</pubDate>
+      <pubDate>Sat, 21 Mar 2020 19:50:33 +0800</pubDate>
       
       <guid>http://jokerguo.top/posts/react%E4%B8%A4%E7%A7%8D%E7%BB%84%E4%BB%B6%E7%9A%84%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%86%99/</guid>
       <description>今天简单分享一下React中组件的数据读写
@@ -77,7 +55,7 @@ componentWillReceiveProps 当组件接受新的props是,会触发这个钩子
     <item>
       <title>React起步</title>
       <link>http://jokerguo.top/posts/react%E8%B5%B7%E6%AD%A5/</link>
-      <pubDate>Tue, 10 Mar 2020 19:53:15 +0800</pubDate>
+      <pubDate>Fri, 20 Mar 2020 19:53:15 +0800</pubDate>
       
       <guid>http://jokerguo.top/posts/react%E8%B5%B7%E6%AD%A5/</guid>
       <description>React的创建 (我都是使用yarn)  使用CDN (不推荐)  react react-dom 两个都要引入
@@ -87,6 +65,35 @@ webpack里内置的babel-loader
 所以直接写
 JSX的注意事项  使用className   &amp;lt;div className=&#39;red&#39;&amp;gt;n&amp;lt;/div&amp;gt;  变量,函数要加上大括号 return () （写react在return后面加括号）  想先试试手可以点下面的链接
 在线转换JSX</description>
+    </item>
+    
+    <item>
+      <title>Vue的进阶属性</title>
+      <link>http://jokerguo.top/posts/vue%E7%9A%84%E8%BF%9B%E9%98%B6%E5%B1%9E%E6%80%A7/</link>
+      <pubDate>Thu, 12 Mar 2020 10:01:23 +0800</pubDate>
+      
+      <guid>http://jokerguo.top/posts/vue%E7%9A%84%E8%BF%9B%E9%98%B6%E5%B1%9E%E6%80%A7/</guid>
+      <description>computed - 计算属性 当其依赖的值发生变化时，计算属性会重新计算，反之则使用缓存中的属性值
+var vm = new Vue({ el: &#39;#example&#39;, data: { message: &#39;Hello&#39; }, computed: { //getter reversedMessage(){ return this.message.split(&#39;&#39;).reverse().join(&#39;&#39;) } } }) 因为时getter函数,所以调用不用加括号
+watch - 监听 一旦data发生变化,就执行的函数
+加上immediate : true　第一次也运行
+加deep ： true 监听对象 如果是true 那么对象里面的改变了 也算对象变了
+语法
+function(value,oldValue){} (){} [f1,f2] //依次执行f1 f2函数 &#39;methodName&#39; //调用methods里的事件 vm.$watch(&#39;xxx&#39;,fn {deep:true,immediate:true}) mixin - 混入 mixin是一个可以复用的组件
+//定义一个mixin组件 const myMixin = { created: function () { this.hello() }, methods: { hello: function () { console.</description>
+    </item>
+    
+    <item>
+      <title>Vue需要知道的入门属性</title>
+      <link>http://jokerguo.top/posts/vue%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E5%85%A5%E9%97%A8%E5%B1%9E%E6%80%A7/</link>
+      <pubDate>Tue, 10 Mar 2020 08:48:21 +0800</pubDate>
+      
+      <guid>http://jokerguo.top/posts/vue%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E5%85%A5%E9%97%A8%E5%B1%9E%E6%80%A7/</guid>
+      <description>这里介绍一下Vue比较简单的，也是一定要知道的属性
+el - 挂载点 new Vue({ el : &#39;#App&#39; }) //可以使用$mount代替 new Vue({ }).$mount(&#39;#App&#39;) data - 内部数据 注意: 在组件中使用data必须是函数
+new Vue({ data(){ return { data : 0 } } }) methods - 方法 new Vue({ data{ data : 0 } methods : { add(){ this.data++ } } }) this.add() //1 components - 组件   引入一个vue文件，就是一个组件
+  声明
+  Vue.component(&#39;Demo&#39;,{ template : `&amp;lt;div&amp;gt;组件&amp;lt;/div&amp;gt; ` })  在实例中添加component对象  使用方法</description>
     </item>
     
     <item>
