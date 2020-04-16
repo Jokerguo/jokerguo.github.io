@@ -65,6 +65,24 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="http://jokerguo.top/posts/%E6%B5%85%E6%9E%90mvc/" title="浅析MVC" >浅析MVC</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2020年2月29日
+                            </date>
+                            
+                            <div class="post-content">
+                                浅析MVC 什么是MVC  M是model（数据模型）的简称，用于操作数据 V是view（视图）的简称，用于负责UI界面 C是controller（控制器）的简称，用于其他  // 伪代码 Model = { data: { 程序需要操作的数据或信息 }, create: { 增数据 }, delete: { 删数据 }, update() {改数据 }, get:{ 获取数据 } } View = { el: 需要刷新的元素, html: `html内容` init(){ v.el: 需要刷新的元素 }, render(){ 刷新页面 } } Controller = { init(){ v.init() // View初始化 v.render() // 第一次渲染 c.autoBindEvents() // 自动的事件绑定 eventBus.on('m:update', () =&gt; { v.render() }) // 当eventBus触发'm:update'时View刷新 }, events:{ 事件以哈希表方式记录 }， method() { data = 改变后的新数据 m.……
+                            </div>
+                            <p class="readmore"><a href="http://jokerguo.top/posts/%E6%B5%85%E6%9E%90mvc/">阅读全文</a></p>
+                        </article>
+                    
+                    
+		    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="http://jokerguo.top/posts/jquery%E7%9A%84%E5%8A%9F%E8%83%BD/" title="JQuery的功能" >JQuery的功能</a>
                                 </h1>
                             </header>
@@ -306,26 +324,6 @@ MDN a 标签……
                         </article>
                     
                     
-		    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="http://jokerguo.top/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/" title="HTML入门笔记1" >HTML入门笔记1</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年11月8日
-                            </date>
-                            
-                            <div class="post-content">
-                                HTML入门笔记1 HTML是谁发明的 1991年由Tim Berners-Lee提出
-HTML的起手式 ! 注：!会自动补齐代码
-常用的表章节标签  h1-h6 标题 section 章节 article 文章 p 段落 header 头部 footer 脚部 main 主要内容 aside 旁支内容 div 划分  全局属性  class 定义一个类 contenteditable 内容可修改 hidden 不可见 id 尽量不使用id style 样式 tabindex 使用Tab键选中 -1（不选中） 0（最后一个选中） 正数（按大小选中 ） title 标题  常用内容标签  ol+li 有序列表 ul+li 无序列表 dl+dt+dd 自定义列表 pre code 通常一起使用 中间代码 hr 水平线 br 换行 a 超链接 em 语气强调 strong 内容重要 quote 表示内联引用 blockquote 表示块级引用 cite属性值：url  ……
-                            </div>
-                            <p class="readmore"><a href="http://jokerguo.top/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/">阅读全文</a></p>
-                        </article>
-                    
-                    
                     
 
 
@@ -386,6 +384,10 @@ HTML的起手式 ! 注：!会自动补齐代码
 <ul class="widget-list">
     
     <li>
+        <a href="http://jokerguo.top/posts/vuex%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8/" title="Vuex如何使用">Vuex如何使用</a>
+    </li>
+    
+    <li>
         <a href="http://jokerguo.top/posts/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" title="单元测试">单元测试</a>
     </li>
     
@@ -419,10 +421,6 @@ HTML的起手式 ! 注：!会自动补齐代码
     
     <li>
         <a href="http://jokerguo.top/posts/vue%E7%9A%84%E4%B8%A4%E4%B8%AA%E7%89%88%E6%9C%AC/" title="Vue的两个版本">Vue的两个版本</a>
-    </li>
-    
-    <li>
-        <a href="http://jokerguo.top/posts/%E6%B5%85%E6%9E%90mvc/" title="浅析MVC">浅析MVC</a>
     </li>
     
 </ul>

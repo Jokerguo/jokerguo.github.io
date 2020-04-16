@@ -6,10 +6,22 @@
     <description>Recent content on joker的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Wed, 25 Mar 2020 23:04:08 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 01 Apr 2020 13:22:23 +0800</lastBuildDate>
     
 	<atom:link href="http://jokerguo.top/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vuex如何使用</title>
+      <link>http://jokerguo.top/posts/vuex%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Wed, 01 Apr 2020 13:22:23 +0800</pubDate>
+      
+      <guid>http://jokerguo.top/posts/vuex%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8/</guid>
+      <description>Vuex是一个专为Vue应用程序开发的状态管理模式
+起步 安装vuex  yarn add vuex -D 使用vuex // 在main.js中 import vuex from &#39;vuex&#39; Vue.use(vuex) const store = new vuex.Store({ state :{ count ： 0 }， }) //在根组件注入store给所有的子组件 const app = new Vue({ el: &#39;#app&#39;, store }) 核心概念 State  const store = new vuex.Store({ state :{ count ： 0 }， }) // 子组件这么拿到state this.$store.state.count ！！！ state中的状态是不能被直接改变的，必须通过提交mutation
+set的用途  最好提前在store中初始化好需要的属性  如果需要添加新属性时，就要使用到set
+// 添加obj对象，key为newProp,value为123 Vue.set(obj,&#39;newProp&#39;,123) Vue.set === this.$set //true //新对象替换老对象 this.</description>
+    </item>
     
     <item>
       <title>单元测试</title>
