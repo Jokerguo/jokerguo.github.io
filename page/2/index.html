@@ -65,6 +65,29 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="http://jokerguo.top/posts/sync%E4%BF%AE%E9%A5%B0%E7%AC%A6/" title="Sync修饰符" >Sync修饰符</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2020年3月5日
+                            </date>
+                            
+                            <div class="post-content">
+                                理解vue的.sync修饰符 .sync会被扩展为一个自动更新父组件属性的 v-on 监听器，是一个语法糖的存在
+代码示例
+ &lt;Child :money.sync = &quot;total&quot;/&gt; //扩展为 &lt;Child :money = &quot;total&quot; @update:money = &quot;total = $event&quot;/&gt; //子组件要触发的事件 (需要100元) &lt;button @click = &quot;$emit('update:money',total - 100)&quot;&gt;&lt;/button&gt; 子组件向父组件发了一个update:money的方法，父组件监听了这个方法，然后更新了prop
+//index.vue
+ &lt;template&gt; &lt;div&gt; App.vue 我现在有 {{total}} &lt;hr&gt; &lt;Child :money.sync=&quot;total&quot;/&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; import Child from &quot;./child.vue&quot;; export default { data() { return { total: 10000 }; }, components: { Child: Child } }; &lt;/script&gt; //child.vue
+ &lt;template&gt; &lt;div&gt; &lt;button @click=&quot;$emit('update:money', money-100)&quot;&gt;花钱&lt;/button&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; export default { props: [&quot;money&quot;] }; &lt;/script&gt; ……
+                            </div>
+                            <p class="readmore"><a href="http://jokerguo.top/posts/sync%E4%BF%AE%E9%A5%B0%E7%AC%A6/">阅读全文</a></p>
+                        </article>
+                    
+                    
+		    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="http://jokerguo.top/posts/vue%E7%9A%84%E4%B8%A4%E4%B8%AA%E7%89%88%E6%9C%AC/" title="Vue的两个版本" >Vue的两个版本</a>
                                 </h1>
                             </header>
@@ -290,33 +313,6 @@ DNS 过程
                         </article>
                     
                     
-		    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="http://jokerguo.top/posts/css%E6%80%BB%E7%BB%93/" title="Css总结" >Css总结</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年11月17日
-                            </date>
-                            
-                            <div class="post-content">
-                                一、css 简介 CSS，全拼 Cascading Style Sheets，层叠样式表，是由 Tim Berners Lee 的同事赖先生（Håkon Wium Lie）首先提出的，目前使用最广泛的版本为 CSS2.1。最新版本为 css3.0
-二、css 语法 三、文档流 inline 行内元素中不能嵌入块级元素
-行内元素不能设置宽度
-行内元素的高度由 line-height 间接决定(如果内容字体不一致 可能行高会有所改变)
-block 块级元素可以设置 width 默认宽度为 auto 不是 100%
-块级元素中可以嵌入行内或者块级元素
-inline-block 行内块元素结合两者 可使用 width
-Tips: HTML5 中没有行内元素 块级元素的区分 所有元素指定 display suggest: 不要使用 width:100% 四、脱离文档流 position: absolute 绝对定位 / fixed 固定定位
-float 浮动
-五、overflow  auto 是灵活设置，超出时有滚动条，不超出时没有 scroll 一直显示滚动条 hidden 直接隐藏溢出部分 visible 直接显示溢出部分  六、盒模型 css 盒模型分两种 一种 content-box 一种 border-box……
-                            </div>
-                            <p class="readmore"><a href="http://jokerguo.top/posts/css%E6%80%BB%E7%BB%93/">阅读全文</a></p>
-                        </article>
-                    
-                    
                     
 
 
@@ -377,6 +373,10 @@ float 浮动
 <ul class="widget-list">
     
     <li>
+        <a href="http://jokerguo.top/posts/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95%E7%9A%84%E7%BB%9F%E8%AE%A1/" title="基本算法的统计">基本算法的统计</a>
+    </li>
+    
+    <li>
         <a href="http://jokerguo.top/posts/vue-router%E5%AF%BC%E8%88%AA%E5%AE%88%E5%8D%AB/" title="Vue Router导航守卫">Vue Router导航守卫</a>
     </li>
     
@@ -410,10 +410,6 @@ float 浮动
     
     <li>
         <a href="http://jokerguo.top/posts/vue%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E5%85%A5%E9%97%A8%E5%B1%9E%E6%80%A7/" title="Vue需要知道的入门属性">Vue需要知道的入门属性</a>
-    </li>
-    
-    <li>
-        <a href="http://jokerguo.top/posts/sync%E4%BF%AE%E9%A5%B0%E7%AC%A6/" title="Sync修饰符">Sync修饰符</a>
     </li>
     
 </ul>
