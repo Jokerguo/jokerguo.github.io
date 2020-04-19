@@ -6,10 +6,32 @@
     <description>Recent content on joker的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Wed, 01 Apr 2020 13:22:23 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 08 Apr 2020 16:34:06 +0800</lastBuildDate>
     
 	<atom:link href="http://jokerguo.top/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vue Router导航守卫</title>
+      <link>http://jokerguo.top/posts/vue-router%E5%AF%BC%E8%88%AA%E5%AE%88%E5%8D%AB/</link>
+      <pubDate>Wed, 08 Apr 2020 16:34:06 +0800</pubDate>
+      
+      <guid>http://jokerguo.top/posts/vue-router%E5%AF%BC%E8%88%AA%E5%AE%88%E5%8D%AB/</guid>
+      <description>导航守卫是什么 正如其名，vue-router提供的导航守卫主要用来通过跳转或取消的方式守卫导航。
+导航守卫全解析 导航守卫分为：全局的，单个路由独享的，组件内的
+全局导航守卫 beforeEach , beforeResolve , afterEach
+特点：所有路由配置的组件都会触发，触发路由就会触发这些钩子函数
+写法如下
+const router = new VueRouter({ ... }) router.beforeEach((to, from, next) =&amp;gt; { // ... }) 【beforeEach】 : 在路由跳转钱触发，参数有to,from,next三个，这个钩子主要用于登录验证，就是路由还没跳转前高职，以免跳转了再通知
+【beforeResolve】 : 这个钩子与beforeEach类似，也是路由跳转前触发，参数也是to,from,next。
+区别是在导航被确认之前，同时在所有组件内守卫和异步路由组件被解析之后，解析守卫就被调用。
+即在 beforeEach 和 组件内beforeRouteEnter 之后，afterEach之前调用。
+【afterEach】 : 在路由跳转之后触发，参数有to,from。他发生在beforeEach和beforeResolve之后，beforeRouteEnter（组件内守卫，后讲）之前
+独享路由 beforeEnter
+是指在单个路由配置的时候可以设置的钩子函数
+写法如下
+const router = new VueRouter({ routes: [ { path: &#39;/foo&#39;, component: Foo, beforeEnter: (to, from, next) =&amp;gt; { // ... } } ] }) 【beforeEnter】 : 和beforeEach完全相同，如果都设置了就在beforeEach之后执行。参数为to,from,next</description>
+    </item>
     
     <item>
       <title>Vuex如何使用</title>
